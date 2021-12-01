@@ -1,0 +1,14 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: welcome
+parts:
+- caption: Geophysics Data Portal
+  chapters:
+  - file: data-portal/about
+  - file: data-portal/user_guide
+  - file: data-portal/data_available
+  - file: data-portal/Checking_Airborne_Radar_Echo_sounding_data
+  - file: data-portal/Checking_gravity_XYZ_data
+  - file: data-portal/Checking_magnetics_XYZ_data

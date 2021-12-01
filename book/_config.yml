@@ -1,0 +1,13 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: UK PDC Geophysics Book
+author: Alice Fremand
+logo: images/logo.jpg
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: cache
+  timeout: 100
+
