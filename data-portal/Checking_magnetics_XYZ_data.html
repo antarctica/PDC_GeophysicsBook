@@ -1,0 +1,1352 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checking Airborne Magnetics data &#8212; UK PDC Geophysics Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Checking Airborne Gravity data" href="Checking_gravity_XYZ_data.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UK PDC Geophysics Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Welcome to the Geophysics Book from the UK Polar Centre
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Geophysics Data Portal
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   About
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="user_guide.html">
+   User Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_available.html">
+   List of data available
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Checking_Airborne_Radar_Echo_sounding_data.html">
+   Checking Airborne Radar Echo Sounding data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Checking_gravity_XYZ_data.html">
+   Checking Airborne Gravity data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Checking Airborne Magnetics data
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/data-portal/Checking_magnetics_XYZ_data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/data-portal/Checking_magnetics_XYZ_data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Checking Airborne Magnetics data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aim">
+     Aim
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#virtual-environment">
+       Virtual environment
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#to-set-up-the-virtual-environment-with-conda">
+       To set up the virtual environment with Conda:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#to-set-up-the-virtual-environment-on-unix">
+       To set up the virtual environment on UNIX:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#load-the-relevant-modules">
+       Load the relevant modules
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#checking-the-xyz-files">
+     Checking the XYZ files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reading-the-xyz-data">
+       Reading the XYZ data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#selecting-the-variables">
+       Selecting the variables
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#have-a-look-at-the-data-geospatially">
+       Have a look at the data geospatially
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setting-up-the-coordinate-system">
+     Setting up the coordinate system
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-the-data">
+     Plotting the data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculate-statistics-about-the-data">
+   Calculate statistics about the data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#size-of-the-dataset">
+     Size of the dataset
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#magnetics-anomaly-statistics">
+     Magnetics anomaly statistics
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-distance-along-the-profile">
+     Calculate distance along the profile
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-number-of-points">
+     Calculate number of points
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#looking-at-the-magnetics-anomaly-along-the-profile">
+     Looking at the magnetics anomaly along the profile
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="checking-airborne-magnetics-data">
+<h1>Checking Airborne Magnetics data<a class="headerlink" href="#checking-airborne-magnetics-data" title="Permalink to this headline">¶</a></h1>
+<p>Author: Alice Fremand (&#64;almand)</p>
+<p>Date: 12/11/2021</p>
+<div class="section" id="aim">
+<h2>Aim<a class="headerlink" href="#aim" title="Permalink to this headline">¶</a></h2>
+<p>The goal of this tutorial is to easily check the airborne gravity data provided in XYZ format.</p>
+<div class="section" id="virtual-environment">
+<h3>Virtual environment<a class="headerlink" href="#virtual-environment" title="Permalink to this headline">¶</a></h3>
+<p>For the code to run, it is important to install the correct dependancies and libraries. In particular the following libraries are crucial for the code to be run:</p>
+<ul class="simple">
+<li><p>pandas <em>module to check CSV and text data in python</em></p></li>
+<li><p>geopandas <em>module to check data geospatially in python</em></p></li>
+</ul>
+</div>
+<div class="section" id="to-set-up-the-virtual-environment-with-conda">
+<h3>To set up the virtual environment with Conda:<a class="headerlink" href="#to-set-up-the-virtual-environment-with-conda" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">aerogeophysics_env</span>
+<span class="o">&gt;</span><span class="n">conda</span> <span class="n">activate</span> <span class="n">aerogeophysics_env</span>
+<span class="o">&gt;</span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">env</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="o">&gt;</span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">env</span> <span class="o">--</span><span class="nb">set</span> <span class="n">channel_priority</span> <span class="n">strict</span>
+<span class="o">&gt;</span><span class="n">conda</span> <span class="n">install</span> <span class="n">python</span><span class="o">=</span><span class="mi">3</span> <span class="n">geopandas</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="to-set-up-the-virtual-environment-on-unix">
+<h3>To set up the virtual environment on UNIX:<a class="headerlink" href="#to-set-up-the-virtual-environment-on-unix" title="Permalink to this headline">¶</a></h3>
+<p>Load your python module:</p>
+<p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">python/conda3</span></code></p>
+<p>Then in the folder where you have your code, you need to launch:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">aerogeophysics_env</span></code></p>
+<p>It will create a folder with all the environment for python.
+To activate the virtual environment you need to lauch it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">aerogeophysics_env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span><span class="o">.</span><span class="n">csh</span>
+</pre></div>
+</div>
+<p>You need to make sure that [aerogeophysics_env] appears before your name on the machine. That means that you are using the virtual environment
+Then you need to upgrade pip which is the command that install the packages</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">pip</span></code></p>
+<p>And install the other libraries</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geopandas</span></code></p>
+<p>In this tutorial, the virtual environment is already set up. The list of the current libraries loaded is given in the list below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="nb">list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Package                       Version
+----------------------------- -------------------
+alabaster                     0.7.12Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>anyio                         3.3.4
+argon2-cffi                   21.1.0
+async-generator               1.10
+attrs                         21.2.0
+Babel                         2.9.1
+backcall                      0.2.0
+backports.functools-lru-cache 1.6.4
+beautifulsoup4                4.10.0
+bleach                        4.1.0
+brotlipy                      0.7.0
+certifi                       2021.10.8
+cffi                          1.15.0
+cftime                        1.5.1.1
+chardet                       4.0.0
+charset-normalizer            2.0.0
+click                         7.1.2
+click-completion              0.5.2
+click-log                     0.3.2
+click-plugins                 1.1.1
+cligj                         0.7.1
+cloudpickle                   1.6.0
+colorama                      0.4.4
+cryptography                  35.0.0
+cycler                        0.10.0
+dataclasses                   0.8
+decorator                     5.0.9
+defusedxml                    0.7.1
+docutils                      0.16
+entrypoints                   0.3
+Fiona                         1.8.18
+future                        0.18.2
+GDAL                          3.1.4
+geopandas                     0.9.0
+gitdb                         4.0.9
+GitPython                     3.1.24
+greenlet                      1.1.2
+idna                          3.1
+imagesize                     1.3.0
+importlib-metadata            4.8.2
+importlib-resources           3.3.1
+ipykernel                     5.5.5
+ipython                       7.23.1
+ipython-genutils              0.2.0
+ipywidgets                    7.6.5
+jedi                          0.18.0
+Jinja2                        3.0.3
+jsonschema                    3.2.0
+jupyter                       1.0.0
+jupyter-book                  0.12.0
+jupyter-cache                 0.4.3
+jupyter-client                6.1.12
+jupyter-console               6.4.0
+jupyter-core                  4.7.1
+jupyter-server                1.11.2
+jupyter-server-mathjax        0.2.3
+jupyter-sphinx                0.3.2
+jupyterlab-pygments           0.1.2
+jupyterlab-widgets            1.0.2
+jupytext                      1.11.5
+kiwisolver                    1.3.2
+latexcodec                    2.0.1
+linkify-it-py                 1.0.2
+lxml                          4.6.4
+markdown-it-py                1.1.0
+MarkupSafe                    2.0.1
+matplotlib                    3.4.3
+matplotlib-inline             0.1.2
+mdit-py-plugins               0.2.8
+mistune                       0.8.4
+munch                         2.5.0
+myst-nb                       0.13.1
+myst-parser                   0.15.2
+nbclient                      0.5.5
+nbconvert                     6.2.0
+nbdime                        3.1.1
+nbformat                      5.1.3
+nest-asyncio                  1.5.1
+netCDF4                       1.5.7
+notebook                      6.4.5
+numpy                         1.20.3
+obspy                         1.2.2
+olefile                       0.46
+packaging                     21.2
+pandas                        1.2.4
+pandocfilters                 1.5.0
+parso                         0.8.2
+pickleshare                   0.7.5
+Pillow                        8.3.1
+pip                           21.1.2
+prometheus-client             0.12.0
+prompt-toolkit                3.0.18
+pybtex                        0.24.0
+pybtex-docutils               1.0.1
+pycparser                     2.21
+pydata-sphinx-theme           0.6.3
+Pygments                      2.9.0
+pyOpenSSL                     21.0.0
+pyparsing                     2.4.7
+pyproj                        3.1.0
+PyQt5                         5.12.3
+PyQt5-sip                     4.19.18
+PyQtChart                     5.12
+PyQtWebEngine                 5.12.1
+pyrsistent                    0.18.0
+PySocks                       1.7.1
+python-dateutil               2.8.1
+pytz                          2021.1
+pywin32                       300
+pywinpty                      1.1.4
+PyYAML                        6.0
+pyzmq                         22.1.0
+qtconsole                     5.1.1
+QtPy                          1.11.2
+requests                      2.26.0
+Rtree                         0.9.7
+scipy                         1.6.3
+Send2Trash                    1.8.0
+setuptools                    49.6.0.post20210108
+Shapely                       1.7.1
+shellingham                   1.4.0
+six                           1.16.0
+smmap                         3.0.5
+sniffio                       1.2.0
+snowballstemmer               2.1.0
+soupsieve                     2.3
+Sphinx                        4.3.0
+sphinx-book-theme             0.1.6
+sphinx-comments               0.0.3
+sphinx-copybutton             0.4.0
+sphinx-external-toc           0.2.3
+sphinx-jupyterbook-latex      0.4.5
+sphinx-multitoc-numbering     0.1.3
+sphinx-panels                 0.6.0
+sphinx-thebe                  0.0.10
+sphinx-togglebutton           0.2.3
+sphinxcontrib-applehelp       1.0.2
+sphinxcontrib-bibtex          2.2.1
+sphinxcontrib-devhelp         1.0.2
+sphinxcontrib-htmlhelp        2.0.0
+sphinxcontrib-jsmath          1.0.1
+sphinxcontrib-qthelp          1.0.3
+sphinxcontrib-serializinghtml 1.1.5
+spyder-kernels                1.10.2
+SQLAlchemy                    1.4.26
+terminado                     0.12.1
+testpath                      0.5.0
+toml                          0.10.2
+tornado                       6.1
+traitlets                     5.0.5
+typing-extensions             3.10.0.2
+uc-micro-py                   1.0.1
+urllib3                       1.26.7
+wcwidth                       0.2.5
+webencodings                  0.5.1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-the-relevant-modules">
+<h3>Load the relevant modules<a class="headerlink" href="#load-the-relevant-modules" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1">#Specific module to plot the graph in the Jupyter Notebook</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>websocket-client              0.57.0
+wheel                         0.36.2
+widgetsnbextension            3.5.2
+win-inet-pton                 1.1.0
+wincertstore                  0.2
+zipp                          3.6.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="checking-the-xyz-files">
+<h2>Checking the XYZ files<a class="headerlink" href="#checking-the-xyz-files" title="Permalink to this headline">¶</a></h2>
+<p>Example given for GRADES-IMAGE data.</p>
+<p>Data available for download here: Ferraccioli, F., &amp; Jordan, T. (2020). Airborne magnetic data covering the Evans, and Rutford Ice Streams, and ice rises in the Ronne Ice Shelf (2006/07) (Version 1.0) [Data set]. UK Polar Data Centre, Natural Environment Research Council, UK Research &amp; Innovation. <a class="reference external" href="https://doi.org/10.5285/7504BE9B-93BA-44AF-A17F-00C84554B819">https://doi.org/10.5285/7504BE9B-93BA-44AF-A17F-00C84554B819</a></p>
+<div class="section" id="reading-the-xyz-data">
+<h3>Reading the XYZ data<a class="headerlink" href="#reading-the-xyz-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aeromag_data</span> <span class="o">=</span> <span class="s1">&#39;E:/UKPDC/JupyterExample/AGAP_Mag.XYZ&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The XYZ data are composed of a large header and empty rows at the top. To read the file, it is recommended to remove these empty rows. The goal is to keep the 5th row which corresponds to the header but remove all the other ten first rows, we can specify these rows like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">skiprow</span><span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">))</span>
+<span class="n">skiprow</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">skiprow</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 6, 7, 8, 9, 10]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, we can use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to read the data. The data are separated by a space, we can specify the separator by using the <code class="docutils literal notranslate"><span class="pre">sep</span></code> parameter, we will use `skiprow</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">aeromag_data</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="n">skiprow</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span> <span class="s1">&#39; +&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;python&#39;</span> <span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>/</th>
+      <th>Flight_ID</th>
+      <th>Line_no</th>
+      <th>Lon</th>
+      <th>Lat</th>
+      <th>x</th>
+      <th>y</th>
+      <th>Height_WGS1984</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>...</th>
+      <th>BCorr_AGAP_NS</th>
+      <th>BCorr_AGAP_S</th>
+      <th>BCorr_AGAP_SP</th>
+      <th>BCorr_Applied</th>
+      <th>MagBRTC</th>
+      <th>ACorr</th>
+      <th>SCorr</th>
+      <th>MagF</th>
+      <th>MagL</th>
+      <th>MagML</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CTAM1</td>
+      <td>5.0</td>
+      <td>154.333738</td>
+      <td>-83.785881</td>
+      <td>2673830.187189</td>
+      <td>1076723.517935</td>
+      <td>3150.4</td>
+      <td>2008/12/08</td>
+      <td>03:30:04.00</td>
+      <td>*</td>
+      <td>...</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CTAM1</td>
+      <td>5.0</td>
+      <td>154.332907</td>
+      <td>-83.786293</td>
+      <td>2673783.220184</td>
+      <td>1076719.879693</td>
+      <td>3151.2</td>
+      <td>2008/12/08</td>
+      <td>03:30:05.00</td>
+      <td>59475.32</td>
+      <td>...</td>
+      <td>*</td>
+      <td>-15.15</td>
+      <td>15.15</td>
+      <td>-148.65</td>
+      <td>*</td>
+      <td>*</td>
+      <td>-148.65</td>
+      <td>-148.65</td>
+      <td>-148.65</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CTAM1</td>
+      <td>5.0</td>
+      <td>154.332099</td>
+      <td>-83.786706</td>
+      <td>2673736.205959</td>
+      <td>1076715.921844</td>
+      <td>3152.1</td>
+      <td>2008/12/08</td>
+      <td>03:30:06.00</td>
+      <td>59475.17</td>
+      <td>...</td>
+      <td>*</td>
+      <td>-15.14</td>
+      <td>15.14</td>
+      <td>-148.47</td>
+      <td>*</td>
+      <td>*</td>
+      <td>-148.47</td>
+      <td>-148.47</td>
+      <td>-148.47</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CTAM1</td>
+      <td>5.0</td>
+      <td>154.331331</td>
+      <td>-83.787120</td>
+      <td>2673689.204893</td>
+      <td>1076711.467081</td>
+      <td>3153.4</td>
+      <td>2008/12/08</td>
+      <td>03:30:07.00</td>
+      <td>59475.19</td>
+      <td>...</td>
+      <td>*</td>
+      <td>-15.13</td>
+      <td>15.13</td>
+      <td>-148.28</td>
+      <td>*</td>
+      <td>*</td>
+      <td>-148.28</td>
+      <td>-148.28</td>
+      <td>-148.28</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CTAM1</td>
+      <td>5.0</td>
+      <td>154.330608</td>
+      <td>-83.787535</td>
+      <td>2673642.281478</td>
+      <td>1076706.469544</td>
+      <td>3154.9</td>
+      <td>2008/12/08</td>
+      <td>03:30:08.00</td>
+      <td>59475.19</td>
+      <td>...</td>
+      <td>*</td>
+      <td>-15.12</td>
+      <td>15.12</td>
+      <td>-148.08</td>
+      <td>*</td>
+      <td>*</td>
+      <td>-148.08</td>
+      <td>-148.08</td>
+      <td>-148.08</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 26 columns</p>
+</div></div></div>
+</div>
+<p>As we can see, the first column is filled with 0, so we might want to remove it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">column_names</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">column_names</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="n">column_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;toDelete&#39;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">column_names</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;toDelete&#39;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Flight_ID</th>
+      <th>Line_no</th>
+      <th>Lon</th>
+      <th>Lat</th>
+      <th>x</th>
+      <th>y</th>
+      <th>Height_WGS1984</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>MagR</th>
+      <th>...</th>
+      <th>BCorr_AGAP_NS</th>
+      <th>BCorr_AGAP_S</th>
+      <th>BCorr_AGAP_SP</th>
+      <th>BCorr_Applied</th>
+      <th>MagBRTC</th>
+      <th>ACorr</th>
+      <th>SCorr</th>
+      <th>MagF</th>
+      <th>MagL</th>
+      <th>MagML</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CTAM1</td>
+      <td>5.0</td>
+      <td>154.333738</td>
+      <td>-83.785881</td>
+      <td>2673830.187189</td>
+      <td>1076723.517935</td>
+      <td>3150.4</td>
+      <td>2008/12/08</td>
+      <td>03:30:04.00</td>
+      <td>*</td>
+      <td>...</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CTAM1</td>
+      <td>5.0</td>
+      <td>154.332907</td>
+      <td>-83.786293</td>
+      <td>2673783.220184</td>
+      <td>1076719.879693</td>
+      <td>3151.2</td>
+      <td>2008/12/08</td>
+      <td>03:30:05.00</td>
+      <td>59475.32</td>
+      <td>...</td>
+      <td>*</td>
+      <td>*</td>
+      <td>-15.15</td>
+      <td>15.15</td>
+      <td>-148.65</td>
+      <td>*</td>
+      <td>*</td>
+      <td>-148.65</td>
+      <td>-148.65</td>
+      <td>-148.65</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CTAM1</td>
+      <td>5.0</td>
+      <td>154.332099</td>
+      <td>-83.786706</td>
+      <td>2673736.205959</td>
+      <td>1076715.921844</td>
+      <td>3152.1</td>
+      <td>2008/12/08</td>
+      <td>03:30:06.00</td>
+      <td>59475.17</td>
+      <td>...</td>
+      <td>*</td>
+      <td>*</td>
+      <td>-15.14</td>
+      <td>15.14</td>
+      <td>-148.47</td>
+      <td>*</td>
+      <td>*</td>
+      <td>-148.47</td>
+      <td>-148.47</td>
+      <td>-148.47</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CTAM1</td>
+      <td>5.0</td>
+      <td>154.331331</td>
+      <td>-83.787120</td>
+      <td>2673689.204893</td>
+      <td>1076711.467081</td>
+      <td>3153.4</td>
+      <td>2008/12/08</td>
+      <td>03:30:07.00</td>
+      <td>59475.19</td>
+      <td>...</td>
+      <td>*</td>
+      <td>*</td>
+      <td>-15.13</td>
+      <td>15.13</td>
+      <td>-148.28</td>
+      <td>*</td>
+      <td>*</td>
+      <td>-148.28</td>
+      <td>-148.28</td>
+      <td>-148.28</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CTAM1</td>
+      <td>5.0</td>
+      <td>154.330608</td>
+      <td>-83.787535</td>
+      <td>2673642.281478</td>
+      <td>1076706.469544</td>
+      <td>3154.9</td>
+      <td>2008/12/08</td>
+      <td>03:30:08.00</td>
+      <td>59475.19</td>
+      <td>...</td>
+      <td>*</td>
+      <td>*</td>
+      <td>-15.12</td>
+      <td>15.12</td>
+      <td>-148.08</td>
+      <td>*</td>
+      <td>*</td>
+      <td>-148.08</td>
+      <td>-148.08</td>
+      <td>-148.08</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 25 columns</p>
+</div></div></div>
+</div>
+<p>As you can see, a number of values are given a star for non value data.
+In this analysis, we are only interested n the longitude, latitude and magnetics anomaly. We will thus select these specific parameters.</p>
+</div>
+<div class="section" id="selecting-the-variables">
+<h3>Selecting the variables<a class="headerlink" href="#selecting-the-variables" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">longitude</span> <span class="o">=</span> <span class="p">[</span><span class="n">variable</span> <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">file</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="p">(</span><span class="n">variable</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Lon&#39;</span><span class="p">))][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">latitude</span> <span class="o">=</span> <span class="p">[</span><span class="n">variable</span> <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">file</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="p">(</span><span class="n">variable</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Lat&#39;</span><span class="p">))][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">mag</span> <span class="o">=</span> <span class="p">[</span><span class="n">variable</span> <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">file</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="p">(</span><span class="n">variable</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;MagF&#39;</span><span class="p">))][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">file</span><span class="p">[[</span><span class="n">longitude</span><span class="p">,</span><span class="n">latitude</span><span class="p">,</span> <span class="n">mag</span><span class="p">]]</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">file</span><span class="p">[</span><span class="n">longitude</span><span class="p">]</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="n">longitude</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="c1">#To make sure lat and Lon are float</span>
+<span class="n">file</span><span class="p">[</span><span class="n">latitude</span><span class="p">]</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="n">latitude</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">file</span><span class="p">[</span><span class="n">mag</span><span class="p">]</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="n">mag</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Lon</th>
+      <th>Lat</th>
+      <th>MagF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>154.332907</td>
+      <td>-83.786293</td>
+      <td>-148.65</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>154.332099</td>
+      <td>-83.786706</td>
+      <td>-148.47</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>154.331331</td>
+      <td>-83.787120</td>
+      <td>-148.28</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>154.330608</td>
+      <td>-83.787535</td>
+      <td>-148.08</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>154.329925</td>
+      <td>-83.787950</td>
+      <td>-147.89</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can also get some specific parameters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ID</span> <span class="o">=</span> <span class="n">aeromag_data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;.XYZ&#39;</span><span class="p">)</span>
+<span class="n">survey</span> <span class="o">=</span> <span class="n">aeromag_data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;ID: </span><span class="si">%s</span><span class="s1"></span>
+<span class="s1">Survey: </span><span class="si">%s</span><span class="s1"></span>
+<span class="s1">Name of magnetic variable: </span><span class="si">%s</span><span class="s1"></span>
+<span class="s1">Name of longitude variable: </span><span class="si">%s</span><span class="s1"></span>
+<span class="s1">Name of latitude variable: </span><span class="si">%s</span><span class="s1">&#39;&#39;&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">ID</span><span class="p">,</span> <span class="n">survey</span><span class="p">,</span> <span class="n">mag</span><span class="p">,</span> <span class="n">longitude</span><span class="p">,</span> <span class="n">latitude</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID: AGAP_Mag
+Survey: AGAP_Mag.XYZ
+Name of magnetic variable: MagF
+Name of longitude variable: Lon
+Name of latitude variable: Lat
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="have-a-look-at-the-data-geospatially">
+<h3>Have a look at the data geospatially<a class="headerlink" href="#have-a-look-at-the-data-geospatially" title="Permalink to this headline">¶</a></h3>
+<p>We can easily convert the data to spatial objects using <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>. The <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> module is used to convert the data to a geodataframe. It will convert the latitude/longitude to points.
+To do that, you will need to identify the specific header used for longitude and latitude in the CSV file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="n">longitude</span><span class="p">],</span> <span class="n">file</span><span class="p">[</span><span class="n">latitude</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can check the conversion:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Lon</th>
+      <th>Lat</th>
+      <th>MagF</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>154.332907</td>
+      <td>-83.786293</td>
+      <td>-148.65</td>
+      <td>POINT (154.33291 -83.78629)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>154.332099</td>
+      <td>-83.786706</td>
+      <td>-148.47</td>
+      <td>POINT (154.33210 -83.78671)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>154.331331</td>
+      <td>-83.787120</td>
+      <td>-148.28</td>
+      <td>POINT (154.33133 -83.78712)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>154.330608</td>
+      <td>-83.787535</td>
+      <td>-148.08</td>
+      <td>POINT (154.33061 -83.78754)</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>154.329925</td>
+      <td>-83.787950</td>
+      <td>-147.89</td>
+      <td>POINT (154.32993 -83.78795)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="setting-up-the-coordinate-system">
+<h2>Setting up the coordinate system<a class="headerlink" href="#setting-up-the-coordinate-system" title="Permalink to this headline">¶</a></h2>
+<p>It is important to then set the coordinate system.
+Here the WGS84 coordinate system is used, it corresponds to the EPSG: 4326.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">set_crs</span><span class="p">(</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With geopandas, it is also possible to convert the data to another coordinate system and project it. You just need to know the EPSG ID of the output coordinate system. Here is how to convert the data to the Polar Antarctic stereographic geographic system (<a class="reference external" href="https://epsg.io/3031">https://epsg.io/3031</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span>  <span class="n">gdf</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="s2">&quot;EPSG:3031&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-the-data">
+<h2>Plotting the data<a class="headerlink" href="#plotting-the-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">75</span><span class="p">})</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="n">mag</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s2">&quot;Magnetic Anomaly (nT)&quot;</span><span class="p">,</span><span class="s1">&#39;orientation&#39;</span><span class="p">:</span> <span class="s2">&quot;horizontal&quot;</span> <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/Checking_magnetics_XYZ_data_25_1.png" src="../_images/Checking_magnetics_XYZ_data_25_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 10000x10000 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="calculate-statistics-about-the-data">
+<h1>Calculate statistics about the data<a class="headerlink" href="#calculate-statistics-about-the-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="size-of-the-dataset">
+<h2>Size of the dataset<a class="headerlink" href="#size-of-the-dataset" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">aeromag_data</span><span class="p">)</span><span class="o">/</span><span class="mf">1e+6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;size: </span><span class="si">%s</span><span class="s1"> MB&#39;</span> <span class="o">%</span><span class="k">size</span>)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>size: 513 MB
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="magnetics-anomaly-statistics">
+<h2>Magnetics anomaly statistics<a class="headerlink" href="#magnetics-anomaly-statistics" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_mag</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="n">mag</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="n">max_mag</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="n">mag</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">latlong_max_mag</span><span class="o">=</span><span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="n">longitude</span><span class="p">][</span><span class="n">file</span><span class="p">[</span><span class="n">mag</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()],</span><span class="n">file</span><span class="p">[</span><span class="n">latitude</span><span class="p">][</span><span class="n">file</span><span class="p">[</span><span class="n">mag</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()])</span>
+<span class="n">min_mag</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="n">mag</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="n">latlong_min_mag</span><span class="o">=</span><span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="n">longitude</span><span class="p">][</span><span class="n">file</span><span class="p">[</span><span class="n">mag</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()],</span><span class="n">file</span><span class="p">[</span><span class="n">latitude</span><span class="p">][</span><span class="n">file</span><span class="p">[</span><span class="n">mag</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">Mean magnetic anomaly: </span><span class="si">%s</span><span class="s1"> nT</span>
+<span class="s1">Max magnetic anomaly: </span><span class="si">%s</span><span class="s1"> nT</span>
+<span class="s1">Longitude and latitude of maximum magnetic anomaly: </span><span class="si">%s</span><span class="s1"></span>
+<span class="s1">Minimum magnetic anomaly: </span><span class="si">%s</span><span class="s1"> nT</span>
+<span class="s1">Longitude/Latitude of minimum magnetic anomaly: </span><span class="si">%s</span><span class="s1">&#39;&#39;&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">mean_mag</span><span class="p">,</span> <span class="n">max_mag</span><span class="p">,</span> <span class="n">latlong_max_mag</span><span class="p">,</span> <span class="n">min_mag</span><span class="p">,</span> <span class="n">latlong_min_mag</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean magnetic anomaly: -12 nT
+Max magnetic anomaly: 921 nT
+Longitude and latitude of maximum magnetic anomaly: (71.247489, -76.942731)
+Minimum magnetic anomaly: -422 nT
+Longitude/Latitude of minimum magnetic anomaly: (41.734519, -84.813545)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calculate-distance-along-the-profile">
+<h2>Calculate distance along the profile<a class="headerlink" href="#calculate-distance-along-the-profile" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="p">[</span><span class="s1">&#39;distance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">gdf</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">distance_total</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">distance</span><span class="p">[</span><span class="n">file</span><span class="o">.</span><span class="n">distance</span><span class="o">&lt;</span><span class="mi">15000</span><span class="p">])</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dstance along the profile: </span><span class="si">%s</span><span class="s1"> km&#39;</span> <span class="o">%</span><span class="k">distance_total</span>)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dstance along the profile: 73676 km
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calculate-number-of-points">
+<h2>Calculate number of points<a class="headerlink" href="#calculate-number-of-points" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nb_points</span><span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of points: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">nb_points</span>)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of points: 1109941
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="looking-at-the-magnetics-anomaly-along-the-profile">
+<h2>Looking at the magnetics anomaly along the profile<a class="headerlink" href="#looking-at-the-magnetics-anomaly-along-the-profile" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="p">[</span><span class="s1">&#39;distance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="s1">&#39;distance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> <span class="c1">#To have the cumulative sum of the distance</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">distance</span><span class="p">,</span> <span class="n">file</span><span class="p">[</span><span class="n">mag</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Distance (m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> (nT)&#39;</span> <span class="o">%</span><span class="k">mag</span>)
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Magnetic anomaly along the profile&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Magnetic anomaly along the profile&#39;)
+</pre></div>
+</div>
+<img alt="../_images/Checking_magnetics_XYZ_data_35_1.png" src="../_images/Checking_magnetics_XYZ_data_35_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./data-portal"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Checking_gravity_XYZ_data.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Checking Airborne Gravity data</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Alice Fremand<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
