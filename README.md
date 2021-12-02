@@ -1,8 +1,3 @@
-[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/antarctica/PDC_GeophysicsBook/blob/main/LICENSE)
-
-[![GitHub contributors](https://img.shields.io/github/contributors/Naereen/badges.svg)](https://github.com/antarctica/PDC_GeophysicsBook/graphs/contributors)
-
-
 # PDC Geophysics Book
 
 
@@ -23,4 +18,12 @@ This notebook is specific to Geophysics projects.
 At the moment, we propose resources from the following project:
 
 * The airborne geophysics data Portal
+
+## Contributors
+
+The list of the contributors is available [here](https://github.com/antarctica/PDC_GeophysicsBook/graphs/contributors)
+
+## LICENSE
+
+[MIT license] (https://github.com/antarctica/PDC_GeophysicsBook/blob/main/LICENSE)
 
