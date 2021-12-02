@@ -1,6 +1,6 @@
-[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/antarctica/PDC_GeophysicsBook/blob/main/LICENSE)
 
-[![GitHub contributors](https://img.shields.io/github/contributors/Naereen/badges.svg)](https://GitHub.com/Naereen/badges/graphs/contributors/)
+[![GitHub contributors](https://img.shields.io/github/contributors/Naereen/badges.svg)](https://github.com/antarctica/PDC_GeophysicsBook/graphs/contributors)
 
 
 # PDC Geophysics Book
