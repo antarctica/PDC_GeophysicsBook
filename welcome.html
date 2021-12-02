@@ -180,6 +180,24 @@
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/antarctica/PDC_GeophysicsBook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/antarctica/PDC_GeophysicsBook/issues/new?title=Issue%20on%20page%20%2Fwelcome.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/antarctica/PDC_GeophysicsBook/edit/main/book/welcome.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -213,18 +231,6 @@
   <a class="reference internal nav-link" href="#how-to-use-this-book">
    How to use this book
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interact-through-a-cloud-based-binder-service">
-     Interact through a cloud-based Binder service¶
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#run-the-code-in-your-own-python-environment">
-     Run the code in your own Python environment
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -254,21 +260,12 @@
 At the moment, we propose resources from the following projects:</p>
 <ul class="simple">
 <li><p>The airborne geophysics data Portal</p></li>
-<li><p>BEDMAP3 (<em>under construction</em>)</p></li>
 </ul>
 </div>
 <div class="section" id="how-to-use-this-book">
 <h2>How to use this book<a class="headerlink" href="#how-to-use-this-book" title="Permalink to this headline">¶</a></h2>
-<p>The contents of this Geophysics book are licensed for free and open consumption under the following license: <a class="reference external" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/</a>.</p>
-<p>While we provide a rendered version of the interactive material, in some cases the outputs of the code may be hidden by default. To experiment and interact with the Python code, we suggest the following pathways to do this:</p>
-<div class="section" id="interact-through-a-cloud-based-binder-service">
-<h3>Interact through a cloud-based Binder service¶<a class="headerlink" href="#interact-through-a-cloud-based-binder-service" title="Permalink to this headline">¶</a></h3>
-<p>This will work well only for simple examples. We use the Pangeo binder which comes with most of the scientific packages in Python use in the examples.</p>
-</div>
-<div class="section" id="run-the-code-in-your-own-python-environment">
-<h3>Run the code in your own Python environment<a class="headerlink" href="#run-the-code-in-your-own-python-environment" title="Permalink to this headline">¶</a></h3>
-<p>For each code, we provided information on how to use the code and the modules necessary for the codes to run. As all the codes are in Python, basic knowledge of Python is recommended.</p>
-</div>
+<p>The contents of this Geophysics book are licensed for free and open consumption under an MIT license.</p>
+<p>While we provide a rendered version of the interactive material, in some cases the outputs of the code may be hidden by default. To experiment and interact with the Python code, we suggest you to run the code in your own Python environment. For each code, we provided information on how to use the code and the modules necessary for the codes to run. As all the codes are in Python, basic knowledge of Python is recommended.</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -321,7 +318,7 @@ At the moment, we propose resources from the following projects:</p>
     <div class="container">
       <p>
         
-          By Alice Fremand<br/>
+          By UK PDC<br/>
         
             &copy; Copyright 2021.<br/>
       </p>

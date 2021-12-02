@@ -17,19 +17,10 @@ This notebook is specific to Geophysics projects.
 At the moment, we propose resources from the following projects:
 
 * The airborne geophysics data Portal
-* BEDMAP3 (*under construction*)
 
 ## How to use this book
 
-The contents of this Geophysics book are licensed for free and open consumption under the following license: https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/. 
+The contents of this Geophysics book are licensed for free and open consumption under an MIT license.  
 
 
-While we provide a rendered version of the interactive material, in some cases the outputs of the code may be hidden by default. To experiment and interact with the Python code, we suggest the following pathways to do this:
-
-### Interact through a cloud-based Binder service¶
-
-This will work well only for simple examples. We use the Pangeo binder which comes with most of the scientific packages in Python use in the examples. 
-
-### Run the code in your own Python environment
-
-For each code, we provided information on how to use the code and the modules necessary for the codes to run. As all the codes are in Python, basic knowledge of Python is recommended.
+While we provide a rendered version of the interactive material, in some cases the outputs of the code may be hidden by default. To experiment and interact with the Python code, we suggest you to run the code in your own Python environment. For each code, we provided information on how to use the code and the modules necessary for the codes to run. As all the codes are in Python, basic knowledge of Python is recommended.
