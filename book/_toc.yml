@@ -10,5 +10,6 @@ parts:
   - file: data-portal/user_guide
   - file: data-portal/data_available
   - file: data-portal/Checking_Airborne_Radar_Echo_sounding_data
+  - file: data-portal/Checking_Airborne_Radar_Echo_sounding_data_MATLAB
   - file: data-portal/Checking_gravity_XYZ_data
   - file: data-portal/Checking_magnetics_XYZ_data
