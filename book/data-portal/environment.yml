@@ -1,0 +1,12 @@
+name: JupyterBook_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - jupyter-book
+  - matplotlib
+  - numpy
+  - netCDF4
+  - obspy
+  - pandas
+  - geopandas
