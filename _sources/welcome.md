@@ -1,6 +1,6 @@
 # Welcome to the Geophysics Book from the UK Polar Centre
 
-The UK Polar Data Centre Geophysics Book is a **living**, **free** and **open** online resource to engage the wider scientific reserch community on using the datasets published by the [UK Polar Data Centre](https://www.bas.ac.uk/data/uk-pdc/)
+The UK Polar Data Centre Geophysics Book is a **living**, **free** and **open** online resource to engage the wider scientific research community on using the datasets published by the [UK Polar Data Centre](https://www.bas.ac.uk/data/uk-pdc/)
 
 
 :::{note}

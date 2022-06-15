@@ -218,6 +218,41 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   User Guide
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-video-guide">
+   The video guide
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-data-portal-guide">
+   The data portal guide
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#layers">
+     Layers
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pop-up-windows-and-widgets">
+     Pop-up windows and widgets
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -229,7 +264,17 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="user-guide">
 <h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
 <p><strong>Author</strong>: Julien Bodart</p>
-<p>This document is a short introduction to the different functionalities provided by the Polar Airborne Data Portal of BAS.</p>
+<p>This document is a short introduction to the different functionalities provided by the <a class="reference external" href="https://www.bas.ac.uk/project/nagdp/">Polar Airborne Data Portal</a> of BAS.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="the-video-guide">
+<h1>The video guide<a class="headerlink" href="#the-video-guide" title="Permalink to this headline">¶</a></h1>
+<p>The following <a class="reference external" href="https://www.youtube.com/watch?v=4i268RDAFi4">YouTube video</a> gives additional information on how to use the data portal:
+<a class="reference external" href="https://www.youtube.com/watch?v=4i268RDAFi4"><img alt="YouTube video" src="../_images/data_portal_youtube.PNG" /></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="the-data-portal-guide">
+<h1>The data portal guide<a class="headerlink" href="#the-data-portal-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="layers">
+<h2>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h2>
 <p>The Layer List <img alt="layer" src="../_images/layer.png" />  menu in the top-left corner of the portal allows to toggle on/off the different surveys and accompanying layers stored on the portal. This menu is primarily divided into three core group layers: AeroGravity, AeroMagnetics, and AeroRadar. Within each of these groups are the individual surveys for which there is data.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -241,6 +286,9 @@
 <p class="admonition-title">Tip</p>
 <p>To move from the ‘hover’ mode to a more static mode where the pop-up does not 	appear or disappear with every mouse move, click on a specific flightline segment 	(highlighted segments appear as bright 	blue). You can then choose to dock the pop-up 	window to the right hand side of the portal using the dock <img alt="dock" src="../_images/dock.png" /> button in the top-right of the 	window.</p>
 </div>
+</div>
+<div class="section" id="pop-up-windows-and-widgets">
+<h2>Pop-up windows and widgets<a class="headerlink" href="#pop-up-windows-and-widgets" title="Permalink to this headline">¶</a></h2>
 <p>In the pop-up windows, you will find key information about the survey line selected, such as the name of the campaign and of the flightline, the year of the campaign, and links that will re-direct you to the DMS page where you will be able to download the data. Note that for the AeroRadar layers, the Radar_img attribute in the table also allows you to view the radar image for a particular segment in a larger window. You will also find key statistics about the particular segment such as mean ice thickness, surface elevation and bed elevation for AeroRadar layers; mean compensated (or low pass filtered) magnetic data for AeroMagnetics layers; and mean calculated absolute gravity for the AeroGravity layers along that particular segment. Segments are typically 25-km long, although some surveys are split in 50-km segments.</p>
 <p>You will also find additional widgets which might be of interest:</p>
 <p><strong>Top right</strong>: You can use the <em>Search</em> <img alt="loupe" src="../_images/loupe.png" /> widget to search for a specific location over Antarctica, see the legend and units for the toggled-on layers using the Legend <img alt="table_list" src="../_images/table_list.png" /> widget, and share the map on social media or via a URL using the Share <img alt="share" src="../_images/share.png" /> widget. You will also be able to measure distances and draw polygons using the Measure <img alt="measure" src="../_images/measure.png" /> widget.</p>
@@ -256,6 +304,7 @@
 </div>
 <p>An <a class="reference external" href="https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/airborne-science-and-technology/airborne-geophysics/">associated webpage</a> was created to provide more information about each of the surveys published on this data portal, and contains links to the DMS entries where the data is deposited. The full list of data available can be found <a class="reference internal" href="data_available.html"><span class="doc std std-doc">here</span></a> as well. You will also find in this book codes written for Python and MATLAB environments in order to read and plot the <a class="reference internal" href="Checking_Airborne_Radar_Echo_sounding_data.html"><span class="doc std std-doc">radar</span></a>, <a class="reference internal" href="Checking_gravity_XYZ_data.html"><span class="doc std std-doc">gravity</span></a> and <a class="reference internal" href="Checking_magnetics_XYZ_data.html"><span class="doc std std-doc">magnetics</span></a> data.</p>
 <p>We hope you enjoy this new portal. To report any issue with the portal or the data hosted on it, please contact the Polar Data Centre at <a class="reference external" href="mailto:PDCServiceDesk&#37;&#52;&#48;bas&#46;ac&#46;uk">mailto:PDCServiceDesk<span>&#64;</span>bas<span>&#46;</span>ac<span>&#46;</span>uk</a></p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
