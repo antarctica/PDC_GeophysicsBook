@@ -3,9 +3,15 @@
 **Author**: Julien Bodart
 
 
-This document is a short introduction to the different functionalities provided by the Polar Airborne Data Portal of BAS.  
+This document is a short introduction to the different functionalities provided by the [Polar Airborne Data Portal](https://www.bas.ac.uk/project/nagdp/) of BAS.  
 
+# The video guide
+The following [YouTube video](https://www.youtube.com/watch?v=4i268RDAFi4) gives additional information on how to use the data portal:
+[![YouTube video](../images/data_portal_youtube.PNG)](https://www.youtube.com/watch?v=4i268RDAFi4)
 
+# The data portal guide
+
+## Layers
 The Layer List ![layer](../images/layer.png)  menu in the top-left corner of the portal allows to toggle on/off the different surveys and accompanying layers stored on the portal. This menu is primarily divided into three core group layers: AeroGravity, AeroMagnetics, and AeroRadar. Within each of these groups are the individual surveys for which there is data.  
 
 :::{Tip}
@@ -24,7 +30,7 @@ Once you have selected the survey of your choice within the Aerogravity / Aeroma
 To move from the ‘hover’ mode to a more static mode where the pop-up does not 	appear or disappear with every mouse move, click on a specific flightline segment 	(highlighted segments appear as bright 	blue). You can then choose to dock the pop-up 	window to the right hand side of the portal using the dock ![dock](../images/dock.png) button in the top-right of the 	window.  
 :::
 
- 
+## Pop-up windows and widgets
 
 In the pop-up windows, you will find key information about the survey line selected, such as the name of the campaign and of the flightline, the year of the campaign, and links that will re-direct you to the DMS page where you will be able to download the data. Note that for the AeroRadar layers, the Radar_img attribute in the table also allows you to view the radar image for a particular segment in a larger window. You will also find key statistics about the particular segment such as mean ice thickness, surface elevation and bed elevation for AeroRadar layers; mean compensated (or low pass filtered) magnetic data for AeroMagnetics layers; and mean calculated absolute gravity for the AeroGravity layers along that particular segment. Segments are typically 25-km long, although some surveys are split in 50-km segments. 
 
