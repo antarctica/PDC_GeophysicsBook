@@ -1,0 +1,1328 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating Shape Points for BEDMAP3 &#8212; UK PDC Geophysics Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Creating Shape Lines for BEDMAP3" href="Create_ShapeLines_for_BEDMAP3.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UK PDC Geophysics Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Welcome to the Geophysics Book from the UK Polar Centre
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Geophysics Data Portal
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data-portal/about.html">
+   About
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data-portal/user_guide.html">
+   User Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data-portal/data_available.html">
+   List of data available
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data-portal/Checking_Airborne_Radar_Echo_sounding_data.html">
+   Checking Airborne Radar Echo Sounding data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data-portal/Checking_Airborne_Radar_Echo_sounding_data_MATLAB.html">
+   Checking Airborne Radar Echo Sounding data (MATLAB)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data-portal/Checking_gravity_XYZ_data.html">
+   Checking Airborne Gravity data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data-portal/Checking_magnetics_XYZ_data.html">
+   Checking Airborne Magnetics data
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  BEDMAP
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   About
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_available.html">
+   List of data available
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Checking_CSV_geospatially.html">
+   Reading the BEDMAP CSV files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Create_ShapeLines_for_BEDMAP3.html">
+   Creating Shape Lines for BEDMAP3
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Creating Shape Points for BEDMAP3
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/BEDMAP/Create_ShapePoints_for_BEDMAP3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/antarctica/PDC_GeophysicsBook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/antarctica/PDC_GeophysicsBook/issues/new?title=Issue%20on%20page%20%2FBEDMAP/Create_ShapePoints_for_BEDMAP3.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/antarctica/PDC_GeophysicsBook/edit/main/book/BEDMAP/Create_ShapePoints_for_BEDMAP3.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/antarctica/PDC_GeophysicsBook/main?urlpath=tree/book/BEDMAP/Create_ShapePoints_for_BEDMAP3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-bedmap3-project">
+   The BEDMAP3 project
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-shape-points">
+   Creating shape Points
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#virtual-environment">
+     Virtual environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#upload-the-modules">
+     Upload the modules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-initial-grid">
+     Load initial grid
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-grid-of-x-and-y-size-that-will-contain-all-the-values-for-each-point-from-the-bed-elevation-picks">
+     Create a grid of x and y size that will contain all the values for each point from the bed elevation picks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initiate-the-different-variables">
+     Initiate the different variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-the-standardised-csv-files">
+     Open the standardised CSV files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convert-the-latitude-and-longitude-to-polar-stereographic-coordinates">
+     Convert the latitude and longitude to polar stereographic coordinates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-the-index">
+     Calculate the index
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-statistics-for-each-pixel-values">
+     Calculate statistics for each pixel values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#saving-the-data-as-a-geo-dataframe">
+     Saving the data as a geo-dataframe
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creation-of-the-columns">
+       Creation of the columns
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creation-of-the-geodataframe">
+       Creation of the geodataframe
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#save-the-data-as-shapefile-and-geopackages">
+       Save the data as shapefile and geopackages
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results">
+   Results
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-ice-thickness">
+     Plotting ice thickness
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Results
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="creating-shape-points-for-bedmap3">
+<h1>Creating Shape Points for BEDMAP3<a class="headerlink" href="#creating-shape-points-for-bedmap3" title="Permalink to this headline">¶</a></h1>
+<p>Author: Alice Fremand (&#64;almand)</p>
+<p>Date: 30/09/2022</p>
+<div class="section" id="the-bedmap3-project">
+<h2>The BEDMAP3 project<a class="headerlink" href="#the-bedmap3-project" title="Permalink to this headline">¶</a></h2>
+<p>Bedmap3 is a collaborative community project with the aim to produce a new map and datasets of Antarctic ice thickness and bed topography for the international glaciology and geophysical community, using a variety of data (including ice-thickness, bathymetry, surface altitude and grounding lines).</p>
+<p>Additionally Bedmap3 will act as a repository and portal for standardized RES data for the glaciology and Geophysics community.</p>
+<p>For more information about the project: <a class="reference external" href="https://www.scar.org/science/bedmap3/home/">https://www.scar.org/science/bedmap3/home/</a></p>
+</div>
+<div class="section" id="creating-shape-points">
+<h2>Creating shape Points<a class="headerlink" href="#creating-shape-points" title="Permalink to this headline">¶</a></h2>
+<p>The goal of the tutorial is to show how the Shape Points have been created as an intermediary file of the BEDMAP3 project. The goal of this code is to grid averaged values of ice thickness, bed and surface elevation at the centre of each pixel of a 500x500m grid.</p>
+<p>The data are available from the UK Polar Data Centre:</p>
+<ul class="simple">
+<li><p>Bedmap1 standardised CSV data points: <a class="reference external" href="https://doi.org/f64815ec-4077-4432-9f55-0ce230f46029">https://doi.org/f64815ec-4077-4432-9f55-0ce230f46029</a></p></li>
+<li><p>Bedmap2 standardised CSV data points: <a class="reference external" href="https://doi.org/2fd95199-365e-4da1-ae26-3b6d48b3e6ac">https://doi.org/2fd95199-365e-4da1-ae26-3b6d48b3e6ac</a></p></li>
+<li><p>Bedmap3 standardised CSV data points: <a class="reference external" href="https://doi.org/91523ff9-d621-46b3-87f7-ffb6efcd1847">https://doi.org/91523ff9-d621-46b3-87f7-ffb6efcd1847</a></p></li>
+</ul>
+<div class="section" id="virtual-environment">
+<h3>Virtual environment<a class="headerlink" href="#virtual-environment" title="Permalink to this headline">¶</a></h3>
+<p>For the code to run, it is important to install the correct dependancies and libraries. In particular the following libraries are crucial for the code to be run:</p>
+<ul class="simple">
+<li><p>geopandas</p></li>
+<li><p>numpy</p></li>
+<li><p>Scipy</p></li>
+<li><p>math</p></li>
+</ul>
+<p><strong>Note</strong>: It is recommended to install geopandas first as it will upload most of the needed libraries at the same time without interoperability issues.</p>
+<p>The list of dependancies uploaded in the current environment is given in the list below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="nb">list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Package                       Version
+----------------------------- -------------------
+alabaster                     0.7.12
+anyio                         3.3.4
+argon2-cffi                   21.1.0
+async-generator               1.10
+attrs                         21.2.0
+Babel                         2.9.1
+backcall                      0.2.0
+backports.functools-lru-cache 1.6.4
+beautifulsoup4                4.10.0
+bleach                        4.1.0
+brotlipy                      0.7.0
+certifi                       2021.10.8
+cffi                          1.15.0
+cftime                        1.5.1.1
+chardet                       4.0.0
+charset-normalizer            2.0.0
+click                         7.1.2
+click-completion              0.5.2
+click-log                     0.3.2
+click-plugins                 1.1.1
+cligj                         0.7.1
+cloudpickle                   1.6.0
+colorama                      0.4.4
+cryptography                  35.0.0
+cycler                        0.10.0
+dataclasses                   0.8
+decorator                     5.0.9
+defusedxml                    0.7.1
+docutils                      0.16
+entrypoints                   0.3
+Fiona                         1.8.18
+future                        0.18.2
+GDAL                          3.1.4
+geopandas                     0.9.0
+gitdb                         4.0.9
+GitPython                     3.1.24
+greenlet                      1.1.2
+idna                          3.1
+imagesize                     1.3.0
+importlib-metadata            4.8.2
+importlib-resources           3.3.1
+ipykernel                     5.5.5
+ipython                       7.23.1
+ipython-genutils              0.2.0
+ipywidgets                    7.6.5
+jedi                          0.18.0
+Jinja2                        3.0.3
+jsonschema                    3.2.0
+jupyter                       1.0.0
+jupyter-book                  0.12.0
+jupyter-cache                 0.4.3
+jupyter-client                6.1.12
+jupyter-console               6.4.0
+jupyter-core                  4.7.1
+jupyter-server                1.11.2
+jupyter-server-mathjax        0.2.3
+jupyter-sphinx                0.3.2
+jupyterlab-pygments           0.1.2
+jupyterlab-widgets            1.0.2
+jupytext                      1.11.5
+kiwisolver                    1.3.2
+latexcodec                    2.0.1
+linkify-it-py                 1.0.2
+lxml                          4.6.4
+markdown-it-py                1.1.0
+MarkupSafe                    2.0.1
+matplotlib                    3.4.3
+matplotlib-inline             0.1.2
+mdit-py-plugins               0.2.8
+mistune                       0.8.4
+munch                         2.5.0
+myst-nb                       0.13.1
+myst-parser                   0.15.2
+nbclient                      0.5.5
+nbconvert                     6.2.0
+nbdime                        3.1.1
+nbformat                      5.1.3
+nest-asyncio                  1.5.1
+netCDF4                       1.5.7
+notebook                      6.4.5
+numpy                         1.20.3
+obspy                         1.2.2
+olefile                       0.46
+packaging                     21.2
+pandas                        1.2.4
+pandocfilters                 1.5.0
+parso                         0.8.2
+pickleshare                   0.7.5
+Pillow                        8.3.1
+pip                           21.1.2
+prometheus-client             0.12.0
+prompt-toolkit                3.0.18
+pybtex                        0.24.0
+pybtex-docutils               1.0.1
+pycparser                     2.21
+pydata-sphinx-theme           0.6.3
+Pygments                      2.9.0
+pyOpenSSL                     21.0.0
+pyparsing                     2.4.7
+pyproj                        3.1.0
+PyQt5                         5.12.3
+PyQt5-sip                     4.19.18
+PyQtChart                     5.12
+PyQtWebEngine                 5.12.1
+pyrsistent                    0.18.0
+PySocks                       1.7.1
+python-dateutil               2.8.1
+pytz                          2021.1
+pywin32                       300
+pywinpty                      1.1.4
+PyYAML                        6.0
+pyzmq                         22.1.0
+qtconsole                     5.1.1
+QtPy                          1.11.2
+requests                      2.26.0
+Rtree                         0.9.7
+scipy                         1.6.3
+Send2Trash                    1.8.0
+setuptools                    49.6.0.post20210108
+Shapely                       1.7.1
+shellingham                   1.4.0
+six                           1.16.0
+smmap                         3.0.5
+sniffio                       1.2.0
+snowballstemmer               2.1.0
+soupsieve                     2.3
+Sphinx                        4.3.0
+sphinx-book-theme             0.1.6
+sphinx-comments               0.0.3
+sphinx-copybutton             0.4.0Note: you may need to restart the kernel to use updated packages.
+sphinx-external-toc           0.2.3
+sphinx-jupyterbook-latex      0.4.5
+sphinx-multitoc-numbering     0.1.3
+sphinx-panels                 0.6.0
+sphinx-thebe                  0.0.10
+sphinx-togglebutton           0.2.3
+sphinxcontrib-applehelp       1.0.2
+sphinxcontrib-bibtex          2.2.1
+sphinxcontrib-devhelp         1.0.2
+sphinxcontrib-htmlhelp        2.0.0
+sphinxcontrib-jsmath          1.0.1
+sphinxcontrib-qthelp          1.0.3
+sphinxcontrib-serializinghtml 1.1.5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>spyder-kernels                1.10.2
+SQLAlchemy                    1.4.26
+terminado                     0.12.1
+testpath                      0.5.0
+toml                          0.10.2
+tornado                       6.1
+traitlets                     5.0.5
+typing-extensions             3.10.0.2
+uc-micro-py                   1.0.1
+urllib3                       1.26.7
+wcwidth                       0.2.5
+webencodings                  0.5.1
+websocket-client              0.57.0
+wheel                         0.36.2
+widgetsnbextension            3.5.2
+win-inet-pton                 1.1.0
+wincertstore                  0.2
+zipp                          3.6.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="upload-the-modules">
+<h3>Upload the modules<a class="headerlink" href="#upload-the-modules" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>geopandas: used to create geodataframe and easily save the result to shapefiles or geopackages.</p></li>
+<li><p>ll2ps_projection: set of tools used for the conversion from latitude/longitude to stereographic coordinates.
+The ll2ps projection script correspond to the <a class="reference external" href="http://projection.py">projection.py</a> script that can be downloaded from the following link:
+Agosta, C. (2019, January 24). Agosta et al. (2019), The Cryosphere : data processing, analyses and figures. Zenodo. <a class="reference external" href="https://doi.org/10.5281/zenodo.2548848">https://doi.org/10.5281/zenodo.2548848</a></p></li>
+<li><p>Other modules: numpy, gdal, pandas, os, glob, math, scipy, pathlib</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">gdal</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">iqr</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="kn">from</span> <span class="nn">ll2ps_projection</span> <span class="kn">import</span> <span class="n">stereosouth_lonlat2xy</span><span class="c1"># for lon/lat to xy projection (see stereosouth_xy2lonlat function)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-initial-grid">
+<h3>Load initial grid<a class="headerlink" href="#load-initial-grid" title="Permalink to this headline">¶</a></h3>
+<p>The first step of the code is to import a raster mask that is used to get the location of the points in a referenced grid. The raster mask consists of a GeoTIFF image with pixels of 500x500m in size. The code opens the file and gets relevant parameters.  From the image we get an array of x and y values that are located at the centre of each pixel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Opening reference GeoTIFF and get relevant parameters</span>
+<span class="n">refIm</span> <span class="o">=</span> <span class="s2">&quot;input_grid/BEDMAP3_shapefile_processing_Input_extent500x500_crop.tif&quot;</span> 
+<span class="n">ds</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">refIm</span><span class="p">)</span>
+<span class="n">ar</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+<span class="n">gt</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">GetGeoTransform</span><span class="p">()</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">gt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">xmin</span> <span class="o">=</span> <span class="n">gt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ymax</span> <span class="o">=</span> <span class="n">gt</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">xsize</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">RasterXSize</span>
+<span class="n">ysize</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">RasterYSize</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">xstart</span> <span class="o">=</span> <span class="n">xmin</span> <span class="o">+</span> <span class="n">res</span><span class="o">/</span><span class="mi">2</span> 
+<span class="n">ystart</span> <span class="o">=</span> <span class="n">ymax</span> <span class="o">-</span> <span class="n">res</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="c1"># Create array of x and y values at the centre of each pixel</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">xstart</span><span class="p">,</span> <span class="n">xstart</span> <span class="o">+</span> <span class="n">xsize</span> <span class="o">*</span> <span class="n">res</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">ystart</span><span class="p">,</span> <span class="n">ystart</span> <span class="o">-</span><span class="n">ysize</span> <span class="o">*</span> <span class="n">res</span><span class="p">,</span> <span class="o">-</span><span class="n">res</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-a-grid-of-x-and-y-size-that-will-contain-all-the-values-for-each-point-from-the-bed-elevation-picks">
+<h3>Create a grid of x and y size that will contain all the values for each point from the bed elevation picks<a class="headerlink" href="#create-a-grid-of-x-and-y-size-that-will-contain-all-the-values-for-each-point-from-the-bed-elevation-picks" title="Permalink to this headline">¶</a></h3>
+<p>From the GeoTIFF image, we can create an empty array that will be used to contain the data in each pixel</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">xsize</span><span class="p">,</span><span class="n">ysize</span><span class="p">,),</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="nb">list</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="initiate-the-different-variables">
+<h3>Initiate the different variables<a class="headerlink" href="#initiate-the-different-variables" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lon_point</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#longitude points from csv file</span>
+<span class="n">lat_point</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#latitude points from csv file</span>
+<span class="n">ice_thickness</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#ice thickness points from csv file</span>
+<span class="n">surfElev</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#surf elev points from csv file</span>
+<span class="n">bedElev</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#bed elev points from csv file</span>
+<span class="n">index</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#will give index for x and y where there are data in csv file</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="open-the-standardised-csv-files">
+<h3>Open the standardised CSV files<a class="headerlink" href="#open-the-standardised-csv-files" title="Permalink to this headline">¶</a></h3>
+<p>The code reads the standardised csv files using pandas. First, the values of latitude, longitude, ice thickness, bed and surface elevation are saved are extracted from the dataframe and stored in the respective following variables:
+lat_point, lon_point, ice_thickness, bedElev, surfElev.</p>
+<p>To do that, we create a function that will read the data and return the information we need: latitude, longitude, ice thickness, bed and surface elevation. We select only the data where at least ice thickness, bed or surface elevation is  not equal to -9999. Indeed, values of -9999 was given where no values exist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_Aerogeophysics</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">ice_thickness</span><span class="p">,</span> <span class="n">surfElev</span><span class="p">,</span> <span class="n">bedElev</span><span class="p">):</span>
+    <span class="s2">&quot;Function to read bed elevation picks data in the standardised format&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;file name: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">input_file</span>) #print filename of file processed   
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span> <span class="c1">#open input file </span>
+    <span class="n">Lat_i</span><span class="o">=</span> <span class="p">[</span><span class="n">variable</span> <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="p">(</span><span class="n">variable</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">))][</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#latitude WGS84 data</span>
+    <span class="n">Lon_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">variable</span> <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="p">(</span><span class="n">variable</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;longitude&#39;</span><span class="p">))][</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#Longitude WGS84 data</span>
+    <span class="n">ice_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">variable</span> <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="p">(</span><span class="n">variable</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;land_ice&#39;</span><span class="p">))][</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#ice thickness WGS84 data</span>
+    <span class="n">surf_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">variable</span> <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="p">(</span><span class="n">variable</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">))][</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#surf elev WGS84 data</span>
+    <span class="n">bed_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">variable</span> <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="p">(</span><span class="n">variable</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;bed&#39;</span><span class="p">))][</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#bed elev WGS84 data</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span> <span class="c1">#To select only data with ice thickness, bed or surface elevation values</span>
+        <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">ice_i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">9000</span> <span class="ow">or</span> <span class="n">data</span><span class="p">[</span><span class="n">surf_i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">9000</span> <span class="ow">or</span> <span class="n">data</span><span class="p">[</span><span class="n">bed_i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">9000</span><span class="p">:</span>
+            <span class="n">ice_thickness</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">ice_i</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+            <span class="n">surfElev</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">surf_i</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+            <span class="n">bedElev</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">bed_i</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+            <span class="n">lon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">Lon_i</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+            <span class="n">lat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">Lat_i</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">ice_thickness</span><span class="p">,</span> <span class="n">surfElev</span><span class="p">,</span> <span class="n">bedElev</span> <span class="c1">#give latitude, longitude (WGS84, decimal degree) and ice thickness from file. -9999 values are excluded</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, we give the location of the file and use the function to load the data to the initiated variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aerogeophysics_data</span> <span class="o">=</span> <span class="s1">&#39;D:/BEDMAP/AWI_2015_GEA-DML_AIR_BM3.csv&#39;</span>
+<span class="n">ID</span> <span class="o">=</span> <span class="n">aerogeophysics_data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
+<span class="n">ID_split</span> <span class="o">=</span> <span class="n">ID</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+<span class="n">lat_point</span><span class="p">,</span> <span class="n">lon_point</span><span class="p">,</span> <span class="n">ice_thickness</span><span class="p">,</span> <span class="n">surfElev</span><span class="p">,</span> <span class="n">bedElev</span>  <span class="o">=</span> <span class="n">read_Aerogeophysics</span><span class="p">(</span><span class="n">aerogeophysics_data</span><span class="p">,</span> <span class="n">lon_point</span><span class="p">,</span> <span class="n">lat_point</span><span class="p">,</span> <span class="n">ice_thickness</span><span class="p">,</span> <span class="n">surfElev</span><span class="p">,</span> <span class="n">bedElev</span><span class="p">)</span> <span class="c1">#To comment if calculating at the data provider level</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>file name: D:/BEDMAP/AWI_2015_GEA-DML_AIR_BM3.csv
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="convert-the-latitude-and-longitude-to-polar-stereographic-coordinates">
+<h3>Convert the latitude and longitude to polar stereographic coordinates<a class="headerlink" href="#convert-the-latitude-and-longitude-to-polar-stereographic-coordinates" title="Permalink to this headline">¶</a></h3>
+<p>We used the <code class="docutils literal notranslate"><span class="pre">stereosouth_lonlat2xy</span></code> to convert the data to polar stereographic coordinates</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lonpolar</span><span class="p">,</span> <span class="n">latpolar</span> <span class="o">=</span> <span class="n">stereosouth_lonlat2xy</span><span class="p">(</span><span class="n">lon_point</span><span class="p">,</span> <span class="n">lat_point</span><span class="p">)</span>
+<span class="n">lonpolar</span><span class="p">,</span> <span class="n">latpolar</span> <span class="o">=</span> <span class="n">lonpolar</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">latpolar</span><span class="o">*</span><span class="mi">1000</span> <span class="c1">#To convert in meters</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calculate-the-index">
+<h3>Calculate the index<a class="headerlink" href="#calculate-the-index" title="Permalink to this headline">¶</a></h3>
+<p>The goal then is to determine the index of the latitude and longitude of each data row so the data can be added to the pixel corresponding to the location of the data.
+In other words, for each latitude and longitude couple, we determine in which pixel the values of ice thickness, bed and surface elevation should be assign to. We will also calculate the distance between the latitude, longitude from csv file to x,y from the reference image to know how far from the center of the pixel the data is.</p>
+<p><strong>Note</strong>: The size of the pixel is of 500 meters</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    <span class="s2">&quot;To calculate the distance between 2 points&quot;</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">dist</span> 
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lat_point</span><span class="p">)):</span>
+    <span class="n">indlat</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">latpolar</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="mi">500</span><span class="p">))</span> <span class="c1">#To get latitude index</span>
+    <span class="n">indlon</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">lonpolar</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="mi">500</span><span class="p">))</span> <span class="c1">#To get longitude index</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">Distance</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">indlon</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">indlat</span><span class="p">],</span> <span class="n">lonpolar</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">latpolar</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="c1">#Calculate the distance between the latitude, longitude from csv file to x,y from the reference image</span>
+    <span class="k">if</span> <span class="n">values</span><span class="p">[</span><span class="n">indlon</span><span class="p">][</span><span class="n">indlat</span><span class="p">]</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span> <span class="c1">#When this is the first point to be added to the variable values</span>
+        <span class="n">values</span><span class="p">[</span><span class="n">indlon</span><span class="p">][</span><span class="n">indlat</span><span class="p">]</span> <span class="o">=</span> <span class="p">[[</span><span class="n">x</span><span class="p">[</span><span class="n">indlon</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">indlat</span><span class="p">],</span> <span class="n">lonpolar</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">latpolar</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">lon_point</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">lat_point</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">ice_thickness</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">surfElev</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">bedElev</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dist</span><span class="p">]]</span>
+        <span class="n">index</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">indlon</span><span class="p">,</span> <span class="n">indlat</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">values</span><span class="p">[</span><span class="n">indlon</span><span class="p">][</span><span class="n">indlat</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">indlon</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">indlat</span><span class="p">],</span> <span class="n">lonpolar</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">latpolar</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">lon_point</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">lat_point</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">ice_thickness</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">surfElev</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">bedElev</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dist</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calculate-statistics-for-each-pixel-values">
+<h3>Calculate statistics for each pixel values<a class="headerlink" href="#calculate-statistics-for-each-pixel-values" title="Permalink to this headline">¶</a></h3>
+<p>Then, we calculate the mean, iqr, min, max values of each variables in each pixel. This calculation is only done when there are values in a pixel. Values of -9999 are given when the information is missing. Values are rounded to the closest integer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">point_values</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">index</span><span class="p">)):</span>
+    <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">RuntimeWarning</span><span class="p">)</span>
+        <span class="n">df_temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="n">index</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">]])</span>
+        <span class="n">df_temp_nan</span> <span class="o">=</span> <span class="n">df_temp</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="n">mean_dist</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="c1"># mean distance to the point</span>
+        <span class="n">df_points</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_temp</span><span class="p">)</span>
+        
+        <span class="c1">#Ice thickness statistics</span>
+        <span class="n">mean_thick</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="c1">#mean of ice thickness</span>
+        <span class="n">median_thick</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">())</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">())</span> <span class="c1">#median for ice thickness        </span>
+        <span class="n">iqr_thick</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">iqr</span><span class="p">(</span><span class="n">df_temp</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="n">df_temp</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mf">9999.</span><span class="p">]))</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">iqr</span><span class="p">(</span><span class="n">df_temp</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="n">df_temp</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mf">9999.</span><span class="p">]))</span> <span class="c1"># IQR range for value of ice thickness at the specific point</span>
+        <span class="n">min_thick</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="c1">#minimum value of ice thickness at the specific point</span>
+        <span class="n">max_thick</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="c1">#maximum value of ice thickness at the specific point</span>
+        <span class="n">nb_point_thick</span> <span class="o">=</span> <span class="n">df_points</span> <span class="o">-</span> <span class="n">df_temp</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="n">df_temp</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mf">9999.</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#to calculate the number of points used to calculate the ice thickness at the specific point </span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="n">index</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">]])</span><span class="o">==</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()):</span>
+            <span class="n">std_thick</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span>
+            <span class="n">SE_thick</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">std_thick</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span> <span class="c1">#standard deviation if ice thickness values at the specific point</span>
+            <span class="n">SE_thick</span> <span class="o">=</span> <span class="n">std_thick</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">nb_point_thick</span><span class="p">)</span>
+            
+        <span class="c1">#Bed elevation statistics</span>
+        <span class="n">mean_bed</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="c1">#mean of ice thickness</span>
+        <span class="n">median_bed</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">())</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">())</span> <span class="c1">#median for ice thickness</span>
+        <span class="n">iqr_bed</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">iqr</span><span class="p">(</span><span class="n">df_temp</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="n">df_temp</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mf">9999.</span><span class="p">]))</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">iqr</span><span class="p">(</span><span class="n">df_temp</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="n">df_temp</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mf">9999.</span><span class="p">]))</span> <span class="c1"># IQR range for value of ice thickness at the specific point</span>
+        <span class="n">min_bed</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="c1">#minimum value of ice thickness at the specific point</span>
+        <span class="n">max_bed</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="c1">#maximum value of ice thickness at the specific point</span>
+        <span class="n">nb_point_bed</span> <span class="o">=</span> <span class="n">df_points</span> <span class="o">-</span> <span class="n">df_temp</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="n">df_temp</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mf">9999.</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#to calculate the number of points used to calculate the ice thickness at the specific point </span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="n">index</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">]])</span><span class="o">==</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()):</span>
+            <span class="n">std_bed</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span>
+            <span class="n">SE_bed</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">std_bed</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span> <span class="c1">#standard deviation if ice thickness values at the specific point</span>
+            <span class="n">SE_bed</span> <span class="o">=</span> <span class="n">std_bed</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">nb_point_bed</span><span class="p">)</span>
+            
+        <span class="c1">#Surface elevation statistics</span>
+        <span class="n">mean_surf</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="c1">#mean of ice thickness</span>
+        <span class="n">median_surf</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">())</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">())</span> <span class="c1">#median for ice thickness</span>
+        <span class="n">iqr_surf</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">iqr</span><span class="p">(</span><span class="n">df_temp</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="n">df_temp</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mf">9999.</span><span class="p">]))</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">iqr</span><span class="p">(</span><span class="n">df_temp</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="n">df_temp</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mf">9999.</span><span class="p">]))</span> <span class="c1"># IQR range for value of ice thickness at the specific point</span>
+        <span class="n">min_surf</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="c1">#minimum value of ice thickness at the specific point</span>
+        <span class="n">max_surf</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="c1">#maximum value of ice thickness at the specific point</span>
+        <span class="n">nb_point_surf</span> <span class="o">=</span> <span class="n">df_points</span> <span class="o">-</span> <span class="n">df_temp</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="n">df_temp</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mf">9999.</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#to calculate the number of points used to calculate the ice thickness at the specific point </span>
+        <span class="n">std_surf</span> <span class="o">=</span> <span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="n">index</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">]])</span><span class="o">==</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()):</span>
+            <span class="n">std_surf</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span>
+            <span class="n">SE_surf</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">std_surf</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">df_temp_nan</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span> <span class="c1">#standard deviation if ice thickness values at the specific point</span>
+            <span class="n">SE_surf</span> <span class="o">=</span> <span class="n">std_surf</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">nb_point_surf</span><span class="p">)</span>
+            
+        <span class="n">point_values</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">]]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">]]),</span> 
+                             <span class="n">mean_thick</span><span class="p">,</span> <span class="n">median_thick</span><span class="p">,</span> <span class="n">std_thick</span><span class="p">,</span> <span class="n">nb_point_thick</span><span class="p">,</span> <span class="n">iqr_thick</span><span class="p">,</span> <span class="n">SE_thick</span><span class="p">,</span> <span class="n">min_thick</span><span class="p">,</span> <span class="n">max_thick</span><span class="p">,</span>
+                             <span class="n">mean_surf</span><span class="p">,</span> <span class="n">median_surf</span><span class="p">,</span> <span class="n">std_surf</span><span class="p">,</span> <span class="n">nb_point_surf</span><span class="p">,</span> <span class="n">iqr_surf</span><span class="p">,</span> <span class="n">SE_surf</span><span class="p">,</span> <span class="n">min_surf</span><span class="p">,</span> <span class="n">max_surf</span><span class="p">,</span>
+                             <span class="n">mean_bed</span><span class="p">,</span> <span class="n">median_bed</span><span class="p">,</span> <span class="n">std_bed</span><span class="p">,</span> <span class="n">nb_point_bed</span><span class="p">,</span> <span class="n">iqr_bed</span><span class="p">,</span> <span class="n">SE_bed</span><span class="p">,</span> <span class="n">min_bed</span><span class="p">,</span> <span class="n">max_bed</span><span class="p">,</span> <span class="n">mean_dist</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="saving-the-data-as-a-geo-dataframe">
+<h3>Saving the data as a geo-dataframe<a class="headerlink" href="#saving-the-data-as-a-geo-dataframe" title="Permalink to this headline">¶</a></h3>
+<p>The values are saved into a dataframe and then converted into a geodataframe. The data are then saved as shapefiles and geopackages. To make sure the files are not too big, we set the columns as integer.</p>
+<div class="section" id="creation-of-the-columns">
+<h4>Creation of the columns<a class="headerlink" href="#creation-of-the-columns" title="Permalink to this headline">¶</a></h4>
+<p>First, we convert the point values to a dataframe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Lon&#39;</span><span class="p">,</span> <span class="s1">&#39;Lat&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;Mean_thick_m&#39;</span><span class="p">,</span> <span class="s1">&#39;Med_thick_m&#39;</span><span class="p">,</span> <span class="s1">&#39;SD_thick&#39;</span><span class="p">,</span> <span class="s1">&#39;Count_thick&#39;</span><span class="p">,</span> <span class="s1">&#39;IQR_thick&#39;</span><span class="p">,</span> <span class="s1">&#39;STE_thick&#39;</span><span class="p">,</span> <span class="s1">&#39;Min_thick_m&#39;</span><span class="p">,</span> <span class="s1">&#39;Max_thick_m&#39;</span><span class="p">,</span> 
+           <span class="s1">&#39;Mean_surf_m&#39;</span><span class="p">,</span> <span class="s1">&#39;Median_surf_m&#39;</span><span class="p">,</span> <span class="s1">&#39;SD_surf&#39;</span><span class="p">,</span> <span class="s1">&#39;Count_surf&#39;</span><span class="p">,</span> <span class="s1">&#39;IQR_surf&#39;</span><span class="p">,</span> <span class="s1">&#39;STE_surf&#39;</span><span class="p">,</span> <span class="s1">&#39;Min_surf_m&#39;</span><span class="p">,</span> <span class="s1">&#39;Max_surf_m&#39;</span><span class="p">,</span> 
+           <span class="s1">&#39;Mean_bed_m&#39;</span><span class="p">,</span> <span class="s1">&#39;Median_bed_m&#39;</span><span class="p">,</span> <span class="s1">&#39;SD_bed&#39;</span><span class="p">,</span> <span class="s1">&#39;Count_bed&#39;</span><span class="p">,</span> <span class="s1">&#39;IQR_bed&#39;</span><span class="p">,</span> <span class="s1">&#39;STE_bed&#39;</span><span class="p">,</span> <span class="s1">&#39;Min_bed_m&#39;</span><span class="p">,</span> <span class="s1">&#39;Max_bed_m&#39;</span><span class="p">,</span> <span class="s1">&#39;Mean_dist_m&#39;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">point_values</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int16&#39;</span><span class="p">)</span> <span class="c1">#dataframe containing all the values</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Lon</th>
+      <th>Lat</th>
+      <th>Mean_thick_m</th>
+      <th>Med_thick_m</th>
+      <th>SD_thick</th>
+      <th>Count_thick</th>
+      <th>IQR_thick</th>
+      <th>STE_thick</th>
+      <th>Min_thick_m</th>
+      <th>Max_thick_m</th>
+      <th>...</th>
+      <th>Max_surf_m</th>
+      <th>Mean_bed_m</th>
+      <th>Median_bed_m</th>
+      <th>SD_bed</th>
+      <th>Count_bed</th>
+      <th>IQR_bed</th>
+      <th>STE_bed</th>
+      <th>Min_bed_m</th>
+      <th>Max_bed_m</th>
+      <th>Mean_dist_m</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-209750.0</td>
+      <td>2069250.0</td>
+      <td>458</td>
+      <td>456</td>
+      <td>6</td>
+      <td>3</td>
+      <td>6</td>
+      <td>3.464102</td>
+      <td>453</td>
+      <td>464</td>
+      <td>...</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>0</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>230</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-209250.0</td>
+      <td>2068750.0</td>
+      <td>445</td>
+      <td>445</td>
+      <td>-9999</td>
+      <td>1</td>
+      <td>0</td>
+      <td>-9999.000000</td>
+      <td>445</td>
+      <td>445</td>
+      <td>...</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>0</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>183</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-208750.0</td>
+      <td>2068750.0</td>
+      <td>434</td>
+      <td>434</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0.577350</td>
+      <td>432</td>
+      <td>434</td>
+      <td>...</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>0</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>143</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-208250.0</td>
+      <td>2068750.0</td>
+      <td>420</td>
+      <td>420</td>
+      <td>9</td>
+      <td>2</td>
+      <td>6</td>
+      <td>6.363961</td>
+      <td>414</td>
+      <td>426</td>
+      <td>...</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>0</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>131</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-207750.0</td>
+      <td>2068750.0</td>
+      <td>397</td>
+      <td>397</td>
+      <td>-9999</td>
+      <td>1</td>
+      <td>0</td>
+      <td>-9999.000000</td>
+      <td>397</td>
+      <td>397</td>
+      <td>...</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>0</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>265</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 27 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="creation-of-the-geodataframe">
+<h4>Creation of the geodataframe<a class="headerlink" href="#creation-of-the-geodataframe" title="Permalink to this headline">¶</a></h4>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> module, we can convert the dataframe to a geodataframe. To do that, we only need to specify the latitude and longitude columns of the dataframe. Then we need to specify the coordinate system used:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Lon</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">Lat</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int16&#39;</span><span class="p">)</span> <span class="c1">#Transformation of the dataframe to a geodataframe</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Lon&#39;</span><span class="p">,</span> <span class="s1">&#39;Lat&#39;</span><span class="p">])</span> <span class="c1">#To not have Lat and Lon in the attributes of the shapefile/geopackage</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">set_crs</span><span class="p">(</span><span class="s2">&quot;EPSG:3031&quot;</span><span class="p">)</span> <span class="c1">#Set the coordinate system</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Mean_thick_m</th>
+      <th>Med_thick_m</th>
+      <th>SD_thick</th>
+      <th>Count_thick</th>
+      <th>IQR_thick</th>
+      <th>STE_thick</th>
+      <th>Min_thick_m</th>
+      <th>Max_thick_m</th>
+      <th>Mean_surf_m</th>
+      <th>Median_surf_m</th>
+      <th>...</th>
+      <th>Mean_bed_m</th>
+      <th>Median_bed_m</th>
+      <th>SD_bed</th>
+      <th>Count_bed</th>
+      <th>IQR_bed</th>
+      <th>STE_bed</th>
+      <th>Min_bed_m</th>
+      <th>Max_bed_m</th>
+      <th>Mean_dist_m</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>458</td>
+      <td>456</td>
+      <td>6</td>
+      <td>3</td>
+      <td>6</td>
+      <td>3</td>
+      <td>453</td>
+      <td>464</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>...</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>0</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>230</td>
+      <td>POINT (-209750.000 2069250.000)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>445</td>
+      <td>445</td>
+      <td>-9999</td>
+      <td>1</td>
+      <td>0</td>
+      <td>-9999</td>
+      <td>445</td>
+      <td>445</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>...</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>0</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>183</td>
+      <td>POINT (-209250.000 2068750.000)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>434</td>
+      <td>434</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0</td>
+      <td>432</td>
+      <td>434</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>...</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>0</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>143</td>
+      <td>POINT (-208750.000 2068750.000)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>420</td>
+      <td>420</td>
+      <td>9</td>
+      <td>2</td>
+      <td>6</td>
+      <td>6</td>
+      <td>414</td>
+      <td>426</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>...</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>0</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>131</td>
+      <td>POINT (-208250.000 2068750.000)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>397</td>
+      <td>397</td>
+      <td>-9999</td>
+      <td>1</td>
+      <td>0</td>
+      <td>-9999</td>
+      <td>397</td>
+      <td>397</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>...</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>0</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>-9999</td>
+      <td>265</td>
+      <td>POINT (-207750.000 2068750.000)</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 26 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="save-the-data-as-shapefile-and-geopackages">
+<h4>Save the data as shapefile and geopackages<a class="headerlink" href="#save-the-data-as-shapefile-and-geopackages" title="Permalink to this headline">¶</a></h4>
+<p>We can then save the result to shapefile and geopackages. We made sure to use intenger for the statistics so the files are not to big and easy to handle in your favorite software:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variables_int</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">variables_int</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;geometry&#39;</span><span class="p">)</span>
+<span class="n">schema</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">infer_schema</span><span class="p">(</span><span class="n">gdf</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">variables_int</span><span class="p">)):</span>
+    <span class="n">schema</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="n">variables_int</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;int32&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;creation of files&#39;</span><span class="p">)</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s1">&#39;D:/BEDMAP/</span><span class="si">%s</span><span class="s1">_points.gpkg&#39;</span> <span class="o">%</span><span class="k">ID</span>, layer=&#39;Point_%s&#39; %ID.replace(&#39;-&#39;, &#39;&#39;), driver=&quot;GPKG&quot;,  schema=schema) #To save as geopackage
+<span class="c1">#gdf.to_file(&#39;shapefile_processing/output/%s_points.shp&#39; %ID, driver=&quot;ESRI Shapefile&quot;,  schema=schema) #To save as a shapefile</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>creation of files
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="plotting-ice-thickness">
+<h3>Plotting ice thickness<a class="headerlink" href="#plotting-ice-thickness" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This line configures matplotlib to show figures embedded in the notebook, </span>
+<span class="c1"># instead of opening a new window for each figure. More about that later. </span>
+<span class="c1"># If you are using an old version of IPython, try using &#39;%pylab inline&#39; instead.</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;Mean_thick_m&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s2">&quot;Mean ice thickness (m)&quot;</span><span class="p">,</span><span class="s1">&#39;orientation&#39;</span><span class="p">:</span> <span class="s2">&quot;horizontal&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/Create_ShapePoints_for_BEDMAP3_29_1.png" src="../_images/Create_ShapePoints_for_BEDMAP3_29_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 2000x2000 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Results<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>All the BEDMAP point shapefiles are available online:</p>
+<ul class="simple">
+<li><p>Bedmap1 statistically-summarised data points (shapefiles): <a class="reference external" href="https://doi.org/925ac4ec-2a9d-461a-bfaa-6314eb0888c8">https://doi.org/925ac4ec-2a9d-461a-bfaa-6314eb0888c8</a></p></li>
+<li><p>Bedmap2 statistically-summarised data points (shapefiles): <a class="reference external" href="https://doi.org/0f90d926-99ce-43c9-b536-0c7791d1728b">https://doi.org/0f90d926-99ce-43c9-b536-0c7791d1728b</a></p></li>
+<li><p>Bedmap3 statistically-summarised data points (shapefiles): <a class="reference external" href="https://doi.org/a72a50c6-a829-4e12-9f9a-5a683a1acc4a">https://doi.org/a72a50c6-a829-4e12-9f9a-5a683a1acc4a</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./BEDMAP"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Create_ShapeLines_for_BEDMAP3.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Creating Shape Lines for BEDMAP3</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By UK PDC<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
