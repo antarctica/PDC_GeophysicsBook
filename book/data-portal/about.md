@@ -16,4 +16,4 @@ Have a look at the Polar Airborne Geophysics data portal [here](https://www.bas.
 ## References
 
 More information about the project can be found in this data paper:
-In prep.
+Frémand, A. C., Bodart, J. A., Jordan, T. A., Ferraccioli, F., Robinson, C., Corr, H. F., … & Vaughan, D. G. (2022). British Antarctic Survey’s Aerogeophysical Data: Releasing 25 Years of Airborne Gravity, Magnetic, and Radar Datasets over Antarctica. Earth System Science Data Discussions, 1-49. https://doi.org/10.5194/essd-14-3379-2022

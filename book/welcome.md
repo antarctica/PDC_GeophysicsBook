@@ -16,7 +16,8 @@ The UK Polar Data Centre (UK PDC, https://www.bas.ac.uk/data/uk-pdc/) is the foc
 This notebook is specific to Geophysics projects.
 At the moment, we propose resources from the following project:
 
-* The airborne geophysics data Portal
+* [The airborne geophysics data Portal](https://www.bas.ac.uk/project/nagdp/)
+* [Bedmap](https://www.bas.ac.uk/project/bedmap/)
 
 ## How to use this book
 

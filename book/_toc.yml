@@ -13,3 +13,10 @@ parts:
   - file: data-portal/Checking_Airborne_Radar_Echo_sounding_data_MATLAB
   - file: data-portal/Checking_gravity_XYZ_data
   - file: data-portal/Checking_magnetics_XYZ_data
+- caption: BEDMAP
+  chapters:
+  - file: BEDMAP/about
+  - file: BEDMAP/data_available
+  - file: BEDMAP/Checking_CSV_geospatially
+  - file: BEDMAP/Create_ShapeLines_for_BEDMAP3
+  - file: BEDMAP/Create_ShapePoints_for_BEDMAP3
