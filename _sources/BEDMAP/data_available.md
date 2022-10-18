@@ -4,16 +4,20 @@ Please find here the list of data published on [The UK Polar Data Centre catalog
 
 ## BEDMAP1
 
-- Bedmap1 standardised CSV data points: https://doi.org/f64815ec-4077-4432-9f55-0ce230f46029
-- Bedmap1 statistically-summarised data points (shapefiles): https://doi.org/925ac4ec-2a9d-461a-bfaa-6314eb0888c8
+Lythe, M., Vaughan, D., BEDMAP 1, consortia, Fremand, A., & Bodart, J. (2022). BEDMAP1 - Ice thickness, bed and surface elevation for Antarctica - standardised data points (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/F64815EC-4077-4432-9F55-0CE230F46029
+
+Lythe, M., Vaughan, D., BEDMAP 1, consortia, Fremand, A., & Bodart, J. (2022). BEDMAP1 - Ice thickness, bed and surface elevation for Antarctica - standardised shapefiles (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/925AC4EC-2A9D-461A-BFAA-6314EB0888C8
 
 ## BEDMAP2
 
-- Bedmap2 standardised CSV data points: https://doi.org/2fd95199-365e-4da1-ae26-3b6d48b3e6ac
-- Bedmap2 statistically-summarised data points (shapefiles): https://doi.org/0f90d926-99ce-43c9-b536-0c7791d1728b
-- Bedmap2 gridding products: https://doi.org/fa5d606c-dc95-47ee-9016-7a82e446f2f2
+Fretwell, P., Fremand, A., Bodart, J., Pritchard, H., Vaughan, D., Bamber, J., Barrand, N., Bell, R. E., Bianchi, C., Bingham, R., Blankenship, D., Casassa, G., Catania, G., Callens, D., Conway, H., Cook, A., Corr, H., Damaske, D., Damn, V., … Zirizzotti, A. (2022). BEDMAP2 - Ice thickness, bed and surface elevation for Antarctica - standardised data points (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/2FD95199-365E-4DA1-AE26-3B6D48B3E6AC
+
+Fretwell, P., Pritchard, H., Vaughan, D., Bamber, J., Barrand, N., Bell, R. E., Bianchi, C., Bingham, R., Blankenship, D., Casassa, G., Catania, G., Callens, D., Conway, H., Cook, A., Corr, H., Damaske, D., Damn, V., Ferraccioli, F., Forsberg, R., … Bodart, J. (2022). BEDMAP2 - Ice thickness, bed and surface elevation for Antarctica - standardised shapefiles (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/0F90D926-99CE-43C9-B536-0C7791D1728B
+
+Fretwell, P., Pritchard, H., Vaughan, D., Bamber, J., Barrand, N., Bell, R. E., Bianchi, C., Bingham, R., Blankenship, D., Casassa, G., Catania, G., Callens, D., Conway, H., Cook, A., Corr, H., Damaske, D., Damn, V., Ferraccioli, F., Forsberg, R., … Zirizzotti, A. (2022). BEDMAP2 - Ice thickness, bed and surface elevation for Antarctica - gridding products (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/FA5D606C-DC95-47EE-9016-7A82E446F2F2
 
 ## BEDMAP3
 
-- Bedmap3 standardised CSV data points: https://doi.org/91523ff9-d621-46b3-87f7-ffb6efcd1847
-- Bedmap3 statistically-summarised data points (shapefiles): https://doi.org/a72a50c6-a829-4e12-9f9a-5a683a1acc4a
+Fremand, A., Fretwell, P., Bodart, J., Pritchard, H., Aitken, A., Bamber, J., Bell, R. E., Bianchi, C., Bingham, R., Blankenship, D., Casassa, G., Catania, G., Christianson, K., Conway, H., Corr, H., Cui, X., Damaske, D., Damn, V., Drews, R., … Zirizzotti, A. (2022). BEDMAP3 - Ice thickness, bed and surface elevation for Antarctica - standardised data points (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/91523FF9-D621-46B3-87F7-FFB6EFCD1847
+
+Fretwell, P., Pritchard, H., Fremand, A., Bodart, J., Aitken, A., Bamber, J., Bell, R. E., Bianchi, C., Bingham, R., Blankenship, D., Casassa, G., Catania, G., Christianson, K., Conway, H., Corr, H., Cui, X., Damaske, D., Damn, V., Drews, R., … Zirizzotti, A. (2022). BEDMAP3 - Ice thickness, bed and surface elevation for Antarctica - standardised shapefiles (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/A72A50C6-A829-4E12-9F9A-5A683A1ACC4A
