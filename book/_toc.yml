@@ -17,6 +17,8 @@ parts:
   chapters:
   - file: BEDMAP/about
   - file: BEDMAP/data_available
+  - file: BEDMAP/Downloading_the_Bedmap_data
+  - file: BEDMAP/Get_full_metadata_from_CSV_file
   - file: BEDMAP/Checking_CSV_geospatially
   - file: BEDMAP/Create_ShapeLines_for_BEDMAP3
   - file: BEDMAP/Create_ShapePoints_for_BEDMAP3
