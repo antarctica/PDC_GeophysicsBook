@@ -351,20 +351,20 @@
 <ul class="simple">
 <li><p>Downloading Bedmap1 CSV and shapepoints:</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">https://ramadda.data.bas.ac.uk/repository/entry/show?entryid=f64815ec-4077-4432-9f55-0ce230f46029&amp;output=zip.tree</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">https://ramadda.data.bas.ac.uk/repository/entry/show?entryid=925ac4ec-2a9d-461a-bfaa-6314eb0888c8&amp;output=zip.tree</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">--content-disposition</span> <span class="pre">--trust-server-names</span> <span class="pre">&quot;https://ramadda.data.bas.ac.uk/repository/entry/show?entryid=f64815ec-4077-4432-9f55-0ce230f46029&amp;output=zip.tree&quot;</span> </code></p>
+<p><code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">--content-disposition</span> <span class="pre">--trust-server-names</span> <span class="pre">&quot;https://ramadda.data.bas.ac.uk/repository/entry/show?entryid=925ac4ec-2a9d-461a-bfaa-6314eb0888c8&amp;output=zip.tree&quot;</span></code></p>
 <ul class="simple">
 <li><p>Downloading Bedmap2 CSV and shapepoints/shapeLines:</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">https://ramadda.data.bas.ac.uk/repository/entry/show?entryid=2fd95199-365e-4da1-ae26-3b6d48b3e6ac&amp;output=zip.tree</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">https://ramadda.data.bas.ac.uk/repository/entry/show?entryid=0f90d926-99ce-43c9-b536-0c7791d1728b&amp;output=zip.tree</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">--content-disposition</span> <span class="pre">--trust-server-names</span> <span class="pre">&quot;https://ramadda.data.bas.ac.uk/repository/entry/show?entryid=2fd95199-365e-4da1-ae26-3b6d48b3e6ac&amp;output=zip.tree&quot;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">--content-disposition</span> <span class="pre">--trust-server-names</span> <span class="pre">&quot;https://ramadda.data.bas.ac.uk/repository/entry/show?entryid=0f90d926-99ce-43c9-b536-0c7791d1728b&amp;output=zip.tree&quot;</span></code></p>
 <ul class="simple">
 <li><p>Downloading Bedmap3 CSV and shapefiles:</p></li>
 </ul>
 <p>Due to the size of the dataset and limitations on Ramadda (that we are trying to resolve), it is not possible to download the dataset with a single URL. You will need to download the following file containing the list of files to download:  <a class="reference external" href="https://raw.githubusercontent.com/antarctica/PDC_GeophysicsBook/main/book/images/Bedmap3_csv_list.txt">Bedmap3_csv_list.txt</a> and run:</p>
-<p><code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">-i</span> <span class="pre">Bedmap3_csv_list.txt</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">--content-disposition</span> <span class="pre">--trust-server-names</span> <span class="pre">-i</span> <span class="pre">Bedmap3_csv_list.txt</span></code></p>
 <p>The same applies for the shapepoints and lines, you will need to download the following file: <a class="reference external" href="https://raw.githubusercontent.com/antarctica/PDC_GeophysicsBook/main/book/images/Bedmap3_shapefiles_gpkg_list.txt">Bedmap3_shapefiles_gpkg_list.txt</a> and run:</p>
-<p><code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">-i</span> <span class="pre">Bedmap3_shapefiles_gpkg_list.txt</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">--content-disposition</span> <span class="pre">--trust-server-names</span> <span class="pre">-i</span> <span class="pre">Bedmap3_shapefiles_gpkg_list.txt</span></code></p>
 </div>
 </div>
 
