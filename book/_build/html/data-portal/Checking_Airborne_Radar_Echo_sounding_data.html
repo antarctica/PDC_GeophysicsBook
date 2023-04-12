@@ -1,0 +1,1589 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checking Airborne Radar Echo Sounding data &#8212; UK PDC Geophysics Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Checking Airborne Radar Echo Sounding data (MATLAB)" href="Checking_Airborne_Radar_Echo_sounding_data_MATLAB.html" />
+    <link rel="prev" title="List of data available" href="data_available.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UK PDC Geophysics Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Welcome to the Geophysics Book from the UK Polar Centre
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Geophysics Data Portal
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   About
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="user_guide.html">
+   User Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_available.html">
+   List of data available
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Checking Airborne Radar Echo Sounding data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Checking_Airborne_Radar_Echo_sounding_data_MATLAB.html">
+   Checking Airborne Radar Echo Sounding data (MATLAB)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Checking_gravity_XYZ_data.html">
+   Checking Airborne Gravity data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Checking_magnetics_XYZ_data.html">
+   Checking Airborne Magnetics data
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  BEDMAP
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../BEDMAP/about.html">
+   About
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../BEDMAP/data_available.html">
+   List of data available
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../BEDMAP/Downloading_the_Bedmap_data.html">
+   Downloading the Bedmap data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../BEDMAP/Get_full_metadata_from_CSV_file.html">
+   Get full metadata from CSV file - BEDMAP
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../BEDMAP/Checking_CSV_geospatially.html">
+   Reading the BEDMAP CSV files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../BEDMAP/Create_ShapeLines_for_BEDMAP3.html">
+   Creating Shape Lines for BEDMAP3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../BEDMAP/Create_ShapePoints_for_BEDMAP3.html">
+   Creating Shape Points for BEDMAP3
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/data-portal/Checking_Airborne_Radar_Echo_sounding_data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/antarctica/PDC_GeophysicsBook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/antarctica/PDC_GeophysicsBook/issues/new?title=Issue%20on%20page%20%2Fdata-portal/Checking_Airborne_Radar_Echo_sounding_data.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/antarctica/PDC_GeophysicsBook/edit/main/book/data-portal/Checking_Airborne_Radar_Echo_sounding_data.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/antarctica/PDC_GeophysicsBook/main?urlpath=tree/book/data-portal/Checking_Airborne_Radar_Echo_sounding_data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aim">
+   Aim
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#virtual-environment">
+     Virtual environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-set-up-the-virtual-environment-with-conda">
+     To set up the virtual environment with Conda:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-set-up-the-virtual-environment-on-unix">
+     To set up the virtual environment on UNIX:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-the-relevant-modules">
+     Load the relevant modules
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-the-netcdf-files">
+   Check the NetCDF files
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-the-netcdf">
+     Read the NetCDF
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-the-metadata-information">
+     Check the metadata information
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-the-dimension-information">
+     Check the dimension information
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-the-name-and-metadata-of-the-variables-stored-in-the-netcdf-file">
+     Check the name and metadata of the variables stored in the NetCDF file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visual-check-of-the-data">
+   Visual check of the data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-the-data">
+     Load the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-processed-radargrams">
+     Plot the processed radargrams
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-amplitude-of-single-trace-from-the-radar-data">
+     Plot amplitude of single trace from the radar data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-geographic-location-of-trace-on-map">
+     Plot geographic location of trace on map
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-surface-and-bed-elevations-along-flightline">
+     Plot surface and bed elevations along flightline
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-the-seg-y-files">
+   Check the SEG-Y files
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-the-data-for-chirp-and-pulse">
+     Load the data for chirp and pulse
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-the-seg-ys">
+     Read the SEG-Ys
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inspect-seg-y-parameters">
+     Inspect SEG-Y parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-traces">
+     Read traces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Plot the processed radargrams
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="checking-airborne-radar-echo-sounding-data">
+<h1>Checking Airborne Radar Echo Sounding data<a class="headerlink" href="#checking-airborne-radar-echo-sounding-data" title="Permalink to this headline">¶</a></h1>
+<p>Author: Alice Fremand (&#64;almand) &amp; Julien Bodart (&#64;julbod)</p>
+<p>Date: 12/11/2021</p>
+<div class="section" id="aim">
+<h2>Aim<a class="headerlink" href="#aim" title="Permalink to this headline">¶</a></h2>
+<p>The goal of this tutorial is to easily check radar echo sounding data from either NetCDF or SEG-Y formatted files.</p>
+<div class="section" id="virtual-environment">
+<h3>Virtual environment<a class="headerlink" href="#virtual-environment" title="Permalink to this headline">¶</a></h3>
+<p>For the code to run, it is important to install the correct dependancies and libraries. In particular the following libraries are crucial for the code to run:</p>
+<ul class="simple">
+<li><p>netCDF4 <em>module to check NetCDF data in python</em></p></li>
+<li><p>obspy <em>module to check SEGY data in python</em></p></li>
+</ul>
+</div>
+<div class="section" id="to-set-up-the-virtual-environment-with-conda">
+<h3>To set up the virtual environment with Conda:<a class="headerlink" href="#to-set-up-the-virtual-environment-with-conda" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">aerogeophysics_env</span>
+<span class="o">&gt;</span><span class="n">conda</span> <span class="n">activate</span> <span class="n">aerogeophysics_env</span>
+<span class="o">&gt;</span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">env</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="o">&gt;</span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">env</span> <span class="o">--</span><span class="nb">set</span> <span class="n">channel_priority</span> <span class="n">strict</span>
+<span class="o">&gt;</span><span class="n">conda</span> <span class="n">install</span> <span class="n">python</span><span class="o">=</span><span class="mi">3</span> <span class="n">obspy</span>
+<span class="o">&gt;</span><span class="n">conda</span> <span class="n">install</span> <span class="n">netCDF4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="to-set-up-the-virtual-environment-on-unix">
+<h3>To set up the virtual environment on UNIX:<a class="headerlink" href="#to-set-up-the-virtual-environment-on-unix" title="Permalink to this headline">¶</a></h3>
+<p>Load your python module:</p>
+<p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">python/conda3</span></code></p>
+<p>Then in the folder where you have your code, you need to launch:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">aerogeophysics_env</span></code></p>
+<p>It will create a folder with all the environment for python.
+To activate the virtual environment you need to lauch it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">aerogeophysics_env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span><span class="o">.</span><span class="n">csh</span>
+</pre></div>
+</div>
+<p>You need to make sure that [aerogeophysics_env] appears before your name on the machine. That means that you are using the virtual environment
+Then you need to upgrade pip which is the command that install the packages</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">pip</span></code></p>
+<p>And install the other libraries</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">obspy</span></code></p>
+<p>In this tutorial, the virtual environment is already set up. The list of the current libraries loaded is given in the list below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="nb">list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Package                       Version
+----------------------------- -------------------
+affine                        2.3.0
+alabaster                     0.7.12
+anyio                         3.3.3
+appdirs                       1.4.4
+argh                          0.26.2
+argon2-cffi                   21.1.0
+arrow                         1.1.0
+astroid                       2.5.8
+async-generator               1.10
+atomicwrites                  1.4.0
+attrs                         21.2.0
+autopep8                      1.5.6
+Babel                         2.9.1
+backcall                      0.2.0
+backports.functools-lru-cache 1.6.4
+bcrypt                        3.2.0
+beautifulsoup4                4.9.3
+binaryornot                   0.4.4
+black                         21.5b2
+bleach                        3.3.0
+brotlipy                      0.7.0
+cached-property               1.5.2
+certifi                       2021.5.30
+cffi                          1.14.5
+cftime                        1.5.0
+chardet                       4.0.0
+click                         7.1.2
+click-plugins                 1.1.1
+cligj                         0.7.2
+cloudpickle                   1.6.0
+colorama                      0.4.4
+cookiecutter                  1.7.0
+cryptography                  3.4.7
+cycler                        0.10.0
+decorator                     4.4.2
+defusedxml                    0.7.1
+diff-match-patch              20200713
+docutils                      0.17.1
+entrypoints                   0.3
+et-xmlfile                    1.1.0
+Fiona                         1.8.18
+flake8                        3.8.4
+future                        0.18.2
+GDAL                          3.1.4
+geopandas                     0.9.0
+greenlet                      1.1.0
+h5py                          3.2.1
+idna                          2.10
+imageio                       2.9.0
+imagesize                     1.2.0
+importlib-metadata            4.5.0
+inflection                    0.5.1
+intervaltree                  3.0.2
+ipykernel                     5.5.5
+ipython                       7.24.1
+ipython-genutils              0.2.0
+isort                         5.8.0
+jedi                          0.17.2
+Jinja2                        3.0.1
+jinja2-time                   0.2.0
+joblib                        1.0.1
+json5                         0.9.6
+jsonschema                    3.2.0
+jupyter-client                6.1.12
+jupyter-core                  4.7.1
+jupyter-server                1.11.1
+jupyterlab                    3.1.18
+jupyterlab-pygments           0.1.2
+jupyterlab-server             2.8.2
+keyring                       23.0.1
+kiwisolver                    1.3.1
+lazy-object-proxy             1.6.0
+lxml                          4.6.3
+mapclassify                   2.4.2
+MarkupSafe                    2.0.1
+matplotlib                    3.4.2
+matplotlib-inline             0.1.2
+mccabe                        0.6.1
+mistune                       0.8.4
+mplcursors                    0.4
+munch                         2.5.0
+mypy-extensions               0.4.3
+nbclassic                     0.3.2
+nbclient                      0.5.3
+nbconvert                     6.0.7
+nbformat                      5.1.3
+nest-asyncio                  1.5.1
+netCDF4                       1.5.6
+networkx                      2.5.1
+notebook                      6.4.4
+numpy                         1.20.3
+numpydoc                      1.1.0
+obspy                         1.2.2
+olefile                       0.46
+openpyxl                      3.0.9
+OWSLib                        0.24.1
+packaging                     20.9
+pandas                        1.2.4
+pandocfilters                 1.4.2
+paramiko                      2.7.2
+parso                         0.7.0
+pathspec                      0.8.1
+pdc-di                        0.20
+pexpect                       4.8.0
+pickleshare                   0.7.5
+Pillow                        8.2.0
+pip                           21.1.2
+pluggy                        0.13.1
+poyo                          0.5.0
+prometheus-client             0.11.0
+prompt-toolkit                3.0.18
+psutil                        5.8.0
+ptyprocess                    0.7.0
+pycodestyle                   2.6.0
+pycparser                     2.20
+pydocstyle                    6.1.1
+pyflakes                      2.2.0
+Pygments                      2.9.0
+pylint                        2.8.2
+pyls-black                    0.4.6
+pyls-spyder                   0.3.2
+PyNaCl                        1.4.0
+pyOpenSSL                     20.0.1
+pyparsing                     2.4.7
+pyproj                        3.1.0
+PyQt5                         5.12.3
+PyQt5-sip                     4.19.18
+PyQtChart                     5.12
+PyQtWebEngine                 5.12.1
+pyreadline                    2.1
+pyrsistent                    0.17.3
+pyshp                         2.1.3
+PySocks                       1.7.1
+python-dateutil               2.8.1
+python-jsonrpc-server         0.4.0
+python-language-server        0.36.2
+pytz                          2021.1
+pywin32                       300
+pywin32-ctypes                0.2.0
+pywinpty                      1.1.4
+PyYAML                        5.4.1
+pyzmq                         22.1.0
+QDarkStyle                    3.0.2
+qstylizer                     0.2.0
+QtAwesome                     1.0.2
+qtconsole                     5.1.0
+QtPy                          1.9.0
+rasterio                      1.2.1
+regex                         2021.4.4
+requests                      2.25.1
+requests-unixsocket           0.2.0
+rope                          0.19.0
+Rtree                         0.9.7
+scikit-learn                  0.24.2
+scipy                         1.6.3
+segyio                        1.9.3Note: you may need to restart the kernel to use updated packages.
+
+Send2Trash                    1.8.0
+setuptools                    49.6.0.post20210108
+Shapely                       1.7.1
+six                           1.16.0
+sniffio                       1.2.0
+snowballstemmer               2.1.0
+snuggs                        1.4.7
+sortedcontainers              2.4.0
+soupsieve                     2.0.1
+Sphinx                        4.0.2
+sphinxcontrib-applehelp       1.0.2
+sphinxcontrib-devhelp         1.0.2
+sphinxcontrib-htmlhelp        2.0.0
+sphinxcontrib-jsmath          1.0.1
+sphinxcontrib-qthelp          1.0.3
+sphinxcontrib-serializinghtml 1.1.5
+spyder                        5.0.4
+spyder-kernels                2.0.4
+SQLAlchemy                    1.4.18
+terminado                     0.12.1
+testpath                      0.5.0
+textdistance                  4.2.1
+threadpoolctl                 2.1.0
+three-merge                   0.1.1
+tinycss2                      1.1.0
+toml                          0.10.2
+tornado                       6.1
+traitlets                     5.0.5
+typed-ast                     1.4.3
+typing-extensions             3.10.0.0
+ujson                         4.0.2
+urllib3                       1.26.5
+watchdog                      2.1.2
+wcwidth                       0.2.5
+webencodings                  0.5.1
+websocket-client              1.2.1
+wheel                         0.36.2
+whichcraft                    0.6.1
+win-inet-pton                 1.1.0
+wincertstore                  0.2
+wrapt                         1.12.1
+xlrd                          2.0.1
+yapf                          0.31.0
+zipp                          3.4.1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-the-relevant-modules">
+<h3>Load the relevant modules<a class="headerlink" href="#load-the-relevant-modules" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">netCDF4</span> <span class="k">as</span> <span class="nn">nc</span>
+<span class="kn">from</span> <span class="nn">obspy.io.segy.segy</span> <span class="kn">import</span> <span class="n">_read_segy</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="k">as</span> <span class="nn">ticker</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">transforms</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-the-netcdf-files">
+<h2>Check the NetCDF files<a class="headerlink" href="#check-the-netcdf-files" title="Permalink to this headline">¶</a></h2>
+<p>Example given for GRADES-IMAGE data.</p>
+<p>Data available for download here: Corr, H. (2021). Processed airborne radio-echo sounding data from the GRADES-IMAGE survey covering the Evans and Rutford Ice Streams, and ice rises in the Ronne Ice Shelf, West Antarctica (2006/2007) (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. <a class="reference external" href="https://doi.org/10.5285/C7EA5697-87E3-4529-A0DD-089A2ED638FB">https://doi.org/10.5285/C7EA5697-87E3-4529-A0DD-089A2ED638FB</a></p>
+<div class="section" id="read-the-netcdf">
+<h3>Read the NetCDF<a class="headerlink" href="#read-the-netcdf" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">=</span><span class="n">nc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s1">&#39;D:/British_Antarctic_Survey/data/GRADES_IMAGE_0607/netcdf/GRADES_IMAGE_G06.nc&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-the-metadata-information">
+<h3>Check the metadata information<a class="headerlink" href="#check-the-metadata-information" title="Permalink to this headline">¶</a></h3>
+<p>By printing <code class="docutils literal notranslate"><span class="pre">f</span></code>, we can read the metadata and obtain information about the variables and their respective dimensions</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">ncattrs</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;title&#39;, &#39;summary&#39;, &#39;history&#39;, &#39;keywords&#39;, &#39;Conventions&#39;, &#39;standard_name_vocabulary&#39;, &#39;acknowlegement&#39;, &#39;institution&#39;, &#39;license&#39;, &#39;location&#39;, &#39;instrument&#39;, &#39;platform&#39;, &#39;source&#39;, &#39;time_coverage_start&#39;, &#39;time_coverage_end&#39;, &#39;flight&#39;, &#39;campaign&#39;, &#39;creator_name&#39;, &#39;geospatial_lat_min&#39;, &#39;geospatial_lat_max&#39;, &#39;geospatial_lon_min&#39;, &#39;geospatial_lon_max&#39;, &#39;radar_parameters&#39;, &#39;antenna&#39;, &#39;digitiser&#39;, &#39;processing&#39;, &#39;resolution&#39;, &#39;GPS&#39;, &#39;projection&#39;, &#39;references&#39;, &#39;metadata_link&#39;, &#39;related_datasets&#39;, &#39;publisher_name&#39;, &#39;publisher_type&#39;, &#39;publisher_email&#39;, &#39;publisher_link&#39;, &#39;comment&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;
+root group (NETCDF4 data model, file format HDF5):
+    title: Processed airborne radio-echo sounding data from the GRADES-IMAGE survey covering the Evans and Rutford Ice Streams, and ice rises in the Ronne Ice Shelf, West Antarctica (2006/2007)
+    summary: An airborne radar survey was flown as part of the GRADES-IMAGE project funded by BAS over the Antarctic Peninsula, Ellsworth Mountains and Filchner-Ronne Ice Shelf 
+    (also including the Evans Ice stream and Carson Inlet) mainly to image englacial layers and bedrock topography during the 2006/07 field season.
+    Operating from temporary field camps at Sky Blu, Partiot Hills and out of RABID depot (Rutford Ice Stream), we collected ~27,550 km of airborne radio-echo sounding data over 100 hours of surveying.
+    Our aircraft was equipped with dual-frequency carrier-phase GPS for navigation, radar altimeter for surface mapping, wing-tip magnetometers, and a new ice-sounding radar system (PASIN). 
+    Note that there was no gravimetric element to this survey.
+    
+    We present here the full radar dataset consisting of the deep-sounding chirp and shallow-sounding pulse-acquired data in their processed form, as well as the navigational information of each trace,
+    the surface and bed elevation picks, ice thickness, and calculated absolute surface and bed elevations.
+    The radar data provided in this NetCDF is also provided separately as georeferenced SEGY files for import into seismic-interpretation software.    
+    
+    Details of survey location and design are presentend in Jeoffry et al. 2018 (ESSD, 10,711-725).
+    More information on the radar system and processing can be found in Corr et al. 2007 (Terra Antartica Reports, 13, 55-63).
+    history: This NetCDF contains the deep-sounding chirp and shallow-sounding pulse-acquired data (see the &#39;radar_parameters&#39; attribute below) in the following structure:
+    &#39;chirp_data&#39;: Radar data for the processed (coherent) chirp
+    &#39;pulse_data&#39;: Radar data for the processed (incoherent) pulse
+    
+    Both radar variables have the same length and contain the associated variables (see the variable attributes below for more details):
+    &#39;traces&#39;: Trace number for the radar data (x axis)
+    &#39;fast_time&#39;: Two-way travel time (y axis) (units: microseconds)
+    &#39;x_coordinates&#39;: Cartesian x-coordinates  for the radar data (x axis) (units: meters in WGS84 EPSG:3031) 
+    &#39;y_coordinates&#39;: Cartesian y-coordinates for the radar data (x axis) (units: meters in WGS84 EPSG:3031) 
+    
+    Additionally, we also provide the associated surface and bed pick information, including the positioning and UTC time of each trace; 
+    the aircraft, surface and bed elevation; the ice thickness; the PriNumber and the range from the aircraft to the ice surface.
+    These variables are provided for each trace in the x-direction (with &quot;-9999&quot; representing missing data points).
+
+    Surface elevation is derived from radar altimeter for ground clearance &lt; 750 m, and the PASIN system for higher altitudes.    
+    Positions are calculated for the phase centre of the aircraft antenna. All positions (Longitude, Latitude and Height) are referred to the WGS1984 ellipsoid.
+    The bed reflector was automatically depicted on the chirp data using a semi-automatic picker in the PROMAX software package. All the picks were afterwards checked and corrected by hand if necessary. 
+    The picked travel time was then converted to depth using a radar wave speed of 168 m/microseconds and a constant firn correction of 10 m. 
+    
+    Note that the aircraft was flown at a constant terrain clearance of ~150 m to optimise radar data collection. 
+    The absolute position and altitude of the aircraft is derived from differentially processed GPS data.
+    
+    The navigational position of each trace comes from the surface files, and the processed GPS files when no surface information was provided in the surface files.
+    Note that for these, interpolation of the navigational data might have been required to match closely the Coordinated Universal Time (UTC) of each trace in the surface files. 
+    No data is shown as &quot;-9999&quot; throughout the files.
+    
+    * Coordinates and Positions:
+    The coordinates provided in the NetCDF for the surface and bed elevation for each radar trace are in longitude and latitude (WGS84, EPSG: 4326). 
+    The navigation attributes for the radar data in the NetCDF are in projected X and Y coordinates (Polar Stereographic, EPSG: 3031), as follows:
+    
+    Latitude of natural origin: -71
+    Longitude of natural origin: 0
+    Scale factor at natural origin: 0.994
+    False easting: 0
+    False northing: 2082760.109
+    
+    --------------------------------------------------------------
+    Please read:
+    --------------------------------------------------------------
+    Previous versions of this dataset are available at the following link:
+    The surface and bed pick information (including surface and bed elevation, ice thickness, etc.) were previously published at: 
+    https://doi.org/10.5285/4efa688e-7659-4cbf-a72f-facac5d63998.
+    
+    Note: 
+        These NetCDF and the associated georeferenced SEGY files provided here have been considerably curated and improved, and thus can be considered the latest and full dataset.
+        They contain all the information from the DOI link provided above, as well as the chirp and pulse radar data
+    keywords: Antarctic, aerogeophysics, ice thickness, radar, surface elevation
+    Conventions: CF-1.8
+    standard_name_vocabulary: CF Standard Name Table v77
+    acknowlegement: This work was funded by the British Antarctic Survey core program (Geology and Geophysics team), in support of the Natural Environment Research Council (NERC).
+    institution: British Antarctic Survey
+    license: http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+    location: Ronne Ice Shelf, West Antarctica
+    instrument: Polarimetric radar Airborne Science Instrument (PASIN)
+    platform: BAS Twin Otter aircraft &quot;Bravo Lima&quot;
+    source: Airborne ice penetrating radar
+    time_coverage_start: 2006-12-29
+    time_coverage_end: 2007-01-30
+    flight: G06
+    campaign: GRADES-IMAGE
+    creator_name: Corr, Hugh
+    geospatial_lat_min: -67.95411
+    geospatial_lat_max: -81.9457
+    geospatial_lon_min: -61.292
+    geospatial_lon_max: -88.96693
+    radar_parameters: Bistatic PASIN radar system operating with a centre frequency of 150 MHz and using two interleaved pulses:
+    Chirp: 4-microseconds, 10 MHz bandwidth linear chirp (deep sounding)
+    Pulse: 0.1-microseconds unmodulated pulse (shallow sounding)
+    Pulse Repetition Frequency: 15,635 Hz (pulse repetition interval: 64 microseconds)
+    antenna: 8 folded dipole elements: 
+    4 transmitters (port side) 
+    4 receivers (starboard side)
+    Antenna gain: 11 dBi (with 4 elements)
+    Transmit power: 1 kW into each 4 antennae
+    Maximum transmit duty cycle: 10% at full power (4 x 1 kW)
+    digitiser: Radar receiver vertical sampling frequency: 22 MHz (resulting in sampling interval of 45.4546 ns) 
+    Receiver coherent stacking: 25
+    Receiver digital filtering: -50 dBc at Nyquist (11 MHz)
+    Effective PRF: 312.5 Hz (post-hardware stacking)
+    Sustained data rate: 10.56 Mbytes/second
+    processing: Chirp compression was applied using a Blackman window to minimise sidelobe levels, resulting in a processing gain of 10 dB. 
+    The chirp data was processed using an coherent averaging filter (commonly referred to as unfocused Synthetic Aperture Radar (SAR) processing) along a moving window of length 15. 
+    This product is best used to assess the bed and internals in deep ice conditions.
+
+    The pulse data was processed using an incoherent averaging filter along a moving window of length 25 and using a combination of the upper and lower channels. 
+    This product is best used to assess the internal structure and bed in shallow ice conditions.
+    resolution: Vertical resolution of the system (using velocity in ice of 168.5e6 microseconds): 8.4 m
+    Post-processing along-track resolution: ~20 m trace spacing
+    GPS: Dual-frequency Leica 500 GPS.
+    Absolute GPS positional accuracy: ~0.1 m (relative accuracy is one order of magnitude better). 
+    anking angle was limited to 10deg during aircraft turns to avoid phase issues between GPS receiver and transmitter.
+    projection: WGS84 EPSG: 3031 Polar Stereographic South (71S,0E)
+    references: Jeofry, H., Ross, N., Corr, H.F., Li, J., Morlighem, M., Gogineni, P. and Siegert, M.J., 2018. A new bed elevation model for the Weddell Sea sector of the West Antarctic Ice Sheet. 
+    Earth System Science Data, 10(2), pp.711-725.doi: https://doi.org/10.5194/essd-10-711-2018
+    metadata_link: https://doi.org/10.5285/c7ea5697-87e3-4529-a0dd-089a2ed638fb
+    related_datasets: https://doi.org/10.5285/4efa688e-7659-4cbf-a72f-facac5d63998
+    https://doi.org/10.5285/7504be9b-93ba-44af-a17f-00c84554b819
+    publisher_name: UK Polar Data Centre
+    publisher_type: institution
+    publisher_email: polardatacentre@bas.ac.uk
+    publisher_link: https://www.bas.ac.uk/data/uk-pdc/
+    comment: This dataset contains radar data for flightline G06 of the GRADES-IMAGE survey in NetCDF format
+    dimensions(sizes): traces(5584), fast_time(1400)
+    variables(dimensions): int32 traces(traces), float32 fast_time(fast_time), float64 x_coordinates(traces), float64 y_coordinates(traces), float32 chirp_data(fast_time, traces), float32 pulse_data(fast_time, traces), float64 longitude_layerData(traces), float64 latitude_layerData(traces), float32 UTC_time_layerData(traces), int32 PriNumber_layerData(traces), float32 terrainClearanceAircraft_layerData(traces), float32 aircraft_altitude_layerData(traces), float32 surface_altitude_layerData(traces), float32 surface_pick_layerData(traces), float32 bed_altitude_layerData(traces), float32 bed_pick_layerData(traces), float32 land_ice_thickness_layerData(traces)
+    groups: 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-the-dimension-information">
+<h3>Check the dimension information<a class="headerlink" href="#check-the-dimension-information" title="Permalink to this headline">¶</a></h3>
+<p>To get information about the NetCDF dimensions and their size, you can do the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">dimensions</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;traces&#39;, &#39;fast_time&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">dimensions</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;netCDF4._netCDF4.Dimension&#39;&gt;: name = &#39;traces&#39;, size = 5584
+&lt;class &#39;netCDF4._netCDF4.Dimension&#39;&gt;: name = &#39;fast_time&#39;, size = 1400
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-the-name-and-metadata-of-the-variables-stored-in-the-netcdf-file">
+<h3>Check the name and metadata of the variables stored in the NetCDF file<a class="headerlink" href="#check-the-name-and-metadata-of-the-variables-stored-in-the-netcdf-file" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">variables</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;traces&#39;, &#39;fast_time&#39;, &#39;x_coordinates&#39;, &#39;y_coordinates&#39;, &#39;chirp_data&#39;, &#39;pulse_data&#39;, &#39;longitude_layerData&#39;, &#39;latitude_layerData&#39;, &#39;UTC_time_layerData&#39;, &#39;PriNumber_layerData&#39;, &#39;terrainClearanceAircraft_layerData&#39;, &#39;aircraft_altitude_layerData&#39;, &#39;surface_altitude_layerData&#39;, &#39;surface_pick_layerData&#39;, &#39;bed_altitude_layerData&#39;, &#39;bed_pick_layerData&#39;, &#39;land_ice_thickness_layerData&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">variables</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+int32 traces(traces)
+    long_name: Trace number for the radar data (x axis)
+    short_name: traceNum
+unlimited dimensions: 
+current shape = (5584,)
+filling off
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float32 fast_time(fast_time)
+    long_name: Two-way travel time (y axis)
+    standard_name: time
+    units: microseconds
+unlimited dimensions: 
+current shape = (1400,)
+filling off
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float64 x_coordinates(traces)
+    long_name: Cartesian x-coordinates (WGS84 EPSG:3031) for the radar data
+    standard_name: projection_x_coordinate
+    units: m
+unlimited dimensions: 
+current shape = (5584,)
+filling off
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float64 y_coordinates(traces)
+    long_name: Cartesian y-coordinates (WGS84 EPSG:3031) for the radar data
+    standard_name: projection_y_coordinate
+    units: m
+unlimited dimensions: 
+current shape = (5584,)
+filling off
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float32 chirp_data(fast_time, traces)
+    long_name: Radar data for the processed (coherent) chirp
+    units: Power in decibel-milliwatts (dBm)
+unlimited dimensions: 
+current shape = (1400, 5584)
+filling off
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float32 pulse_data(fast_time, traces)
+    long_name: Radar data for the processed (incoherent) pulse
+    units: Power in decibel-milliwatts (dBm)
+unlimited dimensions: 
+current shape = (1400, 5584)
+filling off
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float64 longitude_layerData(traces)
+    long_name: Longitudinal position of the trace number (coordinate system: WGS84 EPSG:4326)
+    standard_name: longitude
+    units: degree_east
+unlimited dimensions: 
+current shape = (5584,)
+filling off
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float64 latitude_layerData(traces)
+    long_name: Latitudinal position of the trace number (coordinate system: WGS84 EPSG:4326)
+    standard_name: latitude
+    units: degree_north
+unlimited dimensions: 
+current shape = (5584,)
+filling off
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float32 UTC_time_layerData(traces)
+    long_name: Coordinated Universal Time (UTC) of trace
+    short_name: resTime
+    units: seconds
+unlimited dimensions: 
+current shape = (5584,)
+filling off
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+int32 PriNumber_layerData(traces)
+    long_name: The PRI number is an incremental integer reference number related to initialisation of the radar system that permits processed SEG-Y data and picked surface and bed to be linked back to raw radar data
+    short_name: PriNum
+unlimited dimensions: 
+current shape = (5584,)
+filling off
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float32 terrainClearanceAircraft_layerData(traces)
+    _FillValue: -9999.0
+    long_name: Terrain clearance distance from platform to air interface with ice, sea or ground
+    short_name: resEht
+    units: m
+unlimited dimensions: 
+current shape = (5584,)
+filling on
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float32 aircraft_altitude_layerData(traces)
+    _FillValue: -9999.0
+    long_name: Aircraft altitude
+    short_name: Eht
+    units: m relative to WGS84 ellipsoid
+unlimited dimensions: 
+current shape = (5584,)
+filling on
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float32 surface_altitude_layerData(traces)
+    _FillValue: -9999.0
+    long_name: Ice surface elevation for the trace number from radar altimeter and LiDAR
+    standard_name: surface_altitude
+    short_name: surfElev
+    units: m relative to the WGS84 ellipsoid
+unlimited dimensions: 
+current shape = (5584,)
+filling on
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float32 surface_pick_layerData(traces)
+    _FillValue: -9999.0
+    long_name: Location down trace of surface pick (BAS system)
+    short_name: surfPickLoc
+    units: microseconds
+unlimited dimensions: 
+current shape = (5584,)
+filling on
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float32 bed_altitude_layerData(traces)
+    _FillValue: -9999.0
+    long_name: Bedrock elevation for the trace number derived by subtracting ice thickness from surface elevation
+    standard_name: bed_altitude
+    short_name: bedElev
+    units: m relative to the WGS84 ellipsoid
+unlimited dimensions: 
+current shape = (5584,)
+filling on
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float32 bed_pick_layerData(traces)
+    _FillValue: -9999.0
+    long_name: Location down trace of bed pick (BAS system)
+    short_name: botPickLoc
+    units: microseconds
+unlimited dimensions: 
+current shape = (5584,)
+filling on
+&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+float32 land_ice_thickness_layerData(traces)
+    _FillValue: -9999.0
+    long_name: Ice thickness for the trace number obtained by multiplying the two-way travel-time between the picked ice surface and ice sheet bed by 168 m/microseconds and applying a 10 meter correction for the firn layer
+    standard_name: land_ice_thickness
+    short_name: iceThick
+    units: m
+unlimited dimensions: 
+current shape = (5584,)
+filling on
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visual-check-of-the-data">
+<h2>Visual check of the data<a class="headerlink" href="#visual-check-of-the-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="load-the-data">
+<h3>Load the data<a class="headerlink" href="#load-the-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># radar variables</span>
+<span class="n">traces_nc</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;traces&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span> <span class="c1"># read in traces array</span>
+<span class="n">chirpData</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;chirp_data&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span> <span class="c1"># read in chirp radar data array</span>
+<span class="n">pulseData</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;pulse_data&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span> <span class="c1"># read in pulse radar data array</span>
+
+<span class="n">chirpData</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">chirpData</span><span class="p">)</span> <span class="c1"># convert the data from power to decibels using log function for visualisation</span>
+<span class="n">pulseData</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">pulseData</span><span class="p">)</span> <span class="c1"># convert the data from power to decibels using log function for visualisation</span>
+
+<span class="c1"># X and Y coordinates</span>
+<span class="n">x_nc</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;x_coordinates&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span> <span class="c1"># read in x positions array (Polar Stereographic EPSG 3031)</span>
+<span class="n">y_nc</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;y_coordinates&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span> <span class="c1"># read in y positions array (Polar Stereographic EPSG 3031)</span>
+<span class="n">x_nc_km</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">x_nc</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># transform meters to kilometers</span>
+<span class="n">y_nc_km</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">y_nc</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># transform meters to kilometers</span>
+
+<span class="c1"># surface and bed picks</span>
+<span class="n">surf_pick</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;surface_pick_layerData&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span> <span class="c1"># read in surface pick array</span>
+<span class="n">bed_pick</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;bed_pick_layerData&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span> <span class="c1"># read in bed pick array</span>
+<span class="n">surf_pick</span><span class="p">[</span><span class="n">surf_pick</span> <span class="o">==</span> <span class="o">-</span><span class="mi">9999</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;nan&#39;</span> <span class="c1"># convert -9999 to NaNs for plotting</span>
+<span class="n">bed_pick</span><span class="p">[</span><span class="n">bed_pick</span> <span class="o">==</span> <span class="o">-</span><span class="mi">9999</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;nan&#39;</span> <span class="c1"># convert -9999 to NaNs for plotting</span>
+
+<span class="c1"># surface and bed elevations</span>
+<span class="n">surface_elevation</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;surface_altitude_layerData&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span> <span class="c1"># read in surface altitude array</span>
+<span class="n">bed_elevation</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;bed_altitude_layerData&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span> <span class="c1"># read in bed altitude array</span>
+<span class="n">surface_elevation</span><span class="p">[</span><span class="n">surface_elevation</span> <span class="o">==</span> <span class="o">-</span><span class="mi">9999</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;nan&#39;</span> <span class="c1"># convert -9999 to NaNs for plotting</span>
+<span class="n">bed_elevation</span><span class="p">[</span><span class="n">bed_elevation</span> <span class="o">==</span> <span class="o">-</span><span class="mi">9999</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;nan&#39;</span> <span class="c1"># convert -9999 to NaNs for plotting</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-the-processed-radargrams">
+<h3>Plot the processed radargrams<a class="headerlink" href="#plot-the-processed-radargrams" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span> <span class="c1"># set the size of the inline plot</span>
+
+<span class="n">fig1</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">radar_im</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">chirpData</span><span class="p">[:</span><span class="mi">600</span><span class="p">,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys&#39;</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span> <span class="c1"># plot data (limit y-axis extent and colorscale)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">surf_pick</span><span class="p">,</span><span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># plot surface pick</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bed_pick</span><span class="p">,</span> <span class="s1">&#39;b--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># plot bed pick </span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">ticker</span><span class="o">.</span><span class="n">LinearLocator</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span> <span class="c1"># set x-axis tick limits</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Radar Data - Chirp (NetCDF)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">&#39;bold&#39;</span><span class="p">)</span> <span class="c1"># set title</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Trace Number&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span> <span class="c1"># set axis title</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Fast Time Sample Number&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span> <span class="c1"># set axis title</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">radar_im</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax1</span><span class="p">)</span> <span class="c1"># plot colorbar</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x1e733870f10&gt;
+</pre></div>
+</div>
+<img alt="../_images/Checking_Airborne_Radar_Echo_sounding_data_18_1.png" src="../_images/Checking_Airborne_Radar_Echo_sounding_data_18_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">]</span> <span class="c1"># set the size of the inline plot</span>
+
+<span class="n">fig2</span><span class="p">,</span> <span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">radar_im</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">pulseData</span><span class="p">[:</span><span class="mi">600</span><span class="p">,:],</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;Greys&#39;</span><span class="p">,</span>  <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span> <span class="c1"># plot data (limit y-axis extent and colorscale)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">surf_pick</span><span class="p">,</span><span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># plot surface pick</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bed_pick</span><span class="p">,</span> <span class="s1">&#39;b--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># plot bed pick</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">ticker</span><span class="o">.</span><span class="n">LinearLocator</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span> <span class="c1"># set x-axis tick limits</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Radar Data - pulse  (NetCDF)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">&#39;bold&#39;</span><span class="p">)</span> <span class="c1"># set title</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Trace Number&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span> <span class="c1"># set axis title</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Fast Time Sample Number&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span> <span class="c1"># set axis title</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">radar_im</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax2</span><span class="p">)</span> <span class="c1"># plot colorbar</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x1e70ed627c0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Checking_Airborne_Radar_Echo_sounding_data_19_1.png" src="../_images/Checking_Airborne_Radar_Echo_sounding_data_19_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="plot-amplitude-of-single-trace-from-the-radar-data">
+<h3>Plot amplitude of single trace from the radar data<a class="headerlink" href="#plot-amplitude-of-single-trace-from-the-radar-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">]</span> <span class="c1"># set the size of the inline plot</span>
+<span class="n">fig2</span><span class="p">,</span> <span class="p">(</span><span class="n">ax3</span><span class="p">,</span> <span class="n">ax4</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Specify how many plots you want</span>
+
+<span class="c1"># first plot the radargram with specific trace marked as red vertical line</span>
+<span class="n">radar_im</span> <span class="o">=</span> <span class="n">ax3</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">chirpData</span><span class="p">[:</span><span class="mi">600</span><span class="p">,:],</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys&#39;</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span> <span class="c1"># plot data (limit y-axis extent and colorscale)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">surf_pick</span><span class="p">,</span><span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># plot surface pick</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bed_pick</span><span class="p">,</span> <span class="s1">&#39;b--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># plot surface pick</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">ticker</span><span class="o">.</span><span class="n">LinearLocator</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span> <span class="c1"># set x-axis tick limits</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1850</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span> <span class="c1"># plot position of trace in second plot</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">autoscale</span><span class="p">(</span><span class="n">enable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">tight</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># tighten up x axis</span>
+
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Radar Data - Chirp (NetCDF)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">&#39;bold&#39;</span><span class="p">)</span> <span class="c1"># set title</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Trace Number&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>  <span class="c1"># set axis title</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Fast Time Sample Number&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span> <span class="c1"># set axis title</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">radar_im</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax3</span><span class="p">)</span> <span class="c1"># plot colorbar</span>
+
+<span class="c1"># then plot trace plot with amplitude and sampling window</span>
+<span class="n">ax4</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">chirpData</span><span class="p">[:</span><span class="mi">600</span><span class="p">,</span><span class="mi">1850</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Trace 1850 - Radar Data&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">&#39;bold&#39;</span><span class="p">)</span>  <span class="c1"># set title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fast Time Sample Number&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span> <span class="c1"># set axis title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude (dB)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span> <span class="c1"># set axis title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">60</span><span class="p">])</span> <span class="c1"># set limit of y-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Checking_Airborne_Radar_Echo_sounding_data_21_0.png" src="../_images/Checking_Airborne_Radar_Echo_sounding_data_21_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="plot-geographic-location-of-trace-on-map">
+<h3>Plot geographic location of trace on map<a class="headerlink" href="#plot-geographic-location-of-trace-on-map" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span> <span class="c1"># Set the size of the inline plot</span>
+
+<span class="n">fig3</span><span class="p">,</span> <span class="n">ax5</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_nc_km</span><span class="p">,</span> <span class="n">y_nc_km</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># plot entire profile</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_nc_km</span><span class="p">[</span><span class="mi">1850</span><span class="p">],</span> <span class="n">y_nc_km</span><span class="p">[</span><span class="mi">1850</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># plot specific trace position as red dot</span>
+
+<span class="n">ax5</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Position of Trace 1850&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">&#39;bold&#39;</span><span class="p">)</span> <span class="c1"># set title</span>
+<span class="n">ax5</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;X (km)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span> <span class="c1"># set axis title</span>
+<span class="n">ax5</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Y (km)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span> <span class="c1"># set axis title</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Y (km)&#39;)
+</pre></div>
+</div>
+<img alt="../_images/Checking_Airborne_Radar_Echo_sounding_data_23_1.png" src="../_images/Checking_Airborne_Radar_Echo_sounding_data_23_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="plot-surface-and-bed-elevations-along-flightline">
+<h3>Plot surface and bed elevations along flightline<a class="headerlink" href="#plot-surface-and-bed-elevations-along-flightline" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span> <span class="c1"># Set the size of the inline plot</span>
+
+<span class="n">fig4</span><span class="p">,</span> <span class="n">ax6</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax6</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">traces_nc</span><span class="p">,</span> <span class="n">surface_elevation</span><span class="p">)</span> <span class="c1"># plot surface elevation for entire profile</span>
+<span class="n">ax6</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">traces_nc</span><span class="p">,</span> <span class="n">bed_elevation</span><span class="p">)</span> <span class="c1"># plot bed elevation for entire profile</span>
+
+<span class="n">ax6</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Elevation Profile for flightline G06&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">&#39;bold&#39;</span><span class="p">)</span> <span class="c1"># set title</span>
+<span class="n">ax6</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Trace Number&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span> <span class="c1"># set axis title</span>
+<span class="n">ax6</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Elevation (meters WGS84)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span> <span class="c1"># set axis title</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Elevation (meters WGS84)&#39;)
+</pre></div>
+</div>
+<img alt="../_images/Checking_Airborne_Radar_Echo_sounding_data_25_1.png" src="../_images/Checking_Airborne_Radar_Echo_sounding_data_25_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-the-seg-y-files">
+<h2>Check the SEG-Y files<a class="headerlink" href="#check-the-seg-y-files" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="load-the-data-for-chirp-and-pulse">
+<h3>Load the data for chirp and pulse<a class="headerlink" href="#load-the-data-for-chirp-and-pulse" title="Permalink to this headline">¶</a></h3>
+<p>Give here the path to where the desired files lives on your PC</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">segy_data_chirp</span> <span class="o">=</span> <span class="s1">&#39;D:/British_Antarctic_Survey/data/GRADES_IMAGE_0607/segy/chirp/G06_chirp.segy&#39;</span>
+<span class="n">segy_data_pulse</span> <span class="o">=</span> <span class="s1">&#39;D:/British_Antarctic_Survey/data/GRADES_IMAGE_0607/segy/pulse/G06_pulse.segy&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="read-the-seg-ys">
+<h3>Read the SEG-Ys<a class="headerlink" href="#read-the-seg-ys" title="Permalink to this headline">¶</a></h3>
+<p>The data is read using the <code class="docutils literal notranslate"><span class="pre">_read_segy</span></code> command from the <code class="docutils literal notranslate"><span class="pre">obspy</span></code> Python module</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">segy_chirp</span> <span class="o">=</span> <span class="n">_read_segy</span><span class="p">(</span><span class="n">segy_data_chirp</span><span class="p">,</span> <span class="n">headonly</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">segy_pulse</span> <span class="o">=</span> <span class="n">_read_segy</span><span class="p">(</span><span class="n">segy_data_pulse</span><span class="p">,</span> <span class="n">headonly</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="inspect-seg-y-parameters">
+<h3>Inspect SEG-Y parameters<a class="headerlink" href="#inspect-seg-y-parameters" title="Permalink to this headline">¶</a></h3>
+<p>It is possible to check the content of the SEG-Y bytes using very simple commands of the <code class="docutils literal notranslate"><span class="pre">obspy</span></code> package.</p>
+<p>Some examples are given below for the chirp data (pulse is the same):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">segy_chirp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5584 traces in the SEG Y structure.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">header_segy</span> <span class="o">=</span> <span class="n">segy_chirp</span><span class="o">.</span><span class="n">binary_file_header</span>
+<span class="n">header_segy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Binary File Header:
+	job_identification_number: 0
+	line_number: 0
+	reel_number: 0
+	number_of_data_traces_per_ensemble: 0
+	number_of_auxiliary_traces_per_ensemble: 0
+	sample_interval_in_microseconds: 1000
+	sample_interval_in_microseconds_of_original_field_recording: 0
+	number_of_samples_per_data_trace: 1400
+	number_of_samples_per_data_trace_for_original_field_recording: 0
+	data_sample_format_code: 5
+	ensemble_fold: 0
+	trace_sorting_code: 0
+	vertical_sum_code: 0
+	sweep_frequency_at_start: 0
+	sweep_frequency_at_end: 0
+	sweep_length: 0
+	sweep_type_code: 0
+	trace_number_of_sweep_channel: 0
+	sweep_trace_taper_length_in_ms_at_start: 0
+	sweep_trace_taper_length_in_ms_at_end: 0
+	taper_type: 0
+	correlated_data_traces: 0
+	binary_gain_recovered: 0
+	amplitude_recovery_method: 0
+	measurement_system: 1
+	impulse_signal_polarity: 0
+	vibratory_polarity_code: 0
+	unassigned_1: b&#39;\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00&#39;
+	seg_y_format_revision_number: 100
+	fixed_length_trace_flag: 1
+	number_of_3200_byte_ext_file_header_records_following: 0
+	unassigned_2: b&#39;\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="read-traces">
+<h3>Read traces<a class="headerlink" href="#read-traces" title="Permalink to this headline">¶</a></h3>
+<p>Obspy can also be used to read individual traces</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">traces</span> <span class="o">=</span> <span class="n">segy_chirp</span><span class="o">.</span><span class="n">traces</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then have a look at the header of one specific trace, as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trace_header</span> <span class="o">=</span> <span class="n">traces</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">header</span> <span class="c1"># for trace 1</span>
+<span class="n">trace_header</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>trace_sequence_number_within_line: 2
+trace_sequence_number_within_segy_file: 2
+original_field_record_number: 1185400
+trace_number_within_the_original_field_record: 1
+energy_source_point_number: 2
+ensemble_number: 0
+trace_number_within_the_ensemble: 0
+trace_identification_code: 1
+number_of_vertically_summed_traces_yielding_this_trace: 0
+number_of_horizontally_stacked_traces_yielding_this_trace: 1
+data_use: 0
+distance_from_center_of_the_source_point_to_the_center_of_the_receiver_group: 0
+receiver_group_elevation: 0
+surface_elevation_at_source: 0
+source_depth_below_surface: 0
+datum_elevation_at_receiver_group: 0
+datum_elevation_at_source: 0
+water_depth_at_source: 0
+water_depth_at_group: 0
+scalar_to_be_applied_to_all_elevations_and_depths: 0
+scalar_to_be_applied_to_all_coordinates: 0
+source_coordinate_x: -1270327
+source_coordinate_y: 140859
+group_coordinate_x: 0
+group_coordinate_y: 0
+coordinate_units: 0
+weathering_velocity: 0
+subweathering_velocity: 0
+uphole_time_at_source_in_ms: 0
+uphole_time_at_group_in_ms: 0
+source_static_correction_in_ms: 0
+group_static_correction_in_ms: 0
+total_static_applied_in_ms: 0
+lag_time_A: 0
+lag_time_B: 0
+delay_recording_time: 0
+mute_time_start_time_in_ms: 0
+mute_time_end_time_in_ms: 0
+number_of_samples_in_this_trace: 1400
+sample_interval_in_ms_for_this_trace: 45
+gain_type_of_field_instruments: 0
+instrument_gain_constant: 0
+instrument_early_or_initial_gain: 0
+correlated: 0
+sweep_frequency_at_start: 0
+sweep_frequency_at_end: 0
+sweep_length_in_ms: 0
+sweep_type: 0
+sweep_trace_taper_length_at_start_in_ms: 0
+sweep_trace_taper_length_at_end_in_ms: 0
+taper_type: 0
+alias_filter_frequency: 0
+alias_filter_slope: 0
+notch_filter_frequency: 0
+notch_filter_slope: 0
+low_cut_frequency: 0
+high_cut_frequency: 0
+low_cut_slope: 0
+high_cut_slope: 0
+year_data_recorded: 2021
+day_of_year: 273
+hour_of_day: 3
+minute_of_hour: 14
+second_of_minute: 8
+time_basis_code: 0
+trace_weighting_factor: 0
+geophone_group_number_of_roll_switch_position_one: 0
+geophone_group_number_of_trace_number_one: 0
+geophone_group_number_of_last_trace: 0
+gap_size: 0
+over_travel_associated_with_taper: 0
+x_coordinate_of_ensemble_position_of_this_trace: 0
+y_coordinate_of_ensemble_position_of_this_trace: 0
+for_3d_poststack_data_this_field_is_for_in_line_number: 0
+for_3d_poststack_data_this_field_is_for_cross_line_number: 0
+shotpoint_number: 0
+scalar_to_be_applied_to_the_shotpoint_number: 0
+trace_value_measurement_unit: 0
+transduction_constant_mantissa: 0
+transduction_constant_exponent: 0
+transduction_units: 0
+device_trace_identifier: 0
+scalar_to_be_applied_to_times: 0
+source_type_orientation: 0
+source_energy_direction_mantissa: 0
+source_energy_direction_exponent: 0
+source_measurement_mantissa: 0
+source_measurement_exponent: 0
+source_measurement_unit: 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also check the amount of traces in the file (x-axis):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sgy_traces_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">segy_chirp</span><span class="o">.</span><span class="n">traces</span><span class="p">)</span>
+<span class="n">sgy_traces_len</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5584
+</pre></div>
+</div>
+</div>
+</div>
+<p>And check the length of the sampling window (y-axis)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sgy_samples_len</span> <span class="o">=</span> <span class="n">traces</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">number_of_samples_in_this_trace</span>
+<span class="n">sgy_samples_len</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1400
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Plot the processed radargrams<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>We first need to concatenate all traces from the SEG-Y into one array and calculate the log of data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_chirp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">data</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">segy_chirp</span><span class="o">.</span><span class="n">traces</span><span class="p">)</span> <span class="c1"># concatenate</span>
+<span class="n">data_chirp</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">data_chirp</span><span class="p">)</span> <span class="c1"># convert the data from power to decibels using log of data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_pulse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">data</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">segy_pulse</span><span class="o">.</span><span class="n">traces</span><span class="p">)</span> <span class="c1"># concatenate</span>
+<span class="n">data_pulse</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">data_pulse</span><span class="p">)</span> <span class="c1"># convert the data from power to decibels using log of data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can plot them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span> <span class="c1"># set the size of the inline plot</span>
+
+<span class="n">fig4</span><span class="p">,</span> <span class="n">ax6</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_chirp</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys&#39;</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span> <span class="c1"># plot data (limit colorscale extent)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Radar data - Chirp (SEG-Y)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">&#39;bold&#39;</span><span class="p">)</span> <span class="c1"># set title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span> <span class="c1"># plot colorbar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="c1"># tighten up x axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">600</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># set y-axis limits</span>
+<span class="n">ax5</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Trace Number&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span> <span class="c1"># set axis title</span>
+<span class="n">ax5</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Fast Time Sample Number&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span> <span class="c1"># set axis title</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(143.5, 0.5, &#39;Fast Time Sample Number&#39;)
+</pre></div>
+</div>
+<img alt="../_images/Checking_Airborne_Radar_Echo_sounding_data_46_1.png" src="../_images/Checking_Airborne_Radar_Echo_sounding_data_46_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span> <span class="c1"># set the size of the inline plot</span>
+
+<span class="n">fig5</span><span class="p">,</span> <span class="n">ax7</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_pulse</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span> <span class="c1"># plot data (limit colorscale extent)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Radar data - Pulse (SEG-Y)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">&#39;bold&#39;</span><span class="p">)</span> <span class="c1"># set title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span> <span class="c1"># plot colorbar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="c1"># tighten up x axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">600</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># set y-axis limits</span>
+<span class="n">ax6</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Trace Number&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span> <span class="c1"># set axis title</span>
+<span class="n">ax6</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Fast Time Sample Number&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span> <span class="c1"># set axis title</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(143.5, 0.5, &#39;Fast Time Sample Number&#39;)
+</pre></div>
+</div>
+<img alt="../_images/Checking_Airborne_Radar_Echo_sounding_data_47_1.png" src="../_images/Checking_Airborne_Radar_Echo_sounding_data_47_1.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./data-portal"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="data_available.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">List of data available</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Checking_Airborne_Radar_Echo_sounding_data_MATLAB.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Checking Airborne Radar Echo Sounding data (MATLAB)</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By UK PDC<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
