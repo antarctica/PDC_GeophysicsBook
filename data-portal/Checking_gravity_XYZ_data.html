@@ -440,16 +440,14 @@ Then you need to upgrade pip which is the command that install the packages</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Package                       VersionNote: you may need to restart the kernel to use updated packages.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Package                       Version
 ----------------------------- -------------------
 alabaster                     0.7.12
 anyio                         3.3.4
 argon2-cffi                   21.1.0
 async-generator               1.10
 attrs                         21.2.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Babel                         2.9.1
+Babel                         2.9.1
 backcall                      0.2.0
 backports.functools-lru-cache 1.6.4
 beautifulsoup4                4.10.0
@@ -529,32 +527,10 @@ obspy                         1.2.2
 olefile                       0.46
 packaging                     21.2
 pandas                        1.2.4
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="load-the-relevant-modules">
-<h3>Load the relevant modules<a class="headerlink" href="#load-the-relevant-modules" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="c1">#Specific module to plot the graph in the Jupyter Notebook</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandocfilters                 1.5.0
+pandocfilters                 1.5.0
 parso                         0.8.2
 pickleshare                   0.7.5
-Pillow                        8.3.1
+Pillow                        8.3.1Note: you may need to restart the kernel to use updated packages.
 pip                           21.1.2
 prometheus-client             0.12.0
 prompt-toolkit                3.0.18
@@ -563,6 +539,7 @@ pybtex-docutils               1.0.1
 pycparser                     2.21
 pydata-sphinx-theme           0.6.3
 Pygments                      2.9.0
+
 pyOpenSSL                     21.0.0
 pyparsing                     2.4.7
 pyproj                        3.1.0
@@ -603,7 +580,29 @@ sphinx-panels                 0.6.0
 sphinx-thebe                  0.0.10
 sphinx-togglebutton           0.2.3
 sphinxcontrib-applehelp       1.0.2
-sphinxcontrib-bibtex          2.2.1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-the-relevant-modules">
+<h3>Load the relevant modules<a class="headerlink" href="#load-the-relevant-modules" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1">#Specific module to plot the graph in the Jupyter Notebook</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinxcontrib-bibtex          2.2.1
 sphinxcontrib-devhelp         1.0.2
 sphinxcontrib-htmlhelp        2.0.0
 sphinxcontrib-jsmath          1.0.1

@@ -427,6 +427,7 @@ Then you need to upgrade pip which is the command that install the packages</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Package                       Version
 ----------------------------- -------------------
 alabaster                     0.7.12
+antlr4-python3-runtime        4.7.2
 anyio                         3.3.4
 argon2-cffi                   21.1.0
 async-generator               1.10
@@ -437,7 +438,8 @@ backports.functools-lru-cache 1.6.4
 beautifulsoup4                4.10.0
 bleach                        4.1.0
 brotlipy                      0.7.0
-certifi                       2021.10.8
+certifi                       2022.9.24
+cf-units                      3.0.1
 cffi                          1.15.0
 cftime                        1.5.1.1
 chardet                       4.0.0
@@ -449,14 +451,17 @@ click-plugins                 1.1.1
 cligj                         0.7.1
 cloudpickle                   1.6.0
 colorama                      0.4.4
+compliance-checker            5.0.2
 cryptography                  35.0.0
 cycler                        0.10.0
 dataclasses                   0.8
 decorator                     5.0.9
 defusedxml                    0.7.1
 docutils                      0.16
-entrypoints                   0.3
-Fiona                         1.8.18
+entrypoints                   0.3Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fiona                         1.8.18
 future                        0.18.2
 GDAL                          3.1.4
 geopandas                     0.9.0
@@ -471,6 +476,7 @@ ipykernel                     5.5.5
 ipython                       7.23.1
 ipython-genutils              0.2.0
 ipywidgets                    7.6.5
+isodate                       0.6.1
 jedi                          0.18.0
 Jinja2                        3.0.3
 jsonschema                    3.2.0
@@ -506,13 +512,38 @@ nbformat                      5.1.3
 nest-asyncio                  1.5.1
 netCDF4                       1.5.7
 notebook                      6.4.5
-numpy                         1.20.3
+numpy                         1.22.3
 obspy                         1.2.2
 olefile                       0.46
+OWSLib                        0.27.2
 packaging                     21.2
 pandas                        1.2.4
-pandocfilters                 1.5.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="upload-the-modules">
+<h3>Upload the modules<a class="headerlink" href="#upload-the-modules" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>geopandas: used to create geodataframe and easily save the result to shapefiles or geopackages.</p></li>
+<li><p>pandas: used to read the csv file</p></li>
+<li><p>Other modules: mathplotlib</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandocfilters                 1.5.0
 parso                         0.8.2
+pendulum                      2.1.2
 pickleshare                   0.7.5
 Pillow                        8.3.1
 pip                           21.1.2
@@ -522,6 +553,7 @@ pybtex                        0.24.0
 pybtex-docutils               1.0.1
 pycparser                     2.21
 pydata-sphinx-theme           0.6.3
+pygeoif                       0.7
 Pygments                      2.9.0
 pyOpenSSL                     21.0.0
 pyparsing                     2.4.7
@@ -534,12 +566,14 @@ pyrsistent                    0.18.0
 PySocks                       1.7.1
 python-dateutil               2.8.1
 pytz                          2021.1
+pytzdata                      2020.1
 pywin32                       300
 pywinpty                      1.1.4
 PyYAML                        6.0
 pyzmq                         22.1.0
 qtconsole                     5.1.1
 QtPy                          1.11.2
+regex                         2022.8.17
 requests                      2.26.0
 Rtree                         0.9.7
 scipy                         1.6.3
@@ -579,6 +613,7 @@ traitlets                     5.0.5
 typing-extensions             3.10.0.2
 uc-micro-py                   1.0.1
 urllib3                       1.26.7
+validators                    0.18.2
 wcwidth                       0.2.5
 webencodings                  0.5.1
 websocket-client              0.57.0
@@ -586,27 +621,8 @@ wheel                         0.36.2
 widgetsnbextension            3.5.2
 win-inet-pton                 1.1.0
 wincertstore                  0.2
+xarray                        2022.6.0
 zipp                          3.6.0
-Note: you may need to restart the kernel to use updated packages.
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="upload-the-modules">
-<h3>Upload the modules<a class="headerlink" href="#upload-the-modules" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>geopandas: used to create geodataframe and easily save the result to shapefiles or geopackages.</p></li>
-<li><p>pandas: used to read the csv file</p></li>
-<li><p>Other modules: mathplotlib</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
 </div>
