@@ -22,3 +22,8 @@ parts:
   - file: BEDMAP/Checking_CSV_geospatially
   - file: BEDMAP/Create_ShapeLines_for_BEDMAP3
   - file: BEDMAP/Create_ShapePoints_for_BEDMAP3
+- caption: GLORIA
+  chapters:
+  - file: GLORIA/about
+  - file: GLORIA/checking_gloria_data
+  - file: GLORIA/compare_gloria_with_IBCSO

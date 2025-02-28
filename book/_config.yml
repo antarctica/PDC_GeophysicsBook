@@ -8,7 +8,19 @@ logo: images/logo.jpg
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: cache
+  execute_notebooks: "off"
+  exclude_patterns:
+    - "data-portal/Checking_Airborne_Radar_Echo_sounding_data_MATLAB.ipynb"
+    - "data-portal/Checking_Airborne_Radar_Echo_sounding_data.ipynb"
+    - "data-portal/Checking_Airborne_Radar_Echo_sounding_data.ipynb"
+    - "data-portal/Checking_Airborne_Radar_Echo_sounding_data_MATLAB.ipynb"
+    - "data-portal/Checking_gravity_XYZ_data.ipynb"
+    - "data-portal/Checking_magnetics_XYZ_data.ipynb"
+    - "BEDMAP/Downloading_the_Bedmap_data.ipynb"
+    - "BEDMAP/Get_full_metadata_from_CSV_file.ipynb"
+    - "BEDMAP/Checking_CSV_geospatially.ipynb"
+    - "BEDMAP/Create_ShapeLines_for_BEDMAP3.ipynb"
+    - "BEDMAP/Create_ShapePoints_for_BEDMAP3.ipynb"
   timeout: 100
   
 repository:

@@ -80,13 +80,13 @@ Jones, P. C. (2020). Processed line aerogravity data over the Evans Ice Stream, 
 
 Corr, H., & Robinson, C. (2020). Airborne radio-echo sounding of the English Coast, western Palmer Land, Antarctic Peninsula (2016/17 season) (Version 1.0) [Data set]. UK Polar Data Centre, Natural Environment Research Council, UK Research & Innovation. https://doi.org/10.5285/E07D62BF-D58C-4187-A019-59BE998939CC 
 
-Nicholls, K.W., Corr, H., Robinson, C., & Jordan, T.A. (2021). Processed airborne radio-echo sounding data from the FISS 2015 survey covering the Foundation Ice Stream, Bungenstock Ice Rise, and the Filchner Ice Shelf system, West Antarctica (2015/2016) (Version 1.0) [Data set]. UK Polar Data Centre, Natural Environment Research Council, UK Research & Innovation. https://doi.org/10.5285/3507901f-d03e-45a6-8d9b-59cf98a03e1d  
+Nicholls, K., Robinson, C., Corr, H., Jordan, T., & Bodart, J. (2024). Processed airborne radio-echo sounding data from the FISS 2015 survey covering the Foundation Ice Stream, Bungenstock Ice Rise and the Filchner Ice Shelf system, West Antarctica (2015/2016) (Version 2.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/ef482413-623b-4e71-a054-d394fc28ed54 
 
 Nicholls, K.W., Corr, H., Robinson, C., & Jordan, T.A. (2021). Processed bed elevation picks from airborne radar depth sounding from the  FISS 2015 survey covering the Foundation Ice Stream and the Filchner Ice Shelf system (2015/2016) [Data set]. UK Polar Data Centre, Natural Environment Research Council, UK Research & Innovation. https://doi.org/10.5285/144ceb0d-9d76-4a39-aa01-7b94ac80fac9  
 
 Jordan, T., Corr, H., & Robinson, C. (2021). Processed line aeromagnetic data from the FISS 2015 survey covering the Foundation Ice Stream (2015/2016) (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/367435D1-B2FD-4692-9570-852F9A21EC02 
 
-Corr, H., Robinson, C. Jordan T., & Nichols K. (2021). Processed airborne radio-echo sounding data from the FISS 2016 surveys covering the Filchner and Halley Ice Shelves, and the English Coast (western Palmer Land), West Antarctica (2016/2017) (Version 1.0) [Data set]. UK Polar Data Centre, Natural Environment Research Council, UK Research & Innovation. https://doi.org/10.5285/0cb61583-3985-4875-b141-5743e68abe35  
+Corr, H., Robinson, C., Jordan, T., Nicholls, K., Brisbourne, A., & Bodart, J. (2024). Processed airborne radio-echo sounding data from the FISS 2016 surveys covering the Filchner and Halley Ice Shelves, and the English Coast (western Palmer Land), West Antarctica (2016/2017) - V2 (Version 2.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/e203926b-7a54-4c33-a5df-04df2293d7d3 
 
 Corr, H., Robinson, C. Jordan T., & Nichols K. (2021). Processed bed elevation picks from airborne radar depth sounding from the FISS 2016 survey covering the Filchner and Halley Ice Shelves (2016/2017)  (Version 1.0) [Data set]. UK Polar Data Centre, Natural Environment Research Council, UK Research & Innovation. https://doi.org/10.5285/e7851bba-21ff-4645-b557-d8eafdf89462  
 
@@ -165,7 +165,7 @@ Corr, H., & Vaughan, D. (2020). Processed ice shelf base picks from airborne rad
 
 Corr, H., Ferraccioli, F., Forsberg, R., Jordan, T., Kohler, J., Matsuoka, K., Olesen, A., & Robinson, C. (2021). Processed bed elevation picks from the POLARGAP radar survey across the Pensacola-Pole Basin (2015/2016) (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/D55E87DD-A74D-4182-BE99-93AB805103AB
 
-Ferraccioli, F., Forsberg, R., Matsuoka, K., Olesen, A., Jordan, T., Corr, H., Robinson, C., & Kohler, J. (2021). Processed airborne radio-echo sounding data from the POLARGAP survey covering the South Pole, and Foundation and Recovery Glaciers, East Antarctica (2015/2016) (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/E8A29FA7-A245-4A04-8B56-098DEFA134B9
+Ferraccioli, F., Forsberg, R., Matsuoka, K., Olesen, A., Jordan, T., Corr, H., Robinson, C., Kohler, J., & Bodart, J. (2024). Processed airborne radio-echo sounding data from the POLARGAP survey covering the South Pole, and Foundation and Recovery Glaciers, East Antarctica (2015/2016) (Version 2.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/6be0a803-78d4-4ca9-be02-3838866763c3 
 
 Jordan T.A, Robinson C., Matsuoka K., Olesen A.V., Forsberg R., Ferraccioli F. (2021). Processed line aerogravity data from the 2015/16 PolarGAP survey of the South Pole region. https://data.bas.ac.uk/full-record.php?id=GB/NERC/BAS/PDC/01583 (doi: https://doi.org/10.5270/esa-8ffoo3e)
 
@@ -184,6 +184,12 @@ Ferraccioli, F., & Jones, P. C. (2020). Processed line aeromagnetic data over No
 
 Jones, P. C., & Ferraccioli, F. (2020). Processed line aerogravity data over Northern Palmer Land, Antarctic Peninsula (2002/03 season) (Version 1.0) [Data set]. UK Polar Data Centre, Natural Environment Research Council, UK Research & Innovation. https://doi.org/10.5285/5388DB62-4A5E-4072-9B01-3A65785D80A0 
  
+## SWARM (2023-2024): 
+
+Jordan, T., Robinson, C., Reed, T., & Toomey, R. (2024). Airborne gravity data over Marguerite Bay collected with a Windracers Ultra UAV (2023/24 season) (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/3a9c8604-2bca-48c1-a40c-48a873076581 
+
+Jordan, T., Lowe, M., Robinson, C., Reed, T., & Toomey, R. (2024). Processed aeromagnetic line data flown from Rothera station with a Windracers Ultra UAV (2023/24 season) (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/4bcc9b4e-fab5-46cd-aac3-56c28e61cff1 
+
 
 ## TORUS (2001-02): 
 
