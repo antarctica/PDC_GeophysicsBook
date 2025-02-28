@@ -1,369 +1,513 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Get full metadata from CSV file - BEDMAP &#8212; UK PDC Geophysics Book</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
-
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'BEDMAP/Get_full_metadata_from_CSV_file';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Reading the BEDMAP CSV files" href="Checking_CSV_geospatially.html" />
     <link rel="prev" title="Downloading the Bedmap data" href="Downloading_the_Bedmap_data.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../welcome.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.jpg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">UK PDC Geophysics Book</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../welcome.html">
-   Welcome to the Geophysics Book from the UK Polar Centre
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Geophysics Data Portal
- </span>
-</p>
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="UK PDC Geophysics Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="UK PDC Geophysics Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../welcome.html">
+                    Welcome to the Geophysics Book from the UK Polar Centre
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Geophysics Data Portal</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../data-portal/about.html">
-   About
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../data-portal/user_guide.html">
-   User Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../data-portal/data_available.html">
-   List of data available
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../data-portal/Checking_Airborne_Radar_Echo_sounding_data.html">
-   Checking Airborne Radar Echo Sounding data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../data-portal/Checking_Airborne_Radar_Echo_sounding_data_MATLAB.html">
-   Checking Airborne Radar Echo Sounding data (MATLAB)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../data-portal/Checking_gravity_XYZ_data.html">
-   Checking Airborne Gravity data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../data-portal/Checking_magnetics_XYZ_data.html">
-   Checking Airborne Magnetics data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/user_guide.html">User Guide</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/data_available.html">List of data available</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/Checking_Airborne_Radar_Echo_sounding_data.html">Checking Airborne Radar Echo Sounding data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/Checking_Airborne_Radar_Echo_sounding_data_MATLAB.html">Checking Airborne Radar Echo Sounding data (MATLAB)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/Checking_gravity_XYZ_data.html">Checking Airborne Gravity data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/Checking_magnetics_XYZ_data.html">Checking Airborne Magnetics data</a></li>
+
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  BEDMAP
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">BEDMAP</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="about.html">
-   About
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data_available.html">
-   List of data available
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Downloading_the_Bedmap_data.html">
-   Downloading the Bedmap data
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Get full metadata from CSV file - BEDMAP
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Checking_CSV_geospatially.html">
-   Reading the BEDMAP CSV files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Create_ShapeLines_for_BEDMAP3.html">
-   Creating Shape Lines for BEDMAP3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Create_ShapePoints_for_BEDMAP3.html">
-   Creating Shape Points for BEDMAP3
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_available.html">List of data available</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Downloading_the_Bedmap_data.html">Downloading the Bedmap data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Get full metadata from CSV file - BEDMAP</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Checking_CSV_geospatially.html">Reading the BEDMAP CSV files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Create_ShapeLines_for_BEDMAP3.html">Creating Shape Lines for BEDMAP3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Create_ShapePoints_for_BEDMAP3.html">Creating Shape Points for BEDMAP3</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">GLORIA</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../GLORIA/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GLORIA/checking_gloria_data.html">Checking GLORIA CD37 side-scan sonar data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../GLORIA/compare_gloria_with_IBCSO.html">Visualising GLORIA CD37 side-scan sonar data</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/BEDMAP/Get_full_metadata_from_CSV_file.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/antarctica/PDC_GeophysicsBook"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/antarctica/PDC_GeophysicsBook/issues/new?title=Issue%20on%20page%20%2FBEDMAP/Get_full_metadata_from_CSV_file.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/antarctica/PDC_GeophysicsBook/edit/main/book/BEDMAP/Get_full_metadata_from_CSV_file.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
-</div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
+<div class="article-header-buttons">
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/antarctica/PDC_GeophysicsBook/main?urlpath=tree/book/BEDMAP/Get_full_metadata_from_CSV_file.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
 
-        </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Get full metadata from CSV file - BEDMAP
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-data">
-     The data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#upload-the-modules">
-     Upload the modules
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#opening-and-reading-the-csv-metadata">
-     Opening and reading the CSV metadata
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#getting-the-full-metadata-from-the-csv-file">
-     Getting the full metadata from the CSV file
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#converting-the-csv-file-to-netcdf-with-rich-metadata">
-     Converting the CSV file to NetCDF with rich metadata
-    </a>
-   </li>
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://binder.pangeo.io/v2/gh/antarctica/PDC_GeophysicsBook/main?urlpath=tree/book/BEDMAP/Get_full_metadata_from_CSV_file.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
   </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#checking-completness-of-the-metadata">
-   Checking completness of the metadata
-  </a>
- </li>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/antarctica/PDC_GeophysicsBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/antarctica/PDC_GeophysicsBook/edit/main/book/BEDMAP/Get_full_metadata_from_CSV_file.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/antarctica/PDC_GeophysicsBook/issues/new?title=Issue%20on%20page%20%2FBEDMAP/Get_full_metadata_from_CSV_file.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/BEDMAP/Get_full_metadata_from_CSV_file.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Get full metadata from CSV file - BEDMAP</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Get full metadata from CSV file - BEDMAP</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data">The data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-the-modules">Upload the modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-and-reading-the-csv-metadata">Opening and reading the CSV metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-full-metadata-from-the-csv-file">Getting the full metadata from the CSV file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-the-csv-file-to-netcdf-with-rich-metadata">Converting the CSV file to NetCDF with rich metadata</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-completness-of-the-metadata">Checking completness of the metadata</a></li>
 </ul>
 
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="get-full-metadata-from-csv-file-bedmap">
-<h1>Get full metadata from CSV file - BEDMAP<a class="headerlink" href="#get-full-metadata-from-csv-file-bedmap" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="get-full-metadata-from-csv-file-bedmap">
+<h1>Get full metadata from CSV file - BEDMAP<a class="headerlink" href="#get-full-metadata-from-csv-file-bedmap" title="Link to this heading">#</a></h1>
 <p>This notebook shows how to get the rich and complete metadata from the Bedmap CSV file. It also shows how to convert the CSV file to NCCSV (NetCDF compatible CSV) as an example to the FAIR implementation of the CSV format used for Bedmap.</p>
 <p>With only access to the CSV file, it is possible to programmatically obtain rich metadata from the file without having a complex metadata structure as header information in the file.</p>
-<div class="section" id="the-data">
-<h2>The data<a class="headerlink" href="#the-data" title="Permalink to this headline">¶</a></h2>
+<section id="the-data">
+<h2>The data<a class="headerlink" href="#the-data" title="Link to this heading">#</a></h2>
 <p>The BEDMAP CSV files are available for downmoad from the UK Polar data Centre:</p>
 <ul class="simple">
 <li><p>BEDMAP1 CSV: <a class="reference external" href="https://doi.org/10.5285/f64815ec-4077-4432-9f55-0ce230f46029">https://doi.org/10.5285/f64815ec-4077-4432-9f55-0ce230f46029</a></p></li>
 <li><p>BEDMAP2 CSV: <a class="reference external" href="https://doi.org/10.5285/2fd95199-365e-4da1-ae26-3b6d48b3e6ac">https://doi.org/10.5285/2fd95199-365e-4da1-ae26-3b6d48b3e6ac</a></p></li>
 <li><p>BEDMAP3 CSV: <a class="reference external" href="https://doi.org/10.5285/91523ff9-d621-46b3-87f7-ffb6efcd1847">https://doi.org/10.5285/91523ff9-d621-46b3-87f7-ffb6efcd1847</a></p></li>
 </ul>
-</div>
-<div class="section" id="upload-the-modules">
-<h2>Upload the modules<a class="headerlink" href="#upload-the-modules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="upload-the-modules">
+<h2>Upload the modules<a class="headerlink" href="#upload-the-modules" title="Link to this heading">#</a></h2>
 <p>For this conversion, we will need pandas, json, xarray, netCDF4 and urllib modules.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">urllib.request</span>
-<span class="kn">import</span> <span class="nn">xarray</span>
-<span class="kn">import</span> <span class="nn">netCDF4</span> <span class="k">as</span> <span class="nn">nc</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">urllib.request</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">netCDF4</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nc</span> 
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="opening-and-reading-the-csv-metadata">
-<h2>Opening and reading the CSV metadata<a class="headerlink" href="#opening-and-reading-the-csv-metadata" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="opening-and-reading-the-csv-metadata">
+<h2>Opening and reading the CSV metadata<a class="headerlink" href="#opening-and-reading-the-csv-metadata" title="Link to this heading">#</a></h2>
 <p>For this exercise, we only need to check the short metadata provided in the CSV file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CSV_file</span> <span class="o">=</span> <span class="s1">&#39;E:/BEDMAP/AWI_2015_GEA-DML_AIR_BM3.csv&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CSV_file</span> <span class="o">=</span> <span class="s1">&#39;AWI_2015_GEA-DML_AIR_BM3.csv&#39;</span>
 <span class="n">csv_metadata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">CSV_file</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
 <span class="n">csv_metadata</span>
 </pre></div>
@@ -451,7 +595,7 @@
     <tr>
       <th>11</th>
       <td>#electromagnetic_wave_speed_in_ice</td>
-      <td>168 (meters/microseconds)</td>
+      <td>168.0 (meters/microseconds)</td>
     </tr>
     <tr>
       <th>12</th>
@@ -516,7 +660,7 @@
  &#39;platform&#39;: &#39;airborne radar.&#39;,
  &#39;instrument&#39;: &#39;AWI EMR.&#39;,
  &#39;history&#39;: &#39;Incoherent processing&#39;,
- &#39;electromagnetic_wave_speed_in_ice&#39;: &#39;168 (meters/microseconds)&#39;,
+ &#39;electromagnetic_wave_speed_in_ice&#39;: &#39;168.0 (meters/microseconds)&#39;,
  &#39;firn_correction&#39;: &#39;0 (m)&#39;,
  &#39;centre_frequency&#39;: &#39;150 (MHz)&#39;,
  &#39;comment&#39;: &#39;Part of Bedmap3&#39;,
@@ -559,7 +703,6 @@
    &#39;givenName&#39;: &#39;Alice&#39;,
    &#39;familyName&#39;: &#39;Fremand&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -569,7 +712,6 @@
    &#39;givenName&#39;: &#39;Peter&#39;,
    &#39;familyName&#39;: &#39;Fretwell&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -579,7 +721,6 @@
    &#39;givenName&#39;: &#39;Julien&#39;,
    &#39;familyName&#39;: &#39;Bodart&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -589,7 +730,6 @@
    &#39;givenName&#39;: &#39;Hamish&#39;,
    &#39;familyName&#39;: &#39;Pritchard&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -599,7 +739,6 @@
    &#39;givenName&#39;: &#39;A.&#39;,
    &#39;familyName&#39;: &#39;Aitken&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Centre for Exploration Targeting, University of Western Australia&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/047272k79&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -609,7 +748,6 @@
    &#39;givenName&#39;: &#39;Jonathan&#39;,
    &#39;familyName&#39;: &#39;Bamber&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;University of Bristol&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/0524sp257&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -619,7 +757,6 @@
    &#39;givenName&#39;: &#39;R.E.&#39;,
    &#39;familyName&#39;: &#39;Bell&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Lamont Doherty Earth Observatory, Columbia University, Palisades, NY, USA&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/02e2tgs60&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -629,14 +766,12 @@
    &#39;givenName&#39;: &#39;C&#39;,
    &#39;familyName&#39;: &#39;Bianchi&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Istituto Nazionale di Geofisica e Vulcanologia&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00qps9a02&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Bingham, Robert&#39;,
    &#39;givenName&#39;: &#39;Robert&#39;,
    &#39;familyName&#39;: &#39;Bingham&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;University of Edinburgh&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01nrxwf90&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -646,7 +781,6 @@
    &#39;givenName&#39;: &#39;Donald&#39;,
    &#39;familyName&#39;: &#39;Blankenship&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Institute for Geophysics, Jackson School of Geosciences, University of Texas&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00hj54h04&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -656,7 +790,6 @@
    &#39;givenName&#39;: &#39;G.&#39;,
    &#39;familyName&#39;: &#39;Casassa&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Centro de Estudios Cientificos&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00t8xfq63&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Catania, Ginny&#39;,
@@ -670,7 +803,6 @@
    &#39;givenName&#39;: &#39;K&#39;,
    &#39;familyName&#39;: &#39;Christianson&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Earth and Space Sciences, University of Washington&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00cvxb145&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -680,7 +812,6 @@
    &#39;givenName&#39;: &#39;H&#39;,
    &#39;familyName&#39;: &#39;Conway&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Earth and Space Sciences, University of Washington&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00cvxb145&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -690,14 +821,12 @@
    &#39;givenName&#39;: &#39;Hugh&#39;,
    &#39;familyName&#39;: &#39;Corr&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Cui, X.&#39;,
    &#39;givenName&#39;: &#39;X.&#39;,
    &#39;familyName&#39;: &#39;Cui&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Polar Research Institute of China&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/027fn9x30&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -707,21 +836,18 @@
    &#39;givenName&#39;: &#39;D&#39;,
    &#39;familyName&#39;: &#39;Damaske&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Center for Marine Environmental Sciences, University Bremen&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/04ers2y35&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Damn, V.&#39;,
    &#39;givenName&#39;: &#39;V.&#39;,
    &#39;familyName&#39;: &#39;Damn&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Federal Institute for Geosciences and Natural Resources&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/04d77de73&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Drews, R.&#39;,
    &#39;givenName&#39;: &#39;R.&#39;,
    &#39;familyName&#39;: &#39;Drews&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Tubingen University, Department of Geosciences&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/03a1kwz48&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -731,7 +857,6 @@
    &#39;givenName&#39;: &#39;G.&#39;,
    &#39;familyName&#39;: &#39;Eagles&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred-Wegener-Institut Helmholtz-Zentrum fur Polar und Meeresforschung&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -741,7 +866,6 @@
    &#39;givenName&#39;: &#39;O.&#39;,
    &#39;familyName&#39;: &#39;Eisen&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -751,14 +875,12 @@
    &#39;givenName&#39;: &#39;H.&#39;,
    &#39;familyName&#39;: &#39;Eisermann&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Ferraccioli, Fausto&#39;,
    &#39;givenName&#39;: &#39;Fausto&#39;,
    &#39;familyName&#39;: &#39;Ferraccioli&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -768,7 +890,6 @@
    &#39;givenName&#39;: &#39;Rene&#39;,
    &#39;familyName&#39;: &#39;Forsberg&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;DTU Space&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/04qtj9h94&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -778,7 +899,6 @@
    &#39;givenName&#39;: &#39;S&#39;,
    &#39;familyName&#39;: &#39;Franke&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -788,7 +908,6 @@
    &#39;givenName&#39;: &#39;S.&#39;,
    &#39;familyName&#39;: &#39;Fujita&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;National Institute of Polar Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/05k6m5t95&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -798,35 +917,30 @@
    &#39;givenName&#39;: &#39;Y.&#39;,
    &#39;familyName&#39;: &#39;Gim&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Jet Propulsion Laboratory. California Institute of Technology&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/05dxps055&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Goel, V.&#39;,
    &#39;givenName&#39;: &#39;V.&#39;,
    &#39;familyName&#39;: &#39;Goel&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;National Centre for Polar Ocean Research (NCPOR)&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/05af1fm66&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Gogineni, P.&#39;,
    &#39;givenName&#39;: &#39;P.&#39;,
    &#39;familyName&#39;: &#39;Gogineni&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;University of Alabama&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/03xrrjk67&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Greenbaum, J.S.&#39;,
    &#39;givenName&#39;: &#39;J.S.&#39;,
    &#39;familyName&#39;: &#39;Greenbaum&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Institute for Geophysics, Jackson School of Geosciences, University of Texas&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00hj54h04&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Hills, B.&#39;,
    &#39;givenName&#39;: &#39;B.&#39;,
    &#39;familyName&#39;: &#39;Hills&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Department of Earth and Space Sciences, University of Washington&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00cvxb145&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -836,21 +950,18 @@
    &#39;givenName&#39;: &#39;Richard&#39;,
    &#39;familyName&#39;: &#39;Hindmarsh&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Holmlund, P.&#39;,
    &#39;givenName&#39;: &#39;P.&#39;,
    &#39;familyName&#39;: &#39;Holmlund&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Stockholm University&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/05f0yaq80&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Holschuh, N.&#39;,
    &#39;givenName&#39;: &#39;N.&#39;,
    &#39;familyName&#39;: &#39;Holschuh&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Amherst College&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/028vqfs63&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -860,14 +971,12 @@
    &#39;givenName&#39;: &#39;J.W.&#39;,
    &#39;familyName&#39;: &#39;Holt&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;University of Arizona&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/03m2x1q45&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Humbert, A.&#39;,
    &#39;givenName&#39;: &#39;A.&#39;,
    &#39;familyName&#39;: &#39;Humbert&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -877,14 +986,12 @@
    &#39;givenName&#39;: &#39;R.&#39;,
    &#39;familyName&#39;: &#39;Jacobel&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;St. Olaf College&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01q7w1f47&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Jansen, D.&#39;,
    &#39;givenName&#39;: &#39;D.&#39;,
    &#39;familyName&#39;: &#39;Jansen&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -894,7 +1001,6 @@
    &#39;givenName&#39;: &#39;Adrian&#39;,
    &#39;familyName&#39;: &#39;Jenkins&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Northumbria University&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/049e6bc10&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -904,7 +1010,6 @@
    &#39;givenName&#39;: &#39;Wilfried&#39;,
    &#39;familyName&#39;: &#39;Jokat&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred Wegener Institute Helmholtz Center for Polar and Marine Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -914,7 +1019,6 @@
    &#39;givenName&#39;: &#39;Tom&#39;,
    &#39;familyName&#39;: &#39;Jordan&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -924,7 +1028,6 @@
    &#39;givenName&#39;: &#39;Edward&#39;,
    &#39;familyName&#39;: &#39;King&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -934,35 +1037,30 @@
    &#39;givenName&#39;: &#39;Jack&#39;,
    &#39;familyName&#39;: &#39;Kohler&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Norwegian Polar Institute&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/03avf6522&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Krabill, W.&#39;,
    &#39;givenName&#39;: &#39;W.&#39;,
    &#39;familyName&#39;: &#39;Krabill&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;NASA Wallops Flight Facility&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00r57r863&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Langley, K.&#39;,
    &#39;givenName&#39;: &#39;K.&#39;,
    &#39;familyName&#39;: &#39;Langley&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Department of Geosciences, University of Oslo&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01xtthb56&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Lee, J.&#39;,
    &#39;givenName&#39;: &#39;J.&#39;,
    &#39;familyName&#39;: &#39;Lee&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Korean Polar Research Institute&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00n14a494&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Leitchenkov, G.&#39;,
    &#39;givenName&#39;: &#39;G.&#39;,
    &#39;familyName&#39;: &#39;Leitchenkov&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Institute for Geology and Mineral Resources of the World Ocean&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01fe6wg83&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -972,14 +1070,12 @@
    &#39;givenName&#39;: &#39;C.&#39;,
    &#39;familyName&#39;: &#39;Leuschen&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Centre for Remote Sensing of Ice Sheets, University of Kansas&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/04t2m2598&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Luyendyk, B.&#39;,
    &#39;givenName&#39;: &#39;B.&#39;,
    &#39;familyName&#39;: &#39;Luyendyk&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Earth Research Institute, University of California&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/02t274463&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -989,7 +1085,6 @@
    &#39;givenName&#39;: &#39;J.&#39;,
    &#39;familyName&#39;: &#39;MacGregor&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Cryospheric Sciences Lab, NASA Goddard Space Flight Center&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/0171mag52&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -999,7 +1094,6 @@
    &#39;givenName&#39;: &#39;E.&#39;,
    &#39;familyName&#39;: &#39;MacKie&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Department of Geophysics, Stanford University&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00f54p054&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1009,7 +1103,6 @@
    &#39;givenName&#39;: &#39;Kenichi&#39;,
    &#39;familyName&#39;: &#39;Matsuoka&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Norvegian Polar Institute&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/03avf6522&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1019,7 +1112,6 @@
    &#39;givenName&#39;: &#39;Mathieu&#39;,
    &#39;familyName&#39;: &#39;Morlighem&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Department of Earth Sciences, Dartmouth College&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/049s0rh22&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1036,7 +1128,6 @@
    &#39;givenName&#39;: &#39;Frank&#39;,
    &#39;familyName&#39;: &#39;Nitsche&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Lamont-Doherty Earth Observatory, Columbia University&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/02e2tgs60&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1046,21 +1137,18 @@
    &#39;givenName&#39;: &#39;Y.&#39;,
    &#39;familyName&#39;: &#39;Nogi&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;National Institute of Polar Research, Tokyo, Japan&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/05k6m5t95&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Nost, O.&#39;,
    &#39;givenName&#39;: &#39;O.&#39;,
    &#39;familyName&#39;: &#39;Nost&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Norwegian Polar Institute&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/03avf6522&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Paden, John&#39;,
    &#39;givenName&#39;: &#39;John&#39;,
    &#39;familyName&#39;: &#39;Paden&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Center for Remote Sensing of Ice Sheets (CReSIS), The University of Kansas&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/04t2m2598&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1070,7 +1158,6 @@
    &#39;givenName&#39;: &#39;F.&#39;,
    &#39;familyName&#39;: &#39;Pattyn&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Laboratoire de Glaciologie, Universite Libre de Bruxelles&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01r9htc13&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1087,7 +1174,6 @@
    &#39;givenName&#39;: &#39;M.&#39;,
    &#39;familyName&#39;: &#39;Riger-Kusk&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Western Norway University of Applied Sciences&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/05phns765&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Rignot, Eric&#39;,
@@ -1101,7 +1187,6 @@
    &#39;givenName&#39;: &#39;David&#39;,
    &#39;familyName&#39;: &#39;Rippin&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;University of York&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/04m01e293&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1111,14 +1196,12 @@
    &#39;givenName&#39;: &#39;Andres&#39;,
    &#39;familyName&#39;: &#39;Rivera&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Centro de Estudios Cientificos&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00t8xfq63&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Roberts, Jason&#39;,
    &#39;givenName&#39;: &#39;Jason&#39;,
    &#39;familyName&#39;: &#39;Roberts&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;University of Tasmania&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01nfmeh72&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1128,7 +1211,6 @@
    &#39;givenName&#39;: &#39;Neil&#39;,
    &#39;familyName&#39;: &#39;Ross&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Newcastle University&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01kj2bm70&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1138,14 +1220,12 @@
    &#39;givenName&#39;: &#39;A.&#39;,
    &#39;familyName&#39;: &#39;Ruppel&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Federal Institute for Geosciences and Natural Resources&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/04d77de73&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Schroeder, Dustin&#39;,
    &#39;givenName&#39;: &#39;Dustin&#39;,
    &#39;familyName&#39;: &#39;Schroeder&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Stanford University&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00f54p054&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1155,7 +1235,6 @@
    &#39;givenName&#39;: &#39;Martin&#39;,
    &#39;familyName&#39;: &#39;Siegert&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Imperial College London&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/041kmwe10&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1165,7 +1244,6 @@
    &#39;givenName&#39;: &#39;Andrew&#39;,
    &#39;familyName&#39;: &#39;Smith&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1175,7 +1253,6 @@
    &#39;givenName&#39;: &#39;D.&#39;,
    &#39;familyName&#39;: &#39;Steinhage&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1185,7 +1262,6 @@
    &#39;givenName&#39;: &#39;M.&#39;,
    &#39;familyName&#39;: &#39;Studinger&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;NASA Goddard Space Flight Center&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/0171mag52&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1195,21 +1271,18 @@
    &#39;givenName&#39;: &#39;B.&#39;,
    &#39;familyName&#39;: &#39;Sun&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Polar Research Institute of China&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/027fn9x30&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Tabacco, I.&#39;,
    &#39;givenName&#39;: &#39;I.&#39;,
    &#39;familyName&#39;: &#39;Tabacco&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Istituto Nazionale di Geofisica e Vulcanologia&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00qps9a02&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Tinto, Kirsty&#39;,
    &#39;givenName&#39;: &#39;Kirsty&#39;,
    &#39;familyName&#39;: &#39;Tinto&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Lamont Doherty Earth Observatory&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/02e2tgs60&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1219,14 +1292,12 @@
    &#39;givenName&#39;: &#39;S.&#39;,
    &#39;familyName&#39;: &#39;Urbini&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Istituto Nazionale di Geofisica e Vulcanologia&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00qps9a02&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Vaughan, David&#39;,
    &#39;givenName&#39;: &#39;David&#39;,
    &#39;familyName&#39;: &#39;Vaughan&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1236,14 +1307,12 @@
    &#39;givenName&#39;: &#39;B.&#39;,
    &#39;familyName&#39;: &#39;Welch&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;St. Olaf College&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01q7w1f47&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}]},
   {&#39;name&#39;: &#39;Wilson, D.S.&#39;,
    &#39;givenName&#39;: &#39;D.S.&#39;,
    &#39;familyName&#39;: &#39;Wilson&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Marine Science Institute, University of California&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/02t274463&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1253,7 +1322,6 @@
    &#39;givenName&#39;: &#39;Duncan&#39;,
    &#39;familyName&#39;: &#39;Young&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Institute for Geophysics, Jackson School of Geosciences, University of Texas&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00hj54h04&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1263,7 +1331,6 @@
    &#39;givenName&#39;: &#39;A.&#39;,
    &#39;familyName&#39;: &#39;Zirizzotti&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Istituto Nazionale di Geofisica e Vulcanologia&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00qps9a02&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;nameIdentifiers&#39;: [{&#39;schemeUri&#39;: &#39;https://orcid.org&#39;,
@@ -1271,7 +1338,7 @@
      &#39;nameIdentifierScheme&#39;: &#39;ORCID&#39;}]}],
  &#39;titles&#39;: [{&#39;lang&#39;: &#39;en-GB&#39;,
    &#39;title&#39;: &#39;BEDMAP3 - Ice thickness, bed and surface elevation for Antarctica - standardised data points&#39;}],
- &#39;publisher&#39;: &#39;NERC EDS UK Polar Data Centre&#39;,
+ &#39;publisher&#39;: {&#39;name&#39;: &#39;NERC EDS UK Polar Data Centre&#39;},
  &#39;container&#39;: {&#39;type&#39;: &#39;DataRepository&#39;,
   &#39;identifier&#39;: &#39;https://www.bas.ac.uk/project/bedmap/&#39;,
   &#39;identifierType&#39;: &#39;URL&#39;},
@@ -1295,7 +1362,6 @@
    &#39;givenName&#39;: &#39;Peter&#39;,
    &#39;familyName&#39;: &#39;Fretwell&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;ContactPerson&#39;,
@@ -1306,7 +1372,6 @@
    &#39;givenName&#39;: &#39;Alice&#39;,
    &#39;familyName&#39;: &#39;Fremand&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1317,7 +1382,6 @@
    &#39;givenName&#39;: &#39;Peter&#39;,
    &#39;familyName&#39;: &#39;Fretwell&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1328,7 +1392,6 @@
    &#39;givenName&#39;: &#39;Julien&#39;,
    &#39;familyName&#39;: &#39;Bodart&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1339,7 +1402,6 @@
    &#39;givenName&#39;: &#39;Hamish&#39;,
    &#39;familyName&#39;: &#39;Pritchard&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1350,7 +1412,6 @@
    &#39;givenName&#39;: &#39;A.&#39;,
    &#39;familyName&#39;: &#39;Aitken&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Centre for Exploration Targeting, University of Western Australia&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/047272k79&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1361,7 +1422,6 @@
    &#39;givenName&#39;: &#39;Jonathan&#39;,
    &#39;familyName&#39;: &#39;Bamber&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;University of Bristol&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/0524sp257&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1372,7 +1432,6 @@
    &#39;givenName&#39;: &#39;R.E.&#39;,
    &#39;familyName&#39;: &#39;Bell&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Lamont Doherty Earth Observatory, Columbia University, Palisades, NY, USA&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/02e2tgs60&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1383,7 +1442,6 @@
    &#39;givenName&#39;: &#39;C&#39;,
    &#39;familyName&#39;: &#39;Bianchi&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Istituto Nazionale di Geofisica e Vulcanologia&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00qps9a02&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1391,7 +1449,6 @@
    &#39;givenName&#39;: &#39;Robert&#39;,
    &#39;familyName&#39;: &#39;Bingham&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;University of Edinburgh&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01nrxwf90&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1402,7 +1459,6 @@
    &#39;givenName&#39;: &#39;Donald&#39;,
    &#39;familyName&#39;: &#39;Blankenship&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Institute for Geophysics, Jackson School of Geosciences, University of Texas&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00hj54h04&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1413,7 +1469,6 @@
    &#39;givenName&#39;: &#39;G.&#39;,
    &#39;familyName&#39;: &#39;Casassa&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Centro de Estudios Cientificos&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00t8xfq63&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1429,7 +1484,6 @@
    &#39;givenName&#39;: &#39;K&#39;,
    &#39;familyName&#39;: &#39;Christianson&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Earth and Space Sciences, University of Washington&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00cvxb145&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1440,7 +1494,6 @@
    &#39;givenName&#39;: &#39;H&#39;,
    &#39;familyName&#39;: &#39;Conway&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Earth and Space Sciences, University of Washington&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00cvxb145&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1451,7 +1504,6 @@
    &#39;givenName&#39;: &#39;Hugh&#39;,
    &#39;familyName&#39;: &#39;Corr&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1459,7 +1511,6 @@
    &#39;givenName&#39;: &#39;X.&#39;,
    &#39;familyName&#39;: &#39;Cui&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Polar Research Institute of China&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/027fn9x30&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1470,7 +1521,6 @@
    &#39;givenName&#39;: &#39;D&#39;,
    &#39;familyName&#39;: &#39;Damaske&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Center for Marine Environmental Sciences, University Bremen&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/04ers2y35&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1478,7 +1528,6 @@
    &#39;givenName&#39;: &#39;V.&#39;,
    &#39;familyName&#39;: &#39;Damn&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Federal Institute for Geosciences and Natural Resources&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/04d77de73&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1486,7 +1535,6 @@
    &#39;givenName&#39;: &#39;R.&#39;,
    &#39;familyName&#39;: &#39;Drews&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Tubingen University, Department of Geosciences&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/03a1kwz48&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1497,7 +1545,6 @@
    &#39;givenName&#39;: &#39;G.&#39;,
    &#39;familyName&#39;: &#39;Eagles&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred-Wegener-Institut Helmholtz-Zentrum fur Polar und Meeresforschung&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1508,7 +1555,6 @@
    &#39;givenName&#39;: &#39;O.&#39;,
    &#39;familyName&#39;: &#39;Eisen&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1519,7 +1565,6 @@
    &#39;givenName&#39;: &#39;H.&#39;,
    &#39;familyName&#39;: &#39;Eisermann&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1527,7 +1572,6 @@
    &#39;givenName&#39;: &#39;Fausto&#39;,
    &#39;familyName&#39;: &#39;Ferraccioli&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1538,7 +1582,6 @@
    &#39;givenName&#39;: &#39;Rene&#39;,
    &#39;familyName&#39;: &#39;Forsberg&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;DTU Space&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/04qtj9h94&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1549,7 +1592,6 @@
    &#39;givenName&#39;: &#39;S&#39;,
    &#39;familyName&#39;: &#39;Franke&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1560,7 +1602,6 @@
    &#39;givenName&#39;: &#39;S.&#39;,
    &#39;familyName&#39;: &#39;Fujita&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;National Institute of Polar Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/05k6m5t95&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1571,7 +1612,6 @@
    &#39;givenName&#39;: &#39;Y.&#39;,
    &#39;familyName&#39;: &#39;Gim&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Jet Propulsion Laboratory. California Institute of Technology&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/05dxps055&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1579,7 +1619,6 @@
    &#39;givenName&#39;: &#39;V.&#39;,
    &#39;familyName&#39;: &#39;Goel&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;National Centre for Polar Ocean Research (NCPOR)&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/05af1fm66&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1587,7 +1626,6 @@
    &#39;givenName&#39;: &#39;P.&#39;,
    &#39;familyName&#39;: &#39;Gogineni&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;University of Alabama&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/03xrrjk67&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1595,7 +1633,6 @@
    &#39;givenName&#39;: &#39;J.S.&#39;,
    &#39;familyName&#39;: &#39;Greenbaum&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Institute for Geophysics, Jackson School of Geosciences, University of Texas&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00hj54h04&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1603,7 +1640,6 @@
    &#39;givenName&#39;: &#39;B.&#39;,
    &#39;familyName&#39;: &#39;Hills&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Department of Earth and Space Sciences, University of Washington&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00cvxb145&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1614,7 +1650,6 @@
    &#39;givenName&#39;: &#39;Richard&#39;,
    &#39;familyName&#39;: &#39;Hindmarsh&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1622,7 +1657,6 @@
    &#39;givenName&#39;: &#39;P.&#39;,
    &#39;familyName&#39;: &#39;Holmlund&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Stockholm University&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/05f0yaq80&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1630,7 +1664,6 @@
    &#39;givenName&#39;: &#39;N.&#39;,
    &#39;familyName&#39;: &#39;Holschuh&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Amherst College&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/028vqfs63&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1641,7 +1674,6 @@
    &#39;givenName&#39;: &#39;J.W.&#39;,
    &#39;familyName&#39;: &#39;Holt&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;University of Arizona&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/03m2x1q45&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1649,7 +1681,6 @@
    &#39;givenName&#39;: &#39;A.&#39;,
    &#39;familyName&#39;: &#39;Humbert&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1660,7 +1691,6 @@
    &#39;givenName&#39;: &#39;R.&#39;,
    &#39;familyName&#39;: &#39;Jacobel&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;St. Olaf College&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01q7w1f47&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1668,7 +1698,6 @@
    &#39;givenName&#39;: &#39;D.&#39;,
    &#39;familyName&#39;: &#39;Jansen&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1679,7 +1708,6 @@
    &#39;givenName&#39;: &#39;Adrian&#39;,
    &#39;familyName&#39;: &#39;Jenkins&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Northumbria University&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/049e6bc10&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1690,7 +1718,6 @@
    &#39;givenName&#39;: &#39;Wilfried&#39;,
    &#39;familyName&#39;: &#39;Jokat&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred Wegener Institute Helmholtz Center for Polar and Marine Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1701,7 +1728,6 @@
    &#39;givenName&#39;: &#39;Tom&#39;,
    &#39;familyName&#39;: &#39;Jordan&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1712,7 +1738,6 @@
    &#39;givenName&#39;: &#39;Edward&#39;,
    &#39;familyName&#39;: &#39;King&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1723,7 +1748,6 @@
    &#39;givenName&#39;: &#39;Jack&#39;,
    &#39;familyName&#39;: &#39;Kohler&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Norwegian Polar Institute&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/03avf6522&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1731,7 +1755,6 @@
    &#39;givenName&#39;: &#39;W.&#39;,
    &#39;familyName&#39;: &#39;Krabill&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;NASA Wallops Flight Facility&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00r57r863&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1739,7 +1762,6 @@
    &#39;givenName&#39;: &#39;K.&#39;,
    &#39;familyName&#39;: &#39;Langley&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Department of Geosciences, University of Oslo&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01xtthb56&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1747,7 +1769,6 @@
    &#39;givenName&#39;: &#39;J.&#39;,
    &#39;familyName&#39;: &#39;Lee&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Korean Polar Research Institute&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00n14a494&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1755,7 +1776,6 @@
    &#39;givenName&#39;: &#39;G.&#39;,
    &#39;familyName&#39;: &#39;Leitchenkov&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Institute for Geology and Mineral Resources of the World Ocean&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01fe6wg83&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1766,7 +1786,6 @@
    &#39;givenName&#39;: &#39;C.&#39;,
    &#39;familyName&#39;: &#39;Leuschen&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Centre for Remote Sensing of Ice Sheets, University of Kansas&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/04t2m2598&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1774,7 +1793,6 @@
    &#39;givenName&#39;: &#39;B.&#39;,
    &#39;familyName&#39;: &#39;Luyendyk&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Earth Research Institute, University of California&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/02t274463&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1785,7 +1803,6 @@
    &#39;givenName&#39;: &#39;J.&#39;,
    &#39;familyName&#39;: &#39;MacGregor&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Cryospheric Sciences Lab, NASA Goddard Space Flight Center&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/0171mag52&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1796,7 +1813,6 @@
    &#39;givenName&#39;: &#39;E.&#39;,
    &#39;familyName&#39;: &#39;MacKie&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Department of Geophysics, Stanford University&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00f54p054&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1807,7 +1823,6 @@
    &#39;givenName&#39;: &#39;Kenichi&#39;,
    &#39;familyName&#39;: &#39;Matsuoka&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Norvegian Polar Institute&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/03avf6522&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1818,7 +1833,6 @@
    &#39;givenName&#39;: &#39;Mathieu&#39;,
    &#39;familyName&#39;: &#39;Morlighem&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Department of Earth Sciences, Dartmouth College&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/049s0rh22&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1837,7 +1851,6 @@
    &#39;givenName&#39;: &#39;Frank&#39;,
    &#39;familyName&#39;: &#39;Nitsche&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Lamont-Doherty Earth Observatory, Columbia University&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/02e2tgs60&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1848,7 +1861,6 @@
    &#39;givenName&#39;: &#39;Y.&#39;,
    &#39;familyName&#39;: &#39;Nogi&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;National Institute of Polar Research, Tokyo, Japan&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/05k6m5t95&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1856,7 +1868,6 @@
    &#39;givenName&#39;: &#39;O.&#39;,
    &#39;familyName&#39;: &#39;Nost&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Norwegian Polar Institute&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/03avf6522&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1864,7 +1875,6 @@
    &#39;givenName&#39;: &#39;John&#39;,
    &#39;familyName&#39;: &#39;Paden&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Center for Remote Sensing of Ice Sheets (CReSIS), The University of Kansas&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/04t2m2598&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1875,7 +1885,6 @@
    &#39;givenName&#39;: &#39;F.&#39;,
    &#39;familyName&#39;: &#39;Pattyn&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Laboratoire de Glaciologie, Universite Libre de Bruxelles&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01r9htc13&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1894,7 +1903,6 @@
    &#39;givenName&#39;: &#39;M.&#39;,
    &#39;familyName&#39;: &#39;Riger-Kusk&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Western Norway University of Applied Sciences&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/05phns765&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1910,7 +1918,6 @@
    &#39;givenName&#39;: &#39;David&#39;,
    &#39;familyName&#39;: &#39;Rippin&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;University of York&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/04m01e293&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1921,7 +1928,6 @@
    &#39;givenName&#39;: &#39;Andres&#39;,
    &#39;familyName&#39;: &#39;Rivera&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Centro de Estudios Cientificos&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00t8xfq63&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1929,7 +1935,6 @@
    &#39;givenName&#39;: &#39;Jason&#39;,
    &#39;familyName&#39;: &#39;Roberts&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;University of Tasmania&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01nfmeh72&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1940,7 +1945,6 @@
    &#39;givenName&#39;: &#39;Neil&#39;,
    &#39;familyName&#39;: &#39;Ross&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Newcastle University&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01kj2bm70&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1951,7 +1955,6 @@
    &#39;givenName&#39;: &#39;A.&#39;,
    &#39;familyName&#39;: &#39;Ruppel&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Federal Institute for Geosciences and Natural Resources&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/04d77de73&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -1959,7 +1962,6 @@
    &#39;givenName&#39;: &#39;Dustin&#39;,
    &#39;familyName&#39;: &#39;Schroeder&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Stanford University&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00f54p054&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1970,7 +1972,6 @@
    &#39;givenName&#39;: &#39;Martin&#39;,
    &#39;familyName&#39;: &#39;Siegert&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Imperial College London&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/041kmwe10&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1981,7 +1982,6 @@
    &#39;givenName&#39;: &#39;Andrew&#39;,
    &#39;familyName&#39;: &#39;Smith&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -1992,7 +1992,6 @@
    &#39;givenName&#39;: &#39;D.&#39;,
    &#39;familyName&#39;: &#39;Steinhage&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/032e6b942&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -2003,7 +2002,6 @@
    &#39;givenName&#39;: &#39;M.&#39;,
    &#39;familyName&#39;: &#39;Studinger&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;NASA Goddard Space Flight Center&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/0171mag52&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -2014,7 +2012,6 @@
    &#39;givenName&#39;: &#39;B.&#39;,
    &#39;familyName&#39;: &#39;Sun&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Polar Research Institute of China&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/027fn9x30&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -2022,7 +2019,6 @@
    &#39;givenName&#39;: &#39;I.&#39;,
    &#39;familyName&#39;: &#39;Tabacco&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Istituto Nazionale di Geofisica e Vulcanologia&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00qps9a02&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -2030,7 +2026,6 @@
    &#39;givenName&#39;: &#39;Kirsty&#39;,
    &#39;familyName&#39;: &#39;Tinto&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Lamont Doherty Earth Observatory&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/02e2tgs60&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -2041,7 +2036,6 @@
    &#39;givenName&#39;: &#39;S.&#39;,
    &#39;familyName&#39;: &#39;Urbini&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Istituto Nazionale di Geofisica e Vulcanologia&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00qps9a02&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -2049,7 +2043,6 @@
    &#39;givenName&#39;: &#39;David&#39;,
    &#39;familyName&#39;: &#39;Vaughan&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;British Antarctic Survey&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01rhff309&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -2060,7 +2053,6 @@
    &#39;givenName&#39;: &#39;B.&#39;,
    &#39;familyName&#39;: &#39;Welch&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;St. Olaf College&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/01q7w1f47&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;},
@@ -2068,7 +2060,6 @@
    &#39;givenName&#39;: &#39;D.S.&#39;,
    &#39;familyName&#39;: &#39;Wilson&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Marine Science Institute, University of California&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/02t274463&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -2079,7 +2070,6 @@
    &#39;givenName&#39;: &#39;Duncan&#39;,
    &#39;familyName&#39;: &#39;Young&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Institute for Geophysics, Jackson School of Geosciences, University of Texas&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00hj54h04&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -2090,7 +2080,6 @@
    &#39;givenName&#39;: &#39;A.&#39;,
    &#39;familyName&#39;: &#39;Zirizzotti&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Istituto Nazionale di Geofisica e Vulcanologia&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/00qps9a02&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Researcher&#39;,
@@ -2099,21 +2088,18 @@
      &#39;nameIdentifierScheme&#39;: &#39;ORCID&#39;}]},
   {&#39;name&#39;: &#39;UK Polar Data Centre&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Natural Environment Research Council&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/02b5d8509&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;DataManager&#39;,
    &#39;nameIdentifiers&#39;: []},
   {&#39;name&#39;: &#39;UK Polar Data Centre&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Natural Environment Research Council&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/02b5d8509&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;Distributor&#39;,
    &#39;nameIdentifiers&#39;: []},
   {&#39;name&#39;: &#39;UK Polar Data Centre&#39;,
    &#39;affiliation&#39;: [{&#39;name&#39;: &#39;Natural Environment Research Council&#39;,
-     &#39;schemeUri&#39;: &#39;https://ror.org/&#39;,
      &#39;affiliationIdentifier&#39;: &#39;https://ror.org/02b5d8509&#39;,
      &#39;affiliationIdentifierScheme&#39;: &#39;ROR&#39;}],
    &#39;contributorType&#39;: &#39;HostingInstitution&#39;,
@@ -2136,13 +2122,13 @@
    &#39;rightsIdentifier&#39;: &#39;cc-by-4.0&#39;,
    &#39;rightsIdentifierScheme&#39;: &#39;SPDX&#39;}],
  &#39;descriptions&#39;: [{&#39;lang&#39;: &#39;en-GB&#39;,
-   &#39;description&#39;: &quot;We present here the Bedmap3 ice thickness, bed and surface elevation standardised CSV data points that are used to create the Bedmap3 gridding products in addition to the previous data releases. The data consists of 50 million points acquired by 17 different data providers in Antarctica. The associated datasets consist of: - Bedmap1 standardised CSV data points: https://doi.org/10.5285/f64815ec-4077-4432-9f55-0ce230f46029 - Bedmap2 standardised CSV data points: https://doi.org/10.5285/2fd95199-365e-4da1-ae26-3b6d48b3e6ac - Bedmap3 statistically-summarised data points (shapefiles): https://doi.org/10.5285/a72a50c6-a829-4e12-9f9a-5a683a1acc4a This work is supported by the SCAR Bedmap project and the British Antarctic Survey&#39;s core programme: National Capability - Polar Expertise Supporting UK Research&quot;,
+   &#39;description&#39;: &quot;We present here the Bedmap3 ice thickness, bed and surface elevation standardised CSV data points that are used to create the Bedmap3 gridding products in addition to the previous data releases. The data consists of 50 million points acquired by 17 different data providers in Antarctica.\nThe associated datasets consist of: \n- Bedmap1 standardised CSV data points: https://doi.org/10.5285/f64815ec-4077-4432-9f55-0ce230f46029\n- Bedmap2 standardised CSV data points: https://doi.org/10.5285/2fd95199-365e-4da1-ae26-3b6d48b3e6ac\n- Bedmap3 statistically-summarised data points (shapefiles): https://doi.org/10.5285/a72a50c6-a829-4e12-9f9a-5a683a1acc4a\nThis work is supported by the SCAR Bedmap project and the British Antarctic Survey&#39;s core programme: National Capability - Polar Expertise Supporting UK Research&quot;,
    &#39;descriptionType&#39;: &#39;Abstract&#39;},
   {&#39;lang&#39;: &#39;en-GB&#39;,
-   &#39;description&#39;: &#39;The primary source data consist of survey point measurements of ice thickness, bed elevation and surface elevation, which principally comes from airborne radar surveys and seismic soundings, and to a smaller extent from ground-based radar surveys. All the data have been standardised to a specific CSV format. The format consists of (i) an extended header section where (a) each line is introduced by a comment (#) character, (b) each line contains a single header item, (c) the colon character (:) is used as the key/value separator, (d) units are in parentheses, (e) attributes preferably use a common vocabulary such as the CF convention and includes attributes from the ACDD; (ii) a header row composed of the column name following the CF convention and units in parentheses; and finally (iii) the data using comma as the separator. The extended header consists of general information regarding each campaign such as the year, the name of the main investigator, funding and processing details. The variable names are as follows: trajectory_id Line or Flight ID trace_number Trace number from the specific line given in Line_ID longitude Longitude (WGS84 EPSG: 4326) in decimal degrees latitude Latitude (WGS84 EPSG: 4326) in decimal degrees date Date following ISO 8601 format: YYYY: year, MM: month, DD: day time_UTC UTC time following ISO 8601 format: HH: hours, MM: minutes, SS: seconds surface_altitude Surface elevation or altitude (referenced to WGS84) in meters land_ice_thickness Ice thickness in meters bedrock_altitude Bed elevation or altitude (referenced to WGS84) in meters two_way_travel_time Two-way travel time in seconds aircraft_altitude Aircraft elevation or altitude when applicable (referenced to WGS84) in meters along_track_distance Distance in the along-track direction in meters&#39;,
+   &#39;description&#39;: &#39;The primary source data consist of survey point measurements of ice thickness, bed elevation and surface elevation, which principally comes from airborne radar surveys and seismic soundings, and to a smaller extent from ground-based radar surveys. \nAll the data have been standardised to a specific CSV format. The format consists of (i) an extended header section where (a) each line is introduced by a comment (#) character, (b) each line contains a single header item, (c) the colon character (:) is used as the key/value separator, (d) units are in parentheses, (e) attributes preferably use a common vocabulary such as the CF convention and includes attributes from the ACDD; (ii) a header row composed of the column name following the CF convention and units in parentheses; and finally (iii) the data using comma as the separator. The extended header consists of general information regarding each campaign such as the year, the name of the main investigator, funding and processing details.\nThe variable names are as follows: \ntrajectory_id Line or Flight ID\ntrace_number Trace number from the specific line given in Line_ID\nlongitude Longitude (WGS84 EPSG: 4326) in decimal degrees\nlatitude Latitude (WGS84 EPSG: 4326) in decimal degrees\ndate Date following ISO 8601 format: YYYY: year, MM: month, DD: day\ntime_UTC UTC time following ISO 8601 format: HH: hours, MM: minutes, SS: seconds\nsurface_altitude Surface elevation or altitude (referenced to WGS84) in meters\nland_ice_thickness Ice thickness in meters\nbedrock_altitude Bed elevation or altitude (referenced to WGS84) in meters\ntwo_way_travel_time Two-way travel time in seconds\naircraft_altitude Aircraft elevation or altitude when applicable (referenced to WGS84) in meters\nalong_track_distance Distance in the along-track direction in meters&#39;,
    &#39;descriptionType&#39;: &#39;Methods&#39;},
   {&#39;lang&#39;: &#39;en-GB&#39;,
-   &#39;description&#39;: &quot;All non-value data were converted to -9999, including any negative ice thickness values and any points with clear outliers. We checked the minimum and maximum values of each field to ensure the data are in a reasonable range and calculated mean and standard deviation on each dataset to identify potential issues. For example, if longitude/latitude values did not fall within the expected -180 to 180 or -50 to -90 degrees range respectively, the entire row was removed. When no ice thickness values were provided but surface and bed elevation values existed, we simply calculated ice thickness by subtracting the surface value from the bed value. At times, bed elevation was higher than surface elevation, likely due to issues with the semi-automatic picker used to extract the surface and bed reflector or a lack of distinctive reflectors in areas of shallow ice. To prevent this affecting the gridded product, we converted these values to -9999 for both the surface and the bed. Finally, we also conducted routine checks on the ice thickness data by comparing the given ice thickness value with the inferred ice thickness calculated from subtracting surface with bed. If these did not match, we placed -9999 on the ice thickness values. File naming conventions were also used throughout to easily identify a specific dataset as follows: DataProvider_Year_CampaignName_TypeofData_BM3. The type of data used was separated into three categories: Airborne Radar (AIR), Ground-based Radar (GRN), and Seismic (SEI) data. The &#39;BM3&#39; abbreviation at the end identifies the datasets was part of the Bedmap3 compilation to differentiate from the Bedmap 1 and 2 (BM1 and BM2) compilations. For instance, the file named &#39;NASA_2019_ICEBRIDGE_AIR_BM3.csv&#39; refers to the ICEBRIDGE airborne campaign led by NASA in 2019.&quot;,
+   &#39;description&#39;: &quot;All non-value data were converted to -9999, including any negative ice thickness values and any points with clear outliers. We checked the minimum and maximum values of each field to ensure the data are in a reasonable range and calculated mean and standard deviation on each dataset to identify potential issues. For example, if longitude/latitude values did not fall within the expected -180 to 180 or -50 to -90 degrees range respectively, the entire row was removed. When no ice thickness values were provided but surface and bed elevation values existed, we simply calculated ice thickness by subtracting the surface value from the bed value. At times, bed elevation was higher than surface elevation, likely due to issues with the semi-automatic picker used to extract the surface and bed reflector or a lack of distinctive reflectors in areas of shallow ice. To prevent this affecting the gridded product, we converted these values to -9999 for both the surface and the bed. Finally, we also conducted routine checks on the ice thickness data by comparing the given ice thickness value with the inferred ice thickness calculated from subtracting surface with bed. If these did not match, we placed -9999 on the ice thickness values.\n File naming conventions were also used throughout to easily identify a specific dataset as follows: DataProvider_Year_CampaignName_TypeofData_BM3. The type of data used was separated into three categories: Airborne Radar (AIR), Ground-based Radar (GRN), and Seismic (SEI) data. The &#39;BM3&#39; abbreviation at the end identifies the datasets was part of the Bedmap3 compilation to differentiate from the Bedmap 1 and 2 (BM1 and BM2) compilations. For instance, the file named &#39;NASA_2019_ICEBRIDGE_AIR_BM3.csv&#39; refers to the ICEBRIDGE airborne campaign led by NASA in 2019.&quot;,
    &#39;descriptionType&#39;: &#39;Other&#39;}],
  &#39;geoLocations&#39;: [{&#39;geoLocationBox&#39;: {&#39;eastBoundLongitude&#39;: &#39;180&#39;,
     &#39;northBoundLatitude&#39;: &#39;-60&#39;,
@@ -2150,6 +2136,7 @@
     &#39;westBoundLongitude&#39;: &#39;-180&#39;},
    &#39;geoLocationPlace&#39;: &#39;Antarctica&#39;}],
  &#39;fundingReferences&#39;: [{&#39;awardUri&#39;: &#39;https://gtr.ukri.org/projects?ref=NE/R016038/1&#39;,
+   &#39;schemeUri&#39;: &#39;https://ror.org&#39;,
    &#39;awardTitle&#39;: &#39;National Capability - Polar Expertise Supporting UK Research&#39;,
    &#39;funderName&#39;: &#39;Natural Environment Research Council&#39;,
    &#39;awardNumber&#39;: &#39;NE/R016038/1&#39;,
@@ -2190,6 +2177,62 @@
   {&#39;relationType&#39;: &#39;References&#39;,
    &#39;relatedIdentifier&#39;: &#39;10.5194/tc-7-375-2013&#39;,
    &#39;resourceTypeGeneral&#39;: &#39;Text&#39;,
+   &#39;relatedIdentifierType&#39;: &#39;DOI&#39;},
+  {&#39;relationType&#39;: &#39;References&#39;,
+   &#39;relatedIdentifier&#39;: &#39;10.1594/pangaea.972094 &#39;,
+   &#39;resourceTypeGeneral&#39;: &#39;Dataset&#39;,
+   &#39;relatedIdentifierType&#39;: &#39;DOI&#39;},
+  {&#39;relationType&#39;: &#39;References&#39;,
+   &#39;relatedIdentifier&#39;: &#39;10.13127/ires&#39;,
+   &#39;resourceTypeGeneral&#39;: &#39;Dataset&#39;,
+   &#39;relatedIdentifierType&#39;: &#39;DOI&#39;},
+  {&#39;relationType&#39;: &#39;References&#39;,
+   &#39;relatedIdentifier&#39;: &#39;10.5067/9ebr2t0vxudg&#39;,
+   &#39;resourceTypeGeneral&#39;: &#39;Dataset&#39;,
+   &#39;relatedIdentifierType&#39;: &#39;DOI&#39;},
+  {&#39;relationType&#39;: &#39;References&#39;,
+   &#39;relatedIdentifier&#39;: &#39;10.26179/5xcc-4836&#39;,
+   &#39;resourceTypeGeneral&#39;: &#39;Dataset&#39;,
+   &#39;relatedIdentifierType&#39;: &#39;DOI&#39;},
+  {&#39;relationType&#39;: &#39;References&#39;,
+   &#39;relatedIdentifier&#39;: &#39;10.5067/gdq0cucvte2q&#39;,
+   &#39;resourceTypeGeneral&#39;: &#39;Dataset&#39;,
+   &#39;relatedIdentifierType&#39;: &#39;DOI&#39;},
+  {&#39;relationType&#39;: &#39;References&#39;,
+   &#39;relatedIdentifier&#39;: &#39;10.15784/601047&#39;,
+   &#39;resourceTypeGeneral&#39;: &#39;Dataset&#39;,
+   &#39;relatedIdentifierType&#39;: &#39;DOI&#39;},
+  {&#39;relationType&#39;: &#39;References&#39;,
+   &#39;relatedIdentifier&#39;: &#39;10.15784/601001&#39;,
+   &#39;resourceTypeGeneral&#39;: &#39;Dataset&#39;,
+   &#39;relatedIdentifierType&#39;: &#39;DOI&#39;},
+  {&#39;relationType&#39;: &#39;References&#39;,
+   &#39;relatedIdentifier&#39;: &#39;10.15784/601437&#39;,
+   &#39;resourceTypeGeneral&#39;: &#39;Dataset&#39;,
+   &#39;relatedIdentifierType&#39;: &#39;DOI&#39;},
+  {&#39;relationType&#39;: &#39;References&#39;,
+   &#39;relatedIdentifier&#39;: &#39;10.5281/zenodo.3874654&#39;,
+   &#39;resourceTypeGeneral&#39;: &#39;Dataset&#39;,
+   &#39;relatedIdentifierType&#39;: &#39;DOI&#39;},
+  {&#39;relationType&#39;: &#39;References&#39;,
+   &#39;relatedIdentifier&#39;: &#39;10.5285/6549203d-da8b-4a22-924b-a9e1471ea7f1&#39;,
+   &#39;resourceTypeGeneral&#39;: &#39;Dataset&#39;,
+   &#39;relatedIdentifierType&#39;: &#39;DOI&#39;},
+  {&#39;relationType&#39;: &#39;References&#39;,
+   &#39;relatedIdentifier&#39;: &#39;10.5285/7946c497-72fc-41cb-a9b2-bf9980efe156&#39;,
+   &#39;resourceTypeGeneral&#39;: &#39;Dataset&#39;,
+   &#39;relatedIdentifierType&#39;: &#39;DOI&#39;},
+  {&#39;relationType&#39;: &#39;References&#39;,
+   &#39;relatedIdentifier&#39;: &#39;10.5285/e7851bba-21ff-4645-b557-d8eafdf89462&#39;,
+   &#39;resourceTypeGeneral&#39;: &#39;Dataset&#39;,
+   &#39;relatedIdentifierType&#39;: &#39;DOI&#39;},
+  {&#39;relationType&#39;: &#39;References&#39;,
+   &#39;relatedIdentifier&#39;: &#39;10.5285/d55e87dd-a74d-4182-be99-93ab805103ab&#39;,
+   &#39;resourceTypeGeneral&#39;: &#39;Dataset&#39;,
+   &#39;relatedIdentifierType&#39;: &#39;DOI&#39;},
+  {&#39;relationType&#39;: &#39;References&#39;,
+   &#39;relatedIdentifier&#39;: &#39;10.5285/7c12898d-7e55-458c-ba7d-ecec8252f3b5&#39;,
+   &#39;resourceTypeGeneral&#39;: &#39;Dataset&#39;,
    &#39;relatedIdentifierType&#39;: &#39;DOI&#39;}],
  &#39;relatedItems&#39;: [],
  &#39;schemaVersion&#39;: &#39;http://datacite.org/schema/kernel-4&#39;,
@@ -2202,9 +2245,9 @@
 </div>
 </div>
 <p>It is now possible to add the relevant and rich DOI metadata to the simple metadata specific to the survey. Depending on the standard, the name of the field may differ. The example below shows how the metadata are transformed to NetCDF compliant metadata.</p>
-</div>
-<div class="section" id="getting-the-full-metadata-from-the-csv-file">
-<h2>Getting the full metadata from the CSV file<a class="headerlink" href="#getting-the-full-metadata-from-the-csv-file" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="getting-the-full-metadata-from-the-csv-file">
+<h2>Getting the full metadata from the CSV file<a class="headerlink" href="#getting-the-full-metadata-from-the-csv-file" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dict_metadata</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DOI_metadata</span><span class="p">[</span><span class="s1">&#39;titles&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
@@ -2258,16 +2301,16 @@
  &#39;platform&#39;: &#39;airborne radar.&#39;,
  &#39;instrument&#39;: &#39;AWI EMR.&#39;,
  &#39;history&#39;: &#39;Incoherent processing&#39;,
- &#39;electromagnetic_wave_speed_in_ice&#39;: &#39;168 (meters/microseconds)&#39;,
+ &#39;electromagnetic_wave_speed_in_ice&#39;: &#39;168.0 (meters/microseconds)&#39;,
  &#39;firn_correction&#39;: &#39;0 (m)&#39;,
  &#39;centre_frequency&#39;: &#39;150 (MHz)&#39;,
- &#39;comment&#39;: &quot;The primary source data consist of survey point measurements of ice thickness, bed elevation and surface elevation, which principally comes from airborne radar surveys and seismic soundings, and to a smaller extent from ground-based radar surveys. All the data have been standardised to a specific CSV format. The format consists of (i) an extended header section where (a) each line is introduced by a comment (#) character, (b) each line contains a single header item, (c) the colon character (:) is used as the key/value separator, (d) units are in parentheses, (e) attributes preferably use a common vocabulary such as the CF convention and includes attributes from the ACDD; (ii) a header row composed of the column name following the CF convention and units in parentheses; and finally (iii) the data using comma as the separator. The extended header consists of general information regarding each campaign such as the year, the name of the main investigator, funding and processing details. The variable names are as follows: trajectory_id Line or Flight ID trace_number Trace number from the specific line given in Line_ID longitude Longitude (WGS84 EPSG: 4326) in decimal degrees latitude Latitude (WGS84 EPSG: 4326) in decimal degrees date Date following ISO 8601 format: YYYY: year, MM: month, DD: day time_UTC UTC time following ISO 8601 format: HH: hours, MM: minutes, SS: seconds surface_altitude Surface elevation or altitude (referenced to WGS84) in meters land_ice_thickness Ice thickness in meters bedrock_altitude Bed elevation or altitude (referenced to WGS84) in meters two_way_travel_time Two-way travel time in seconds aircraft_altitude Aircraft elevation or altitude when applicable (referenced to WGS84) in meters along_track_distance Distance in the along-track direction in metersAll non-value data were converted to -9999, including any negative ice thickness values and any points with clear outliers. We checked the minimum and maximum values of each field to ensure the data are in a reasonable range and calculated mean and standard deviation on each dataset to identify potential issues. For example, if longitude/latitude values did not fall within the expected -180 to 180 or -50 to -90 degrees range respectively, the entire row was removed. When no ice thickness values were provided but surface and bed elevation values existed, we simply calculated ice thickness by subtracting the surface value from the bed value. At times, bed elevation was higher than surface elevation, likely due to issues with the semi-automatic picker used to extract the surface and bed reflector or a lack of distinctive reflectors in areas of shallow ice. To prevent this affecting the gridded product, we converted these values to -9999 for both the surface and the bed. Finally, we also conducted routine checks on the ice thickness data by comparing the given ice thickness value with the inferred ice thickness calculated from subtracting surface with bed. If these did not match, we placed -9999 on the ice thickness values. File naming conventions were also used throughout to easily identify a specific dataset as follows: DataProvider_Year_CampaignName_TypeofData_BM3. The type of data used was separated into three categories: Airborne Radar (AIR), Ground-based Radar (GRN), and Seismic (SEI) data. The &#39;BM3&#39; abbreviation at the end identifies the datasets was part of the Bedmap3 compilation to differentiate from the Bedmap 1 and 2 (BM1 and BM2) compilations. For instance, the file named &#39;NASA_2019_ICEBRIDGE_AIR_BM3.csv&#39; refers to the ICEBRIDGE airborne campaign led by NASA in 2019.&quot;,
+ &#39;comment&#39;: &quot;The primary source data consist of survey point measurements of ice thickness, bed elevation and surface elevation, which principally comes from airborne radar surveys and seismic soundings, and to a smaller extent from ground-based radar surveys. \nAll the data have been standardised to a specific CSV format. The format consists of (i) an extended header section where (a) each line is introduced by a comment (#) character, (b) each line contains a single header item, (c) the colon character (:) is used as the key/value separator, (d) units are in parentheses, (e) attributes preferably use a common vocabulary such as the CF convention and includes attributes from the ACDD; (ii) a header row composed of the column name following the CF convention and units in parentheses; and finally (iii) the data using comma as the separator. The extended header consists of general information regarding each campaign such as the year, the name of the main investigator, funding and processing details.\nThe variable names are as follows: \ntrajectory_id Line or Flight ID\ntrace_number Trace number from the specific line given in Line_ID\nlongitude Longitude (WGS84 EPSG: 4326) in decimal degrees\nlatitude Latitude (WGS84 EPSG: 4326) in decimal degrees\ndate Date following ISO 8601 format: YYYY: year, MM: month, DD: day\ntime_UTC UTC time following ISO 8601 format: HH: hours, MM: minutes, SS: seconds\nsurface_altitude Surface elevation or altitude (referenced to WGS84) in meters\nland_ice_thickness Ice thickness in meters\nbedrock_altitude Bed elevation or altitude (referenced to WGS84) in meters\ntwo_way_travel_time Two-way travel time in seconds\naircraft_altitude Aircraft elevation or altitude when applicable (referenced to WGS84) in meters\nalong_track_distance Distance in the along-track direction in metersAll non-value data were converted to -9999, including any negative ice thickness values and any points with clear outliers. We checked the minimum and maximum values of each field to ensure the data are in a reasonable range and calculated mean and standard deviation on each dataset to identify potential issues. For example, if longitude/latitude values did not fall within the expected -180 to 180 or -50 to -90 degrees range respectively, the entire row was removed. When no ice thickness values were provided but surface and bed elevation values existed, we simply calculated ice thickness by subtracting the surface value from the bed value. At times, bed elevation was higher than surface elevation, likely due to issues with the semi-automatic picker used to extract the surface and bed reflector or a lack of distinctive reflectors in areas of shallow ice. To prevent this affecting the gridded product, we converted these values to -9999 for both the surface and the bed. Finally, we also conducted routine checks on the ice thickness data by comparing the given ice thickness value with the inferred ice thickness calculated from subtracting surface with bed. If these did not match, we placed -9999 on the ice thickness values.\n File naming conventions were also used throughout to easily identify a specific dataset as follows: DataProvider_Year_CampaignName_TypeofData_BM3. The type of data used was separated into three categories: Airborne Radar (AIR), Ground-based Radar (GRN), and Seismic (SEI) data. The &#39;BM3&#39; abbreviation at the end identifies the datasets was part of the Bedmap3 compilation to differentiate from the Bedmap 1 and 2 (BM1 and BM2) compilations. For instance, the file named &#39;NASA_2019_ICEBRIDGE_AIR_BM3.csv&#39; refers to the ICEBRIDGE airborne campaign led by NASA in 2019.&quot;,
  &#39;metadata_link&#39;: &#39;https://doi.org/10.5285/91523ff9-d621-46b3-87f7-ffb6efcd1847&#39;,
  &#39;license&#39;: &#39;https://creativecommons.org/licenses/by/4.0/&#39;,
  &#39;Conventions&#39;: &#39;ACDD-1.3, CF-1.8&#39;,
  &#39;title&#39;: &#39;BEDMAP3 - Ice thickness, bed and surface elevation for Antarctica - standardised data points&#39;,
- &#39;summary&#39;: &quot;We present here the Bedmap3 ice thickness, bed and surface elevation standardised CSV data points that are used to create the Bedmap3 gridding products in addition to the previous data releases. The data consists of 50 million points acquired by 17 different data providers in Antarctica. The associated datasets consist of: - Bedmap1 standardised CSV data points: https://doi.org/10.5285/f64815ec-4077-4432-9f55-0ce230f46029 - Bedmap2 standardised CSV data points: https://doi.org/10.5285/2fd95199-365e-4da1-ae26-3b6d48b3e6ac - Bedmap3 statistically-summarised data points (shapefiles): https://doi.org/10.5285/a72a50c6-a829-4e12-9f9a-5a683a1acc4a This work is supported by the SCAR Bedmap project and the British Antarctic Survey&#39;s core programme: National Capability - Polar Expertise Supporting UK Research&quot;,
- &#39;publisher_name&#39;: &#39;NERC EDS UK Polar Data Centre&#39;,
+ &#39;summary&#39;: &quot;We present here the Bedmap3 ice thickness, bed and surface elevation standardised CSV data points that are used to create the Bedmap3 gridding products in addition to the previous data releases. The data consists of 50 million points acquired by 17 different data providers in Antarctica.\nThe associated datasets consist of: \n- Bedmap1 standardised CSV data points: https://doi.org/10.5285/f64815ec-4077-4432-9f55-0ce230f46029\n- Bedmap2 standardised CSV data points: https://doi.org/10.5285/2fd95199-365e-4da1-ae26-3b6d48b3e6ac\n- Bedmap3 statistically-summarised data points (shapefiles): https://doi.org/10.5285/a72a50c6-a829-4e12-9f9a-5a683a1acc4a\nThis work is supported by the SCAR Bedmap project and the British Antarctic Survey&#39;s core programme: National Capability - Polar Expertise Supporting UK Research&quot;,
+ &#39;publisher_name&#39;: {&#39;name&#39;: &#39;NERC EDS UK Polar Data Centre&#39;},
  &#39;geospatial_lat_min&#39;: &#39;-90&#39;,
  &#39;geospatial_lat_max&#39;: &#39;-60&#39;,
  &#39;geospatial_lon_min&#39;: &#39;-180&#39;,
@@ -2278,9 +2321,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="converting-the-csv-file-to-netcdf-with-rich-metadata">
-<h2>Converting the CSV file to NetCDF with rich metadata<a class="headerlink" href="#converting-the-csv-file-to-netcdf-with-rich-metadata" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="converting-the-csv-file-to-netcdf-with-rich-metadata">
+<h2>Converting the CSV file to NetCDF with rich metadata<a class="headerlink" href="#converting-the-csv-file-to-netcdf-with-rich-metadata" title="Link to this heading">#</a></h2>
 <p>First, we will load the data, convert them to an array and convert them to NetCDF.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2336,13 +2379,14 @@
   --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
 }
 
-html[theme=dark],
-body[data-theme=dark],
+html[theme="dark"],
+html[data-theme="dark"],
+body[data-theme="dark"],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
   --xr-font-color2: rgba(255, 255, 255, 0.54);
   --xr-font-color3: rgba(255, 255, 255, 0.38);
-  --xr-border-color: #1F1F1F;
+  --xr-border-color: #1f1f1f;
   --xr-disabled-color: #515151;
   --xr-background-color: #111111;
   --xr-background-color-row-even: #111111;
@@ -2387,7 +2431,7 @@ body.vscode-dark {
 .xr-sections {
   padding-left: 0 !important;
   display: grid;
-  grid-template-columns: 150px auto auto 1fr 20px 20px;
+  grid-template-columns: 150px auto auto 1fr 0 20px 0 20px;
 }
 
 .xr-section-item {
@@ -2395,7 +2439,9 @@ body.vscode-dark {
 }
 
 .xr-section-item input {
-  display: none;
+  display: inline-block;
+  opacity: 0;
+  height: 0;
 }
 
 .xr-section-item input + label {
@@ -2405,6 +2451,10 @@ body.vscode-dark {
 .xr-section-item input:enabled + label {
   cursor: pointer;
   color: var(--xr-font-color2);
+}
+
+.xr-section-item input:focus + label {
+  border: 2px solid var(--xr-font-color0);
 }
 
 .xr-section-item input:enabled + label:hover {
@@ -2428,7 +2478,7 @@ body.vscode-dark {
 
 .xr-section-summary-in + label:before {
   display: inline-block;
-  content: '►';
+  content: "►";
   font-size: 11px;
   width: 15px;
   text-align: center;
@@ -2439,7 +2489,7 @@ body.vscode-dark {
 }
 
 .xr-section-summary-in:checked + label:before {
-  content: '▼';
+  content: "▼";
 }
 
 .xr-section-summary-in:checked + label > span {
@@ -2511,15 +2561,15 @@ body.vscode-dark {
 }
 
 .xr-dim-list:before {
-  content: '(';
+  content: "(";
 }
 
 .xr-dim-list:after {
-  content: ')';
+  content: ")";
 }
 
 .xr-dim-list li:not(:last-child):after {
-  content: ',';
+  content: ",";
   padding-right: 5px;
 }
 
@@ -2567,6 +2617,11 @@ body.vscode-dark {
   grid-column: 4;
 }
 
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
 .xr-var-name,
 .xr-var-dims,
 .xr-var-dtype,
@@ -2588,14 +2643,16 @@ body.vscode-dark {
 }
 
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   display: none;
   background-color: var(--xr-background-color) !important;
   padding-bottom: 5px !important;
 }
 
 .xr-var-attrs-in:checked ~ .xr-var-attrs,
-.xr-var-data-in:checked ~ .xr-var-data {
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
   display: block;
 }
 
@@ -2605,13 +2662,16 @@ body.vscode-dark {
 
 .xr-var-name span,
 .xr-var-data,
+.xr-index-name div,
+.xr-index-data,
 .xr-attrs {
   padding-left: 25px !important;
 }
 
 .xr-attrs,
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   grid-column: 1 / -1;
 }
 
@@ -2649,7 +2709,8 @@ dl.xr-attrs {
 }
 
 .xr-icon-database,
-.xr-icon-file-text2 {
+.xr-icon-file-text2,
+.xr-no-icon {
   display: inline-block;
   vertical-align: middle;
   width: 1em;
@@ -2658,23 +2719,23 @@ dl.xr-attrs {
   stroke: currentColor;
   fill: currentColor;
 }
-</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 2MB
 Dimensions:                   (index: 23382)
 Coordinates:
-  * index                     (index) int64 0 1 2 3 ... 23378 23379 23380 23381
+  * index                     (index) int64 187kB 0 1 2 3 ... 23379 23380 23381
 Data variables:
-    trajectory_id             (index) object &#x27;20162002_01&#x27; ... &#x27;20162020_04&#x27;
-    trace_number              (index) int64 -9999 -9999 -9999 ... -9999 -9999
-    longitude (degree_east)   (index) float64 -5.795 -5.794 ... -7.318 -7.323
-    latitude (degree_north)   (index) float64 -71.03 -71.03 ... -70.66 -70.66
-    date                      (index) object &#x27;2015-12-15&#x27; ... &#x27;2016-01-03&#x27;
-    time_UTC                  (index) object &#x27;12:43:36&#x27; ... &#x27;14:51:38&#x27;
-    surface_altitude (m)      (index) int64 -9999 -9999 -9999 ... -9999 -9999
-    land_ice_thickness (m)    (index) float64 463.7 463.7 456.3 ... 252.5 253.0
-    bedrock_altitude (m)      (index) int64 -9999 -9999 -9999 ... -9999 -9999
-    two_way_travel_time (m)   (index) float64 5.52e-06 5.52e-06 ... 3.012e-06
-    aircraft_altitude (m)     (index) int64 -9999 -9999 -9999 ... -9999 -9999
-    along_track_distance (m)  (index) int64 0 56 325 ... 161406 161636 161832
+    trajectory_id             (index) object 187kB &#x27;20162002_01&#x27; ... &#x27;2016202...
+    trace_number              (index) int64 187kB -9999 -9999 ... -9999 -9999
+    longitude (degree_east)   (index) float64 187kB -5.795 -5.794 ... -7.323
+    latitude (degree_north)   (index) float64 187kB -71.03 -71.03 ... -70.66
+    date                      (index) object 187kB &#x27;2015-12-15&#x27; ... &#x27;2016-01-03&#x27;
+    time_UTC                  (index) object 187kB &#x27;12:43:36&#x27; ... &#x27;14:51:38&#x27;
+    surface_altitude (m)      (index) int64 187kB -9999 -9999 ... -9999 -9999
+    land_ice_thickness (m)    (index) float64 187kB 463.7 463.7 ... 252.5 253.0
+    bedrock_altitude (m)      (index) int64 187kB -9999 -9999 ... -9999 -9999
+    two_way_travel_time (m)   (index) float64 187kB 5.52e-06 ... 3.012e-06
+    aircraft_altitude (m)     (index) int64 187kB -9999 -9999 ... -9999 -9999
+    along_track_distance (m)  (index) int64 187kB 0 56 325 ... 161636 161832
 Attributes: (12/27)
     project:                            Dronning Maud Land (GEA).
     time_coverage_start:                2015
@@ -2688,11 +2749,34 @@ Attributes: (12/27)
     geospatial_lon_min:                 -180
     geospatial_lon_max:                 180
     date_created:                       2022-02-28
-    keywords:                           Antarctica, BEDMAP, Elevation, Ice th...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-0af88f23-2045-4a98-ae2d-e6143c39f7e0' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-0af88f23-2045-4a98-ae2d-e6143c39f7e0' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>index</span>: 23382</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-d872c9d1-ca96-460a-a20c-92e947f399da' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d872c9d1-ca96-460a-a20c-92e947f399da' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>index</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0 1 2 3 ... 23378 23379 23380 23381</div><input id='attrs-4f63eb36-e020-40b7-b8d6-8a254f95d533' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-4f63eb36-e020-40b7-b8d6-8a254f95d533' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-95ab762e-bd1d-493a-91e8-d91450688b63' class='xr-var-data-in' type='checkbox'><label for='data-95ab762e-bd1d-493a-91e8-d91450688b63' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([    0,     1,     2, ..., 23379, 23380, 23381], dtype=int64)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-62d0a9d3-ca56-463d-87c3-e96baae7e5d4' class='xr-section-summary-in' type='checkbox'  checked><label for='section-62d0a9d3-ca56-463d-87c3-e96baae7e5d4' class='xr-section-summary' >Data variables: <span>(12)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>trajectory_id</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>&#x27;20162002_01&#x27; ... &#x27;20162020_04&#x27;</div><input id='attrs-aaad013e-cfa0-47c1-b8f1-aaff4bc6926e' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-aaad013e-cfa0-47c1-b8f1-aaff4bc6926e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d608605d-0f8c-4c7b-9621-ec35e53d0cf1' class='xr-var-data-in' type='checkbox'><label for='data-d608605d-0f8c-4c7b-9621-ec35e53d0cf1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;20162002_01&#x27;, &#x27;20162002_01&#x27;, &#x27;20162002_01&#x27;, ..., &#x27;20162020_04&#x27;,
-       &#x27;20162020_04&#x27;, &#x27;20162020_04&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>trace_number</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>-9999 -9999 -9999 ... -9999 -9999</div><input id='attrs-d1d1d9da-f1b3-4c87-8e5a-6997dbffb2ac' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-d1d1d9da-f1b3-4c87-8e5a-6997dbffb2ac' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5beea360-d11c-48d8-bfe3-3ca7eac16ae3' class='xr-var-data-in' type='checkbox'><label for='data-5beea360-d11c-48d8-bfe3-3ca7eac16ae3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-9999, -9999, -9999, ..., -9999, -9999, -9999], dtype=int64)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude (degree_east)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-5.795 -5.794 ... -7.318 -7.323</div><input id='attrs-f82470f5-d008-41a1-94c3-2cfca1c0f89a' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f82470f5-d008-41a1-94c3-2cfca1c0f89a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3a2441c2-1e80-490d-865f-586392baad6f' class='xr-var-data-in' type='checkbox'><label for='data-3a2441c2-1e80-490d-865f-586392baad6f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-5.7951, -5.7937, -5.7871, ..., -7.3119, -7.3181, -7.3234])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude (degree_north)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-71.03 -71.03 ... -70.66 -70.66</div><input id='attrs-ac1ec04b-0243-40f6-b540-b1a75510c7d9' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ac1ec04b-0243-40f6-b540-b1a75510c7d9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-afd9eca5-6745-483d-9c4b-bfe6a9c57c00' class='xr-var-data-in' type='checkbox'><label for='data-afd9eca5-6745-483d-9c4b-bfe6a9c57c00' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-71.0262, -71.0264, -71.0275, ..., -70.6624, -70.6623, -70.6622])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>date</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>&#x27;2015-12-15&#x27; ... &#x27;2016-01-03&#x27;</div><input id='attrs-9a3cfdfe-5cca-4a02-9038-32974792e17f' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-9a3cfdfe-5cca-4a02-9038-32974792e17f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2c6758d4-c04b-4e18-9ed1-f903633c7fe2' class='xr-var-data-in' type='checkbox'><label for='data-2c6758d4-c04b-4e18-9ed1-f903633c7fe2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2015-12-15&#x27;, &#x27;2015-12-15&#x27;, &#x27;2015-12-15&#x27;, ..., &#x27;2016-01-03&#x27;,
-       &#x27;2016-01-03&#x27;, &#x27;2016-01-03&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time_UTC</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>&#x27;12:43:36&#x27; ... &#x27;14:51:38&#x27;</div><input id='attrs-8bfe49d5-b008-4695-80be-99d915e9b6cd' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-8bfe49d5-b008-4695-80be-99d915e9b6cd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e2b8bd81-1b68-40c3-ac28-38d4a6da38ee' class='xr-var-data-in' type='checkbox'><label for='data-e2b8bd81-1b68-40c3-ac28-38d4a6da38ee' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;12:43:36&#x27;, &#x27;12:43:37&#x27;, &#x27;12:43:42&#x27;, ..., &#x27;14:51:32&#x27;, &#x27;14:51:35&#x27;,
-       &#x27;14:51:38&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>surface_altitude (m)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>-9999 -9999 -9999 ... -9999 -9999</div><input id='attrs-38c657cf-e88f-4785-af58-b73fb732f82b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-38c657cf-e88f-4785-af58-b73fb732f82b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-60750250-9d7a-438a-a469-f31df2c1b99f' class='xr-var-data-in' type='checkbox'><label for='data-60750250-9d7a-438a-a469-f31df2c1b99f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-9999, -9999, -9999, ..., -9999, -9999, -9999], dtype=int64)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>land_ice_thickness (m)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>463.7 463.7 456.3 ... 252.5 253.0</div><input id='attrs-a5283434-4501-4a6d-94e5-814c17ea3f07' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a5283434-4501-4a6d-94e5-814c17ea3f07' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1ee376a8-59b0-4185-af8a-99ad46043c89' class='xr-var-data-in' type='checkbox'><label for='data-1ee376a8-59b0-4185-af8a-99ad46043c89' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([463.7, 463.7, 456.3, ..., 251.6, 252.5, 253. ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>bedrock_altitude (m)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>-9999 -9999 -9999 ... -9999 -9999</div><input id='attrs-ed200ed8-f7c5-4011-95f0-31da4500f71d' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ed200ed8-f7c5-4011-95f0-31da4500f71d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0cddc3f2-df36-4ef3-9f0f-5c19dd1d81dc' class='xr-var-data-in' type='checkbox'><label for='data-0cddc3f2-df36-4ef3-9f0f-5c19dd1d81dc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-9999, -9999, -9999, ..., -9999, -9999, -9999], dtype=int64)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>two_way_travel_time (m)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>5.52e-06 5.52e-06 ... 3.012e-06</div><input id='attrs-f4b259a4-7981-4ac1-97aa-293ed8f317d5' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f4b259a4-7981-4ac1-97aa-293ed8f317d5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6ed04b98-8a33-4c41-99f4-48bb47bf6eaa' class='xr-var-data-in' type='checkbox'><label for='data-6ed04b98-8a33-4c41-99f4-48bb47bf6eaa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([5.520e-06, 5.520e-06, 5.432e-06, ..., 2.995e-06, 3.006e-06,
-       3.012e-06])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>aircraft_altitude (m)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>-9999 -9999 -9999 ... -9999 -9999</div><input id='attrs-a87aa9d0-0b59-4a31-af0e-eb58e6f69ca1' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a87aa9d0-0b59-4a31-af0e-eb58e6f69ca1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-20a4dab2-646b-43b0-848b-54c112ea6e7a' class='xr-var-data-in' type='checkbox'><label for='data-20a4dab2-646b-43b0-848b-54c112ea6e7a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-9999, -9999, -9999, ..., -9999, -9999, -9999], dtype=int64)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>along_track_distance (m)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0 56 325 ... 161406 161636 161832</div><input id='attrs-864a9db5-3211-4355-b15f-1eacab4c8fb0' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-864a9db5-3211-4355-b15f-1eacab4c8fb0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c630dfe3-b483-4627-9ebd-ffa8b5e2ad58' class='xr-var-data-in' type='checkbox'><label for='data-c630dfe3-b483-4627-9ebd-ffa8b5e2ad58' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([     0,     56,    325, ..., 161406, 161636, 161832], dtype=int64)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-cfbcf2e0-4d61-4aa6-8980-4bccf2c218a1' class='xr-section-summary-in' type='checkbox'  ><label for='section-cfbcf2e0-4d61-4aa6-8980-4bccf2c218a1' class='xr-section-summary' >Attributes: <span>(27)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>project :</span></dt><dd>Dronning Maud Land (GEA).</dd><dt><span>time_coverage_start :</span></dt><dd>2015</dd><dt><span>time_coverage_end :</span></dt><dd>2016</dd><dt><span>creator_name :</span></dt><dd>Alfred Wegener Institute; Bundesanstalt für Geowissenschaften.</dd><dt><span>institution :</span></dt><dd>Alfred Wegener Institute; Bundesanstalt für Geowissenschaften.</dd><dt><span>acknowledgement :</span></dt><dd>National Capability - Polar Expertise Supporting UK Research</dd><dt><span>source :</span></dt><dd>https://doi.pangaea.de/10.1594/PANGAEA.915475</dd><dt><span>references :</span></dt><dd>https://doi.org/10.1016/j.gr.2018.05.011</dd><dt><span>platform :</span></dt><dd>airborne radar.</dd><dt><span>instrument :</span></dt><dd>AWI EMR.</dd><dt><span>history :</span></dt><dd>Incoherent processing</dd><dt><span>electromagnetic_wave_speed_in_ice :</span></dt><dd>168 (meters/microseconds)</dd><dt><span>firn_correction :</span></dt><dd>0 (m)</dd><dt><span>centre_frequency :</span></dt><dd>150 (MHz)</dd><dt><span>comment :</span></dt><dd>The primary source data consist of survey point measurements of ice thickness, bed elevation and surface elevation, which principally comes from airborne radar surveys and seismic soundings, and to a smaller extent from ground-based radar surveys. All the data have been standardised to a specific CSV format. The format consists of (i) an extended header section where (a) each line is introduced by a comment (#) character, (b) each line contains a single header item, (c) the colon character (:) is used as the key/value separator, (d) units are in parentheses, (e) attributes preferably use a common vocabulary such as the CF convention and includes attributes from the ACDD; (ii) a header row composed of the column name following the CF convention and units in parentheses; and finally (iii) the data using comma as the separator. The extended header consists of general information regarding each campaign such as the year, the name of the main investigator, funding and processing details. The variable names are as follows: trajectory_id Line or Flight ID trace_number Trace number from the specific line given in Line_ID longitude Longitude (WGS84 EPSG: 4326) in decimal degrees latitude Latitude (WGS84 EPSG: 4326) in decimal degrees date Date following ISO 8601 format: YYYY: year, MM: month, DD: day time_UTC UTC time following ISO 8601 format: HH: hours, MM: minutes, SS: seconds surface_altitude Surface elevation or altitude (referenced to WGS84) in meters land_ice_thickness Ice thickness in meters bedrock_altitude Bed elevation or altitude (referenced to WGS84) in meters two_way_travel_time Two-way travel time in seconds aircraft_altitude Aircraft elevation or altitude when applicable (referenced to WGS84) in meters along_track_distance Distance in the along-track direction in metersAll non-value data were converted to -9999, including any negative ice thickness values and any points with clear outliers. We checked the minimum and maximum values of each field to ensure the data are in a reasonable range and calculated mean and standard deviation on each dataset to identify potential issues. For example, if longitude/latitude values did not fall within the expected -180 to 180 or -50 to -90 degrees range respectively, the entire row was removed. When no ice thickness values were provided but surface and bed elevation values existed, we simply calculated ice thickness by subtracting the surface value from the bed value. At times, bed elevation was higher than surface elevation, likely due to issues with the semi-automatic picker used to extract the surface and bed reflector or a lack of distinctive reflectors in areas of shallow ice. To prevent this affecting the gridded product, we converted these values to -9999 for both the surface and the bed. Finally, we also conducted routine checks on the ice thickness data by comparing the given ice thickness value with the inferred ice thickness calculated from subtracting surface with bed. If these did not match, we placed -9999 on the ice thickness values. File naming conventions were also used throughout to easily identify a specific dataset as follows: DataProvider_Year_CampaignName_TypeofData_BM3. The type of data used was separated into three categories: Airborne Radar (AIR), Ground-based Radar (GRN), and Seismic (SEI) data. The &#x27;BM3&#x27; abbreviation at the end identifies the datasets was part of the Bedmap3 compilation to differentiate from the Bedmap 1 and 2 (BM1 and BM2) compilations. For instance, the file named &#x27;NASA_2019_ICEBRIDGE_AIR_BM3.csv&#x27; refers to the ICEBRIDGE airborne campaign led by NASA in 2019.</dd><dt><span>metadata_link :</span></dt><dd>https://doi.org/10.5285/91523ff9-d621-46b3-87f7-ffb6efcd1847</dd><dt><span>license :</span></dt><dd>https://creativecommons.org/licenses/by/4.0/</dd><dt><span>Conventions :</span></dt><dd>ACDD-1.3, CF-1.8</dd><dt><span>title :</span></dt><dd>BEDMAP3 - Ice thickness, bed and surface elevation for Antarctica - standardised data points</dd><dt><span>summary :</span></dt><dd>We present here the Bedmap3 ice thickness, bed and surface elevation standardised CSV data points that are used to create the Bedmap3 gridding products in addition to the previous data releases. The data consists of 50 million points acquired by 17 different data providers in Antarctica. The associated datasets consist of: - Bedmap1 standardised CSV data points: https://doi.org/10.5285/f64815ec-4077-4432-9f55-0ce230f46029 - Bedmap2 standardised CSV data points: https://doi.org/10.5285/2fd95199-365e-4da1-ae26-3b6d48b3e6ac - Bedmap3 statistically-summarised data points (shapefiles): https://doi.org/10.5285/a72a50c6-a829-4e12-9f9a-5a683a1acc4a This work is supported by the SCAR Bedmap project and the British Antarctic Survey&#x27;s core programme: National Capability - Polar Expertise Supporting UK Research</dd><dt><span>publisher_name :</span></dt><dd>NERC EDS UK Polar Data Centre</dd><dt><span>geospatial_lat_min :</span></dt><dd>-90</dd><dt><span>geospatial_lat_max :</span></dt><dd>-60</dd><dt><span>geospatial_lon_min :</span></dt><dd>-180</dd><dt><span>geospatial_lon_max :</span></dt><dd>180</dd><dt><span>date_created :</span></dt><dd>2022-02-28</dd><dt><span>keywords :</span></dt><dd>Antarctica, BEDMAP, Elevation, Ice thickness</dd></dl></div></li></ul></div></div></div></div>
+    keywords:                           Antarctica, BEDMAP, Elevation, Ice th...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-b9041f5a-cbd2-4b30-ad95-da2a7cab6db7' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-b9041f5a-cbd2-4b30-ad95-da2a7cab6db7' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>index</span>: 23382</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-5905ad03-ab8d-4887-95c0-979c6605901d' class='xr-section-summary-in' type='checkbox'  checked><label for='section-5905ad03-ab8d-4887-95c0-979c6605901d' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>index</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0 1 2 3 ... 23378 23379 23380 23381</div><input id='attrs-3b357025-bd6e-485c-972a-1b6b7704cb08' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-3b357025-bd6e-485c-972a-1b6b7704cb08' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2b3ec3b6-b80d-4120-a540-661a99e4498f' class='xr-var-data-in' type='checkbox'><label for='data-2b3ec3b6-b80d-4120-a540-661a99e4498f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([    0,     1,     2, ..., 23379, 23380, 23381], shape=(23382,))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d34fbcf0-47f4-4313-809d-febf31d1840b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d34fbcf0-47f4-4313-809d-febf31d1840b' class='xr-section-summary' >Data variables: <span>(12)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>trajectory_id</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>&#x27;20162002_01&#x27; ... &#x27;20162020_04&#x27;</div><input id='attrs-63becd01-54e0-4dff-9d0d-1bbefa8bd53b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-63becd01-54e0-4dff-9d0d-1bbefa8bd53b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e93bf358-df41-4260-a137-3c59c1c95ac7' class='xr-var-data-in' type='checkbox'><label for='data-e93bf358-df41-4260-a137-3c59c1c95ac7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;20162002_01&#x27;, &#x27;20162002_01&#x27;, &#x27;20162002_01&#x27;, ..., &#x27;20162020_04&#x27;,
+       &#x27;20162020_04&#x27;, &#x27;20162020_04&#x27;], shape=(23382,), dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>trace_number</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>-9999 -9999 -9999 ... -9999 -9999</div><input id='attrs-cd73d02f-5088-4da0-b984-53b1f4c7ef69' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-cd73d02f-5088-4da0-b984-53b1f4c7ef69' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f2ea0ce4-0487-4294-89a1-1c674fcb0447' class='xr-var-data-in' type='checkbox'><label for='data-f2ea0ce4-0487-4294-89a1-1c674fcb0447' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-9999, -9999, -9999, ..., -9999, -9999, -9999], shape=(23382,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude (degree_east)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-5.795 -5.794 ... -7.318 -7.323</div><input id='attrs-d217c30b-38d5-43e4-94de-7ad20231ecf5' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-d217c30b-38d5-43e4-94de-7ad20231ecf5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4c8cb51d-9d55-4252-912d-45d817e4f1d3' class='xr-var-data-in' type='checkbox'><label for='data-4c8cb51d-9d55-4252-912d-45d817e4f1d3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-5.7951, -5.7937, -5.7871, ..., -7.3119, -7.3181, -7.3234],
+      shape=(23382,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude (degree_north)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-71.03 -71.03 ... -70.66 -70.66</div><input id='attrs-d72f80a8-1a84-4dfd-a837-16ca15e18631' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-d72f80a8-1a84-4dfd-a837-16ca15e18631' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-614b24fa-70a0-4019-9216-b6b3e1ac3435' class='xr-var-data-in' type='checkbox'><label for='data-614b24fa-70a0-4019-9216-b6b3e1ac3435' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-71.0262, -71.0264, -71.0275, ..., -70.6624, -70.6623, -70.6622],
+      shape=(23382,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>date</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>&#x27;2015-12-15&#x27; ... &#x27;2016-01-03&#x27;</div><input id='attrs-30f73ff5-d032-490a-81ab-7205d91fd4db' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-30f73ff5-d032-490a-81ab-7205d91fd4db' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3f374f18-be6d-4bd6-8eed-d397e9dd4783' class='xr-var-data-in' type='checkbox'><label for='data-3f374f18-be6d-4bd6-8eed-d397e9dd4783' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2015-12-15&#x27;, &#x27;2015-12-15&#x27;, &#x27;2015-12-15&#x27;, ..., &#x27;2016-01-03&#x27;,
+       &#x27;2016-01-03&#x27;, &#x27;2016-01-03&#x27;], shape=(23382,), dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time_UTC</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>&#x27;12:43:36&#x27; ... &#x27;14:51:38&#x27;</div><input id='attrs-e299b909-214d-4384-b791-16e3fb22c6f0' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-e299b909-214d-4384-b791-16e3fb22c6f0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b787171b-a607-4150-a576-edb6e789091b' class='xr-var-data-in' type='checkbox'><label for='data-b787171b-a607-4150-a576-edb6e789091b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;12:43:36&#x27;, &#x27;12:43:37&#x27;, &#x27;12:43:42&#x27;, ..., &#x27;14:51:32&#x27;, &#x27;14:51:35&#x27;,
+       &#x27;14:51:38&#x27;], shape=(23382,), dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>surface_altitude (m)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>-9999 -9999 -9999 ... -9999 -9999</div><input id='attrs-82579312-a2d8-4418-a3b0-ef2dd6c8cda3' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-82579312-a2d8-4418-a3b0-ef2dd6c8cda3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c0e6c29e-6eee-474e-96d1-9485c28c2555' class='xr-var-data-in' type='checkbox'><label for='data-c0e6c29e-6eee-474e-96d1-9485c28c2555' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-9999, -9999, -9999, ..., -9999, -9999, -9999], shape=(23382,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>land_ice_thickness (m)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>463.7 463.7 456.3 ... 252.5 253.0</div><input id='attrs-83130aef-5cf4-4dd3-a972-06d11a1eb910' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-83130aef-5cf4-4dd3-a972-06d11a1eb910' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-76535089-f372-4a8e-a612-1b9a7953b13f' class='xr-var-data-in' type='checkbox'><label for='data-76535089-f372-4a8e-a612-1b9a7953b13f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([463.7, 463.7, 456.3, ..., 251.6, 252.5, 253. ], shape=(23382,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>bedrock_altitude (m)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>-9999 -9999 -9999 ... -9999 -9999</div><input id='attrs-0a18caec-db28-4ad3-8c73-7941cccba731' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-0a18caec-db28-4ad3-8c73-7941cccba731' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0c9b96a7-8bab-4f47-98b3-f54a1b4400fa' class='xr-var-data-in' type='checkbox'><label for='data-0c9b96a7-8bab-4f47-98b3-f54a1b4400fa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-9999, -9999, -9999, ..., -9999, -9999, -9999], shape=(23382,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>two_way_travel_time (m)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>5.52e-06 5.52e-06 ... 3.012e-06</div><input id='attrs-a8266725-4fc0-4fc1-be11-053247f5dc06' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a8266725-4fc0-4fc1-be11-053247f5dc06' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-af6827f0-30e5-466d-9c06-2760d0533e3e' class='xr-var-data-in' type='checkbox'><label for='data-af6827f0-30e5-466d-9c06-2760d0533e3e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([5.520e-06, 5.520e-06, 5.432e-06, ..., 2.995e-06, 3.006e-06,
+       3.012e-06], shape=(23382,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>aircraft_altitude (m)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>-9999 -9999 -9999 ... -9999 -9999</div><input id='attrs-70e2c369-6a91-4671-868c-55e727b7f5b8' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-70e2c369-6a91-4671-868c-55e727b7f5b8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-54c85bf9-a137-4b05-af07-2f389b39dbf5' class='xr-var-data-in' type='checkbox'><label for='data-54c85bf9-a137-4b05-af07-2f389b39dbf5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-9999, -9999, -9999, ..., -9999, -9999, -9999], shape=(23382,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>along_track_distance (m)</span></div><div class='xr-var-dims'>(index)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0 56 325 ... 161406 161636 161832</div><input id='attrs-c41bf7b2-549f-4d77-a6a6-8ea20e63eeda' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-c41bf7b2-549f-4d77-a6a6-8ea20e63eeda' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8bdd9615-e39b-4fd5-8cf1-f06e44f785aa' class='xr-var-data-in' type='checkbox'><label for='data-8bdd9615-e39b-4fd5-8cf1-f06e44f785aa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([     0,     56,    325, ..., 161406, 161636, 161832],
+      shape=(23382,))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-614f8a14-0089-4afe-a158-ac5f6be3a940' class='xr-section-summary-in' type='checkbox'  ><label for='section-614f8a14-0089-4afe-a158-ac5f6be3a940' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>index</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-c11b3648-cc18-4315-af02-6a65d0ecb7fd' class='xr-index-data-in' type='checkbox'/><label for='index-c11b3648-cc18-4315-af02-6a65d0ecb7fd' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(RangeIndex(start=0, stop=23382, step=1, name=&#x27;index&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-4ce685fe-b81b-4568-91d8-2ef3805dbfdb' class='xr-section-summary-in' type='checkbox'  ><label for='section-4ce685fe-b81b-4568-91d8-2ef3805dbfdb' class='xr-section-summary' >Attributes: <span>(27)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>project :</span></dt><dd>Dronning Maud Land (GEA).</dd><dt><span>time_coverage_start :</span></dt><dd>2015</dd><dt><span>time_coverage_end :</span></dt><dd>2016</dd><dt><span>creator_name :</span></dt><dd>Alfred Wegener Institute; Bundesanstalt für Geowissenschaften.</dd><dt><span>institution :</span></dt><dd>Alfred Wegener Institute; Bundesanstalt für Geowissenschaften.</dd><dt><span>acknowledgement :</span></dt><dd>National Capability - Polar Expertise Supporting UK Research</dd><dt><span>source :</span></dt><dd>https://doi.pangaea.de/10.1594/PANGAEA.915475</dd><dt><span>references :</span></dt><dd>https://doi.org/10.1016/j.gr.2018.05.011</dd><dt><span>platform :</span></dt><dd>airborne radar.</dd><dt><span>instrument :</span></dt><dd>AWI EMR.</dd><dt><span>history :</span></dt><dd>Incoherent processing</dd><dt><span>electromagnetic_wave_speed_in_ice :</span></dt><dd>168.0 (meters/microseconds)</dd><dt><span>firn_correction :</span></dt><dd>0 (m)</dd><dt><span>centre_frequency :</span></dt><dd>150 (MHz)</dd><dt><span>comment :</span></dt><dd>The primary source data consist of survey point measurements of ice thickness, bed elevation and surface elevation, which principally comes from airborne radar surveys and seismic soundings, and to a smaller extent from ground-based radar surveys. 
+All the data have been standardised to a specific CSV format. The format consists of (i) an extended header section where (a) each line is introduced by a comment (#) character, (b) each line contains a single header item, (c) the colon character (:) is used as the key/value separator, (d) units are in parentheses, (e) attributes preferably use a common vocabulary such as the CF convention and includes attributes from the ACDD; (ii) a header row composed of the column name following the CF convention and units in parentheses; and finally (iii) the data using comma as the separator. The extended header consists of general information regarding each campaign such as the year, the name of the main investigator, funding and processing details.
+The variable names are as follows: 
+trajectory_id Line or Flight ID
+trace_number Trace number from the specific line given in Line_ID
+longitude Longitude (WGS84 EPSG: 4326) in decimal degrees
+latitude Latitude (WGS84 EPSG: 4326) in decimal degrees
+date Date following ISO 8601 format: YYYY: year, MM: month, DD: day
+time_UTC UTC time following ISO 8601 format: HH: hours, MM: minutes, SS: seconds
+surface_altitude Surface elevation or altitude (referenced to WGS84) in meters
+land_ice_thickness Ice thickness in meters
+bedrock_altitude Bed elevation or altitude (referenced to WGS84) in meters
+two_way_travel_time Two-way travel time in seconds
+aircraft_altitude Aircraft elevation or altitude when applicable (referenced to WGS84) in meters
+along_track_distance Distance in the along-track direction in metersAll non-value data were converted to -9999, including any negative ice thickness values and any points with clear outliers. We checked the minimum and maximum values of each field to ensure the data are in a reasonable range and calculated mean and standard deviation on each dataset to identify potential issues. For example, if longitude/latitude values did not fall within the expected -180 to 180 or -50 to -90 degrees range respectively, the entire row was removed. When no ice thickness values were provided but surface and bed elevation values existed, we simply calculated ice thickness by subtracting the surface value from the bed value. At times, bed elevation was higher than surface elevation, likely due to issues with the semi-automatic picker used to extract the surface and bed reflector or a lack of distinctive reflectors in areas of shallow ice. To prevent this affecting the gridded product, we converted these values to -9999 for both the surface and the bed. Finally, we also conducted routine checks on the ice thickness data by comparing the given ice thickness value with the inferred ice thickness calculated from subtracting surface with bed. If these did not match, we placed -9999 on the ice thickness values.
+ File naming conventions were also used throughout to easily identify a specific dataset as follows: DataProvider_Year_CampaignName_TypeofData_BM3. The type of data used was separated into three categories: Airborne Radar (AIR), Ground-based Radar (GRN), and Seismic (SEI) data. The &#x27;BM3&#x27; abbreviation at the end identifies the datasets was part of the Bedmap3 compilation to differentiate from the Bedmap 1 and 2 (BM1 and BM2) compilations. For instance, the file named &#x27;NASA_2019_ICEBRIDGE_AIR_BM3.csv&#x27; refers to the ICEBRIDGE airborne campaign led by NASA in 2019.</dd><dt><span>metadata_link :</span></dt><dd>https://doi.org/10.5285/91523ff9-d621-46b3-87f7-ffb6efcd1847</dd><dt><span>license :</span></dt><dd>https://creativecommons.org/licenses/by/4.0/</dd><dt><span>Conventions :</span></dt><dd>ACDD-1.3, CF-1.8</dd><dt><span>title :</span></dt><dd>BEDMAP3 - Ice thickness, bed and surface elevation for Antarctica - standardised data points</dd><dt><span>summary :</span></dt><dd>We present here the Bedmap3 ice thickness, bed and surface elevation standardised CSV data points that are used to create the Bedmap3 gridding products in addition to the previous data releases. The data consists of 50 million points acquired by 17 different data providers in Antarctica.
+The associated datasets consist of: 
+- Bedmap1 standardised CSV data points: https://doi.org/10.5285/f64815ec-4077-4432-9f55-0ce230f46029
+- Bedmap2 standardised CSV data points: https://doi.org/10.5285/2fd95199-365e-4da1-ae26-3b6d48b3e6ac
+- Bedmap3 statistically-summarised data points (shapefiles): https://doi.org/10.5285/a72a50c6-a829-4e12-9f9a-5a683a1acc4a
+This work is supported by the SCAR Bedmap project and the British Antarctic Survey&#x27;s core programme: National Capability - Polar Expertise Supporting UK Research</dd><dt><span>publisher_name :</span></dt><dd>{&#x27;name&#x27;: &#x27;NERC EDS UK Polar Data Centre&#x27;}</dd><dt><span>geospatial_lat_min :</span></dt><dd>-90</dd><dt><span>geospatial_lat_max :</span></dt><dd>-60</dd><dt><span>geospatial_lon_min :</span></dt><dd>-180</dd><dt><span>geospatial_lon_max :</span></dt><dd>180</dd><dt><span>date_created :</span></dt><dd>2022-02-28</dd><dt><span>keywords :</span></dt><dd>Antarctica, BEDMAP, Elevation, Ice thickness</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>We can add the standard names and units for all the variables:</p>
 <div class="cell docutils container">
@@ -2707,6 +2791,11 @@ Attributes: (12/27)
         <span class="n">xr</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="n">name_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; (&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">xr</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">name_dict</span><span class="o">=</span><span class="n">name_dict</span><span class="p">)</span> 
+
+<span class="c1"># Ensure attributes are valid</span>
+<span class="k">for</span> <span class="n">attr_name</span><span class="p">,</span> <span class="n">attr_value</span> <span class="ow">in</span> <span class="n">xr</span><span class="o">.</span><span class="n">attrs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">attr_value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>  
+        <span class="n">xr</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="n">attr_name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">attr_value</span><span class="p">)</span>  <span class="c1"># Convert dictionary to string</span>
 </pre></div>
 </div>
 </div>
@@ -2715,19 +2804,20 @@ Attributes: (12/27)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="n">CSV_file</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
-<span class="n">xr</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">.nc&#39;</span> <span class="o">%</span><span class="k">filename</span>)
+<span class="c1"># Save to NetCDF</span>
+<span class="n">xr</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">.nc&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="checking-completness-of-the-metadata">
-<h1>Checking completness of the metadata<a class="headerlink" href="#checking-completness-of-the-metadata" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="checking-completness-of-the-metadata">
+<h1>Checking completness of the metadata<a class="headerlink" href="#checking-completness-of-the-metadata" title="Link to this heading">#</a></h1>
 <p>It is possible to check the metadata completness thanks to the <code class="docutils literal notranslate"><span class="pre">compliance-checker</span></code> library</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compliance_checker.runner</span> <span class="kn">import</span> <span class="n">ComplianceChecker</span><span class="p">,</span> <span class="n">CheckSuite</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">compliance_checker.runner</span><span class="w"> </span><span class="kn">import</span> <span class="n">ComplianceChecker</span><span class="p">,</span> <span class="n">CheckSuite</span>
 
 <span class="c1"># Load all available checker classes</span>
 <span class="n">check_suite</span> <span class="o">=</span> <span class="n">CheckSuite</span><span class="p">()</span>
@@ -2770,14 +2860,14 @@ Attributes: (12/27)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Convention: cf - CC Scored 235 out of 246 possible points
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Convention: cf - CC Scored 236 out of 247 possible points
 Convention: acdd - CC Scored 49 out of 77 possible points
 </pre></div>
 </div>
 </div>
 </div>
 <p>Although the CSV metadata are quite small, all the enriched metadata can be easily retrieved from the DOI metadata. The missing points are linked to parameters that are not referenced in the conventions cited.</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2791,7 +2881,7 @@ Convention: acdd - CC Scored 49 out of 77 possible points
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./BEDMAP"
         },
         predefinedOutput: true
@@ -2799,56 +2889,112 @@ Convention: acdd - CC Scored 49 out of 77 possible points
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="Downloading_the_Bedmap_data.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Downloading the Bedmap data</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="Checking_CSV_geospatially.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Reading the BEDMAP CSV files</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By UK PDC<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Downloading_the_Bedmap_data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Downloading the Bedmap data</p>
       </div>
-    </div>
-  
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+    </a>
+    <a class="right-next"
+       href="Checking_CSV_geospatially.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Reading the BEDMAP CSV files</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Get full metadata from CSV file - BEDMAP</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data">The data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-the-modules">Upload the modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-and-reading-the-csv-metadata">Opening and reading the CSV metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-full-metadata-from-the-csv-file">Getting the full metadata from the CSV file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-the-csv-file-to-netcdf-with-rich-metadata">Converting the CSV file to NetCDF with rich metadata</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-completness-of-the-metadata">Checking completness of the metadata</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
+  <div class="footer-item">
+    
+<p class="component-author">
+By UK PDC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

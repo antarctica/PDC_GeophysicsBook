@@ -1,0 +1,1525 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Checking GLORIA CD37 side-scan sonar data &#8212; UK PDC Geophysics Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'GLORIA/checking_gloria_data';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Visualising GLORIA CD37 side-scan sonar data" href="compare_gloria_with_IBCSO.html" />
+    <link rel="prev" title="About" href="about.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../welcome.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="UK PDC Geophysics Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="UK PDC Geophysics Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../welcome.html">
+                    Welcome to the Geophysics Book from the UK Polar Centre
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Geophysics Data Portal</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/user_guide.html">User Guide</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/data_available.html">List of data available</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/Checking_Airborne_Radar_Echo_sounding_data.html">Checking Airborne Radar Echo Sounding data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/Checking_Airborne_Radar_Echo_sounding_data_MATLAB.html">Checking Airborne Radar Echo Sounding data (MATLAB)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/Checking_gravity_XYZ_data.html">Checking Airborne Gravity data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/Checking_magnetics_XYZ_data.html">Checking Airborne Magnetics data</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">BEDMAP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../BEDMAP/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BEDMAP/data_available.html">List of data available</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BEDMAP/Downloading_the_Bedmap_data.html">Downloading the Bedmap data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BEDMAP/Get_full_metadata_from_CSV_file.html">Get full metadata from CSV file - BEDMAP</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../BEDMAP/Checking_CSV_geospatially.html">Reading the BEDMAP CSV files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BEDMAP/Create_ShapeLines_for_BEDMAP3.html">Creating Shape Lines for BEDMAP3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BEDMAP/Create_ShapePoints_for_BEDMAP3.html">Creating Shape Points for BEDMAP3</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">GLORIA</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Checking GLORIA CD37 side-scan sonar data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="compare_gloria_with_IBCSO.html">Visualising GLORIA CD37 side-scan sonar data</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://binder.pangeo.io/v2/gh/antarctica/PDC_GeophysicsBook/main?urlpath=tree/book/GLORIA/checking_gloria_data.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/antarctica/PDC_GeophysicsBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/antarctica/PDC_GeophysicsBook/edit/main/book/GLORIA/checking_gloria_data.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/antarctica/PDC_GeophysicsBook/issues/new?title=Issue%20on%20page%20%2FGLORIA/checking_gloria_data.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/GLORIA/checking_gloria_data.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Checking GLORIA CD37 side-scan sonar data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Checking GLORIA CD37 side-scan sonar data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aim">Aim</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#survey-background">Survey background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-available-gloria-data">List of available GLORIA data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-data-via-the-ramadda-interface">Downloading the data via the Ramadda interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-set-up-the-virtual-environment-with-conda-if-desired">To set up the virtual environment with Conda (if desired):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-set-up-the-virtual-environment-on-unix-if-desired">To set up the virtual environment on UNIX (if desired):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-dependencies">Useful dependencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-relevant-modules">Load the relevant modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-metadata-information">Check the metadata information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-the-netcdf-data">Checking the NetCDF data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-group-attributes-and-data-structure">List group attributes and data structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data-for-first-scan">Plot data for first scan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interrogate-time-coverage-and-scanning-frequency-of-pass-file">Interrogate time coverage and scanning frequency of pass file</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-summary-statistics-for-each-attribute">Generate summary statistics for each attribute</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bounding-box-of-gloria-dataset">Bounding box of GLORIA dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-a-simple-sonargram-with-data-from-first-scan-in-the-file">Plot a simple sonargram with data from first scan in the file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-list-of-references-below-give-additional-context-regarding-the-cruise-and-the-processing-of-gloria-data">The list of references below give additional context regarding the cruise and the processing of GLORIA data.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="checking-gloria-cd37-side-scan-sonar-data">
+<h1>Checking GLORIA CD37 side-scan sonar data<a class="headerlink" href="#checking-gloria-cd37-side-scan-sonar-data" title="Link to this heading">#</a></h1>
+<p>Author: Ellie Fisher (&#64;efisher008) and Alice Fremand (&#64;almand_BAS)</p>
+<p>Date: 07/02/2025</p>
+<section id="aim">
+<h2>Aim<a class="headerlink" href="#aim" title="Link to this heading">#</a></h2>
+<p>The goal of this tutorial is to showcase how to read and check the GLORIA CD37 side-scan sonar data available from the UK Polar Data Centre</p>
+</section>
+<section id="survey-background">
+<h2>Survey background<a class="headerlink" href="#survey-background" title="Link to this heading">#</a></h2>
+<p>The GLORIA instrument was operated on the Royal Research Ship (RRS) Charles Darwin CD37 research cruise during January – April 1989. The study area was the Scotia Sea, North Scotia Ridge (NSR), South Sandwich Island, South Sandwich Arc, and West Antarctic Peninsula (WAP) continental shelf, within the broader region of the Southern Ocean.</p>
+<p>The cruise was carried out in order to gain a better understanding of the Southern Ocean with a particular focus on:</p>
+<ul class="simple">
+<li><p>Tectonic history</p></li>
+<li><p>Active tectonic processes</p></li>
+<li><p>Paleoceanography</p></li>
+<li><p>Stratigraphy</p></li>
+<li><p>Ice dynamics during glacial intervals</p></li>
+</ul>
+</section>
+<section id="list-of-available-gloria-data">
+<h2>List of available GLORIA data<a class="headerlink" href="#list-of-available-gloria-data" title="Link to this heading">#</a></h2>
+<p>The metadata record for the GLORIA CD37 dataset can be found from the UK Polar Data Centre:</p>
+<p>Barker, P., Livermore, R., Tomlinson, J., Woollett, R., Cunningham, A., Larter, R., Pudsey, C., &amp; Jordan, R. (2025). Geological Long Range Inclined Asdic (GLORIA) seabed side-scan sonar raw data acquired on Charles Darwin CD37 cruise in 1989 (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. <a class="reference external" href="https://doi.org/10.5285/cf87183c-51df-4588-be73-ad0a45fea2d7">https://doi.org/10.5285/cf87183c-51df-4588-be73-ad0a45fea2d7</a></p>
+<p>The GLORIA CD37 NetCDF files are available from:
+<a class="reference external" href="https://ramadda.data.bas.ac.uk/repository/entry/show?entryid=cf87183c-51df-4588-be73-ad0a45fea2d7">https://ramadda.data.bas.ac.uk/repository/entry/show?entryid=cf87183c-51df-4588-be73-ad0a45fea2d7</a></p>
+</section>
+<section id="downloading-the-data-via-the-ramadda-interface">
+<h2>Downloading the data via the Ramadda interface<a class="headerlink" href="#downloading-the-data-via-the-ramadda-interface" title="Link to this heading">#</a></h2>
+<p>From the <a class="reference external" href="https://doi.org/10.5285/cf87183c-51df-4588-be73-ad0a45fea2d7">metadata page</a>, it is possible to access the data by clicking on ‘GET DATA’. You will then be redirected to our Ramadda repository.</p>
+<p>From the interface, it is possible to download the data individually by clicking on the dataset you want to download. It is also possible to zip and download the data together by clicking at the top of the Ramadda interface on the down arrow next to “Polar Data Centre &gt; DOI” and Zip and Download Tree:</p>
+<p><img alt="GLORIA-CD37-zip-and-download-tree" src="../_images/GLORIA-CD37-zip-and-download-tree.png" /></p>
+<center>Screenshot showing how to zip and download the data from Ramadda</center><p>To download a ZIP file containing all pass files, use the following command (the preceeding ! runs the line as a Linux command):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget<span class="w"> </span><span class="s2">&quot;https://ramadda.data.bas.ac.uk/repository/entry/show/UK+Polar+Data+Centre/DOI/Geological+Long+Range+Inclined+Asdic+%28GLORIA%29+seabed+side-scan+sonar+raw+data+acquired+on+Charles+Darwin+CD37+cruise+in+1989/netcdf?entryid=synth%3Acf87183c-51df-4588-be73-ad0a45fea2d7%3AL25ldGNkZg%3D%3D&amp;output=zip.tree&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To download a single file, run the following command:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget<span class="w"> </span>--content-disposition<span class="w"> </span>--trust-server-names<span class="w"> </span><span class="s2">&quot;https://ramadda.data.bas.ac.uk/repository/entry/get/CD37_GLORIA_PASS169.nc?entryid=synth%3Acf87183c-51df-4588-be73-ad0a45fea2d7%3AL25ldGNkZi9DRDM3X0dMT1JJQV9QQVNTMTY5Lm5j&quot;</span><span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;CD37_GLORIA_PASS169.nc&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="to-set-up-the-virtual-environment-with-conda-if-desired">
+<h2>To set up the virtual environment with Conda (if desired):<a class="headerlink" href="#to-set-up-the-virtual-environment-with-conda-if-desired" title="Link to this heading">#</a></h2>
+<p>These commands will need to be run in a Linux environment.</p>
+<p>If you do not have conda on your machine, you will need to install it. This is a package manager which is used with languages like Python.</p>
+<blockquote>
+<div><p>conda create -n gloria_env</p>
+</div></blockquote>
+<blockquote>
+<div><p>conda activate gloria_env</p>
+</div></blockquote>
+<blockquote>
+<div><p>conda config –env –add channels conda-forge</p>
+</div></blockquote>
+<blockquote>
+<div><p>conda config –env –set channel_priority strict</p>
+</div></blockquote>
+<blockquote>
+<div><p>conda install netCDF4</p>
+</div></blockquote>
+<p>The new environment is then able to activated again simply by running: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">gloria_env</span></code>.</p>
+<p>Any packages or modules which are installed while the environment is active will be added to the environment configuration and can be seen by running: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code></p>
+</section>
+<section id="to-set-up-the-virtual-environment-on-unix-if-desired">
+<h2>To set up the virtual environment on UNIX (if desired):<a class="headerlink" href="#to-set-up-the-virtual-environment-on-unix-if-desired" title="Link to this heading">#</a></h2>
+<p>In the folder where you have your code, you need to launch:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">gloria_env</span></code></p>
+<p>It will create a folder with all the environment for python. To activate the virtual environment you need to launch it:</p>
+<p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">gloria_env/bin/activate.csh</span></code></p>
+<p>You need to make sure that [gloria_env] appears before your name on the machine.
+That means that you are using the virtual environment.
+Then you need to upgrade pip which is the command that installs the packages:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">pip</span></code></p>
+<p>And install the other libraries:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">netCDF4</span></code></p>
+</section>
+<section id="useful-dependencies">
+<h2>Useful dependencies<a class="headerlink" href="#useful-dependencies" title="Link to this heading">#</a></h2>
+<p>For the code to run, it is important to install the correct dependancies and libraries. In particular the following library is crucial for the code to run:</p>
+<ul class="simple">
+<li><p><strong>netCDF4</strong> module to check NetCDF data in Python</p></li>
+<li><p><strong>pandas</strong> package to work with CSV data</p></li>
+<li><p><strong>numpy</strong> package to work with numerical data and 3-dimensional arrays</p></li>
+<li><p><strong>matplotlib</strong> package to plot geographic and non-geographic data</p></li>
+<li><p><strong>cartopy</strong> package to plot geographic (map-based) data</p></li>
+</ul>
+<p>If any of the modules specified in this notebook are not currently installed in your Linux environment, you will need to install these, for example with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code>.</p>
+<p>In this tutorial, the virtual environment is already set up. The list of the current libraries loaded is given in the list below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>list
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Package                   Version
+------------------------- --------------
+affine                    2.4.0
+anyio                     4.8.0
+argon2-cffi               23.1.0
+argon2-cffi-bindings      21.2.0
+arrow                     1.3.0
+asttokens                 3.0.0
+async-lru                 2.0.4
+attrs                     25.1.0
+babel                     2.17.0
+beautifulsoup4            4.13.3
+bleach                    6.2.0
+Brotli                    1.1.0
+cached-property           1.5.2
+Cartopy                   0.24.0
+certifi                   2025.1.31
+cffi                      1.17.1
+cftime                    1.6.4
+charset-normalizer        3.4.1
+click                     8.1.8
+click-plugins             1.1.1
+cligj                     0.7.2
+colorama                  0.4.6
+comm                      0.2.2
+contourpy                 1.3.1
+cycler                    0.12.1
+debugpy                   1.8.12
+decorator                 5.2.1
+defusedxml                0.7.1
+exceptiongroup            1.2.2
+executing                 2.1.0
+fastjsonschema            2.21.1
+fonttools                 4.56.0
+fqdn                      1.5.1
+h11                       0.14.0
+h2                        4.2.0
+hpack                     4.1.0
+httpcore                  1.0.7
+httpx                     0.28.1
+hyperframe                6.1.0
+idna                      3.10
+importlib_metadata        8.6.1
+importlib_resources       6.5.2
+ipykernel                 6.29.5
+ipython                   8.32.0
+isoduration               20.11.0
+jedi                      0.19.2
+Jinja2                    3.1.5
+json5                     0.10.0
+jsonpointer               3.0.0
+jsonschema                4.23.0
+jsonschema-specifications 2024.10.1
+jupyter_client            8.6.3
+jupyter_core              5.7.2
+jupyter-events            0.12.0
+jupyter-lsp               2.2.5
+jupyter_server            2.15.0
+jupyter_server_terminals  0.5.3
+jupyterlab                4.3.5
+jupyterlab_pygments       0.3.0
+jupyterlab_server         2.27.3
+kiwisolver                1.4.7
+MarkupSafe                3.0.2
+matplotlib                3.10.0
+matplotlib-inline         0.1.7
+mistune                   3.1.2
+munkres                   1.1.4
+nbclient                  0.10.2
+nbconvert                 7.16.6
+nbformat                  5.10.4
+nest_asyncio              1.6.0
+netCDF4                   1.7.2
+notebook_shim             0.2.4
+numpy                     2.2.3
+overrides                 7.7.0
+packaging                 24.2
+pandas                    2.2.3
+pandocfilters             1.5.0
+parso                     0.8.4
+pickleshare               0.7.5
+pillow                    11.1.0
+pip                       25.0.1
+pkgutil_resolve_name      1.3.10
+platformdirs              4.3.6
+prometheus_client         0.21.1
+prompt_toolkit            3.0.50
+psutil                    7.0.0
+pure_eval                 0.2.3
+pycparser                 2.22
+Pygments                  2.19.1
+pyparsing                 3.2.1
+pyproj                    3.7.1
+pyshp                     2.3.1
+PySocks                   1.7.1
+python-dateutil           2.9.0.post0
+python-json-logger        2.0.7
+pytz                      2024.1
+pywin32                   307
+pywinpty                  2.0.15
+PyYAML                    6.0.2
+pyzmq                     26.2.1
+rasterio                  1.4.3
+referencing               0.36.2
+requests                  2.32.3
+rfc3339_validator         0.1.4
+rfc3986-validator         0.1.1
+rpds-py                   0.23.1
+Send2Trash                1.8.3
+setuptools                75.8.2
+shapely                   2.0.7
+six                       1.17.0
+sniffio                   1.3.1
+snuggs                    1.4.7
+soupsieve                 2.5
+stack_data                0.6.3
+terminado                 0.18.1
+tinycss2                  1.4.0
+tomli                     2.2.1
+tornado                   6.4.2
+traitlets                 5.14.3
+types-python-dateutil     2.9.0.20241206
+typing_extensions         4.12.2
+typing_utils              0.1.0
+tzdata                    2025.1
+uri-template              1.3.0
+urllib3                   2.2.2
+wcwidth                   0.2.13
+webcolors                 24.11.1
+webencodings              0.5.1
+websocket-client          1.8.0
+wget                      3.2
+win_inet_pton             1.1.0
+zipp                      3.21.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-the-relevant-modules">
+<h2>Load the relevant modules<a class="headerlink" href="#load-the-relevant-modules" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">netCDF4</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nc</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.ticker</span><span class="w"> </span><span class="kn">import</span> <span class="n">MultipleLocator</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cartopy</span><span class="w"> </span><span class="kn">import</span> <span class="n">crs</span> <span class="k">as</span> <span class="n">ccrs</span><span class="p">,</span> <span class="n">feature</span> <span class="k">as</span> <span class="n">cfeature</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pprint</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="check-the-metadata-information">
+<h2>Check the metadata information<a class="headerlink" href="#check-the-metadata-information" title="Link to this heading">#</a></h2>
+<p>If your downloaded files are not in the directory you are running this code from, you will need to specify the full or relative path to that directory.</p>
+<p>A NetCDF file contains global attributes, group attributes, variable attributes and data. We will guide you through how to read the NetCDF file in Python below.</p>
+<p>First, let’s open the netCDF file and have a look at the global attributes of the <em>CD37_GLORIA_PASS169.nc</em> netCDF file</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;CD37_GLORIA_PASS169.nc&quot;</span>
+<span class="n">fnc</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fnc</span><span class="o">.</span><span class="n">ncattrs</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Conventions&#39;, &#39;title&#39;, &#39;summary&#39;, &#39;acknowledgement&#39;, &#39;keywords&#39;, &#39;citation&#39;, &#39;license&#39;, &#39;history&#39;, &#39;source&#39;, &#39;comment&#39;, &#39;institution&#39;, &#39;contributor_name&#39;, &#39;contributor_role&#39;, &#39;project&#39;, &#39;references&#39;, &#39;publisher_name&#39;, &#39;publisher_type&#39;, &#39;publisher_email&#39;, &#39;publisher_url&#39;, &#39;time_coverage_start&#39;, &#39;time_coverage_end&#39;, &#39;geospatial_lon_min&#39;, &#39;geospatial_lon_max&#39;, &#39;geospatial_lat_min&#39;, &#39;geospatial_lat_max&#39;, &#39;geospatial_bounds_crs&#39;, &#39;metadata_link&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can display key information about the NetCDF dataset (global attributes, variables, dimensions, groups) by just using a print function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fnc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;netCDF4.Dataset&#39;&gt;
+root group (NETCDF4 data model, file format HDF5):
+    Conventions: ACDD-1.3, CF-1.12
+    title: Geological Long Range Inclined Asdic (GLORIA) seabed side-scan sonar raw data acquired on Charles Darwin CD37 cruise in 1989
+    summary: The GLORIA instrument was operated on the Royal Research Ship (RRS) Charles Darwin 37 (CD37) research cruise during January - April 1989. The study area was the Scotia Sea, North Scotia Ridge (NSR), South Sandwich Island, South Sandwich Arc, and West Antarctic Peninsula (WAP) continental shelf, within the broader region of the Southern Ocean. Raw data are presented in NetCDF format. These have been pre-processed from the binary pass data using the bas-gloria package (https://github.com/antarctica/bas-gloria). The data have been improved with additional metadata such as latitude, longitude and depth.
+    acknowledgement: This project was funded by BAS under project code B6153: Scotia Sea tectonic evolution and palaeo-circulation.
+    keywords: Antarctica,GLORIA,Southern Ocean,marine geology,marine geophysics,sidescan sonar
+    citation:  (2025). Geological Long Range Inclined Asdic (GLORIA) seabed side-scan sonar raw data acquired on Charles Darwin CD37 cruise in 1989 (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. https://doi.org/10.5285/cf87183c-51df-4588-be73-ad0a45fea2d7
+    license: http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+    history: The acquisition instrument for this dataset was GLORIA II, operated on RRS Charles Darwin. The sonar towfish was 8m in length, and towed 300m behind the vessel at 50m depth. Data were collected on the RRS Charles Darwin CD37 scientific research cruise and stored on 9-track magnetic tapes, which are currently held by the British Antarctic Survey, Cambridge. Raw data were recovered from 9-track magnetic tapes in 2021. Transcription from tape was performed by Troika International/Interica. There was some data loss, due to stiction causing read errors. Heat treatment of the tapes improved data recovery at this stage. A Python package was developed by Paul Breen (BAS) to handle the GLORIA raw pass files. Conversion to NetCDF and generation of quicklooks for the GLORIA data from CD37 was performed in 2024/2025 using the package. This can be accessed here: https://github.com/antarctica/bas-gloria. Decoding of the data has been performed following the structure as descibed in Table 1 of Searle et al. 1989. The geographic position of the GLORIA instrument relative to the ship was calculated from the CD37 cruise track by introducing a fixed time offset of 90 seconds to the datetime of the ship at each recorded coordinate point. Latitude and longitude were subsequently interpolated, to increase the frequency of the coordinate information such that this could be added to the NetCDF attribute metadata by matching the track information with passes based on the datetime field.
+    source: Geological Long-Range Inclined Asdic (GLORIA) II
+    comment: In the initial data recovery, PASS245 was long and PASS246 was missed. This was determined to be caused by a reading error, resulting in concatenation of consecutive data from PASS246 to PASS245. These passes were then read from tape separately, and are now considered complete. In the recovered raw data, some passes were missing or partially complete. PASS038, PASS227 and PASS236 were partially complete, and PASS039, PASS040 and PASS231 were missing. Copies of these data held at BODC were provided in CDF format, which were converted to NetCDF. These passes are now considered complete. As the CDF files did not contain data for the slant range correction code, zero flag, hour mark flag and unused attributes (which were determined to be non-significant in the recovered raw data), a NaN value of 9999 has been used in the converted files for these passes. A fixed 90 second time offset was added to the ship track datetime to account for tow distance of the GLORIA instrument behind the ship (the output of this was the GLORIA track CSV). The latitude and longitude of the GLORIA track was then interpolated to provide the value of these coordinates at the original datetime of the ship track. This was done in order to map geographic information to the timestamps within the netCDF metadata. Interpolation on the latitude and longitude fields from ship track data was done with the Pandas Python library. Depth values within the NetCDF file metadata are provided by the International Bathymetric Chart of the Southern Ocean (IBCSO) version 2. Due to the resolution of IBCSO, the depth in the GLORIA NetCDF metadata is provided with a horizontal resolution of 500x500m, leading to some positive values close to coastline areas.
+    institution: British Antarctic Survey
+    contributor_name: Peter F. Barker, Roy A. Livermore, Jeremy S. Tomlinson, Richard Woollett, Alexander P. Cunningham, Robert D. Larter, Carol J. Pudsey, Richard W. Jordan
+    contributor_role: Chief Scientific Officer, Researcher, Researcher, Researcher, Researcher, Researcher, Researcher, Researcher
+    project: This project was funded by BAS under project code B6153: Scotia Sea tectonic evolution and palaeo-circulation.
+    references: Cunningham, Alexander P.. 1998 Geophysical Investigations of the North Scotia Ridge. University of London, PhD Thesis, Tomlinson, J.S.; Pudsey, C.J.; Livermore, R.A.; Larter, Robert D. ; Barker, Peter F.. 1992 Long-range sidescan sonar (GLORIA) survey of the Antarctic Peninsula Pacific margin. In: Yoshida, Y.; Kaminuma, K.; Shiraishi, K., (eds.) Recent progress in Antarctic earth science. Proceedings of the Sixth International Symposium on Antarctic Earth Sciences. Ranzan, Saitama, Japan, September 1991. Tokyo, Terra Scientific Publishing, 423-429, Searle, R. C., Le Bas, T. P., Mitchell, N. C., Somers, M. L., Parson, L. M., &amp; Patriat, P. H. (1990). GLORIA image processing: The state of the art. Marine geophysical researches, 12, 21-39,  Searle, R. C., &amp; Hunter, P. M. (1986). The use of GLORIA long-range sidescan sonar for deep-ocean mapping. In Autocarto London (Vol. 2, pp. 339-388).
+    publisher_name: NERC EDS UK Polar Data Centre
+    publisher_type: institution
+    publisher_email: pdc@bas.ac.uk
+    publisher_url: https://www.bas.ac.uk/data/uk-pdc/
+    time_coverage_start: 1989-01-04
+    time_coverage_end: 1989-04-02
+    geospatial_lon_min: -74.8
+    geospatial_lon_max: 0
+    geospatial_lat_min: -65
+    geospatial_lat_max: -51.5
+    geospatial_bounds_crs: EPSG:4326
+    metadata_link: https://doi.org/10.5285/cf87183c-51df-4588-be73-ad0a45fea2d7
+    dimensions(sizes): 
+    variables(dimensions): 
+    groups: scan1, scan2, scan3, scan4, scan5, scan6, scan7, scan8, scan9, scan10, scan11, scan12, scan13, scan14, scan15, scan16, scan17, scan18, scan19, scan20, scan21, scan22, scan23, scan24, scan25, scan26, scan27, scan28, scan29, scan30, scan31, scan32, scan33, scan34, scan35, scan36, scan37, scan38, scan39, scan40, scan41, scan42, scan43, scan44, scan45, scan46, scan47, scan48, scan49, scan50, scan51, scan52, scan53, scan54, scan55, scan56, scan57, scan58, scan59, scan60, scan61, scan62, scan63, scan64, scan65, scan66, scan67, scan68, scan69, scan70, scan71, scan72, scan73, scan74, scan75, scan76, scan77, scan78, scan79, scan80, scan81, scan82, scan83, scan84, scan85, scan86, scan87, scan88, scan89, scan90, scan91, scan92, scan93, scan94, scan95, scan96, scan97, scan98, scan99, scan100, scan101, scan102, scan103, scan104, scan105, scan106, scan107, scan108, scan109, scan110, scan111, scan112, scan113, scan114, scan115, scan116, scan117, scan118, scan119, scan120, scan121, scan122, scan123, scan124, scan125, scan126, scan127, scan128, scan129, scan130, scan131, scan132, scan133, scan134, scan135, scan136, scan137, scan138, scan139, scan140, scan141, scan142, scan143, scan144, scan145, scan146, scan147, scan148, scan149, scan150, scan151, scan152, scan153, scan154, scan155, scan156, scan157, scan158, scan159, scan160, scan161, scan162, scan163, scan164, scan165, scan166, scan167, scan168, scan169, scan170, scan171, scan172, scan173, scan174, scan175, scan176, scan177, scan178, scan179, scan180, scan181, scan182, scan183, scan184, scan185, scan186, scan187, scan188, scan189, scan190, scan191, scan192, scan193, scan194, scan195, scan196, scan197, scan198, scan199, scan200, scan201, scan202, scan203, scan204, scan205, scan206, scan207, scan208, scan209, scan210, scan211, scan212, scan213, scan214, scan215, scan216, scan217, scan218, scan219, scan220, scan221, scan222, scan223, scan224, scan225, scan226, scan227, scan228, scan229, scan230, scan231, scan232, scan233, scan234, scan235, scan236, scan237, scan238, scan239, scan240, scan241, scan242, scan243, scan244, scan245, scan246, scan247, scan248, scan249, scan250, scan251, scan252, scan253, scan254, scan255, scan256, scan257, scan258, scan259, scan260, scan261, scan262, scan263, scan264, scan265, scan266, scan267, scan268, scan269, scan270, scan271, scan272, scan273, scan274, scan275, scan276, scan277, scan278, scan279, scan280, scan281, scan282, scan283, scan284, scan285, scan286, scan287, scan288, scan289, scan290, scan291, scan292, scan293, scan294, scan295, scan296, scan297, scan298, scan299, scan300, scan301, scan302, scan303, scan304, scan305, scan306, scan307, scan308, scan309, scan310, scan311, scan312, scan313, scan314, scan315, scan316, scan317, scan318, scan319, scan320, scan321, scan322, scan323, scan324, scan325, scan326, scan327, scan328, scan329, scan330, scan331, scan332, scan333, scan334, scan335, scan336, scan337, scan338, scan339, scan340, scan341, scan342, scan343, scan344, scan345, scan346, scan347, scan348, scan349, scan350, scan351, scan352, scan353, scan354, scan355, scan356, scan357, scan358, scan359, scan360, scan361, scan362, scan363, scan364, scan365, scan366, scan367, scan368, scan369, scan370, scan371, scan372, scan373, scan374, scan375, scan376, scan377, scan378, scan379, scan380, scan381, scan382, scan383, scan384, scan385, scan386, scan387, scan388, scan389, scan390, scan391, scan392, scan393, scan394, scan395, scan396, scan397, scan398, scan399, scan400, scan401, scan402, scan403, scan404, scan405, scan406, scan407, scan408, scan409, scan410, scan411, scan412, scan413, scan414, scan415, scan416, scan417, scan418, scan419, scan420, scan421, scan422, scan423, scan424, scan425, scan426, scan427, scan428, scan429, scan430, scan431, scan432, scan433, scan434, scan435, scan436, scan437, scan438, scan439, scan440, scan441, scan442, scan443, scan444, scan445, scan446, scan447, scan448, scan449, scan450, scan451, scan452, scan453, scan454, scan455, scan456, scan457, scan458, scan459, scan460, scan461, scan462, scan463, scan464, scan465, scan466, scan467, scan468, scan469, scan470, scan471, scan472, scan473, scan474, scan475, scan476, scan477, scan478, scan479, scan480, scan481, scan482, scan483, scan484, scan485, scan486, scan487, scan488, scan489, scan490, scan491, scan492, scan493, scan494, scan495, scan496, scan497, scan498, scan499, scan500, scan501, scan502, scan503, scan504, scan505, scan506, scan507, scan508, scan509, scan510, scan511, scan512, scan513, scan514, scan515, scan516, scan517, scan518, scan519, scan520, scan521, scan522, scan523, scan524, scan525, scan526, scan527, scan528, scan529, scan530, scan531, scan532, scan533, scan534, scan535, scan536, scan537, scan538, scan539, scan540, scan541, scan542, scan543, scan544, scan545, scan546, scan547, scan548, scan549, scan550, scan551, scan552, scan553, scan554, scan555, scan556, scan557, scan558, scan559, scan560, scan561, scan562, scan563, scan564, scan565, scan566, scan567, scan568, scan569, scan570, scan571, scan572, scan573, scan574, scan575, scan576, scan577, scan578, scan579, scan580, scan581, scan582, scan583, scan584, scan585, scan586, scan587, scan588, scan589, scan590, scan591, scan592, scan593, scan594, scan595, scan596, scan597, scan598, scan599, scan600, scan601, scan602, scan603, scan604, scan605, scan606, scan607, scan608, scan609, scan610, scan611, scan612, scan613, scan614, scan615, scan616, scan617, scan618, scan619, scan620, scan621, scan622, scan623, scan624, scan625, scan626, scan627, scan628, scan629, scan630, scan631, scan632, scan633, scan634, scan635, scan636, scan637, scan638, scan639, scan640, scan641, scan642, scan643, scan644, scan645, scan646, scan647, scan648, scan649, scan650, scan651, scan652, scan653, scan654, scan655, scan656, scan657, scan658, scan659, scan660, scan661, scan662, scan663, scan664, scan665, scan666, scan667, scan668, scan669, scan670, scan671, scan672, scan673, scan674, scan675, scan676, scan677, scan678, scan679, scan680, scan681, scan682, scan683, scan684, scan685, scan686, scan687, scan688, scan689, scan690, scan691, scan692, scan693, scan694, scan695, scan696, scan697, scan698, scan699, scan700, scan701, scan702, scan703, scan704, scan705, scan706, scan707, scan708, scan709, scan710, scan711, scan712, scan713, scan714, scan715, scan716, scan717, scan718, scan719, scan720
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also access directly a single global attribute value by treating their values as if they are key-value pairs in a dictionary:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fnc</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;history&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The acquisition instrument for this dataset was GLORIA II, operated on RRS Charles Darwin. The sonar towfish was 8m in length, and towed 300m behind the vessel at 50m depth. Data were collected on the RRS Charles Darwin CD37 scientific research cruise and stored on 9-track magnetic tapes, which are currently held by the British Antarctic Survey, Cambridge. Raw data were recovered from 9-track magnetic tapes in 2021. Transcription from tape was performed by Troika International/Interica. There was some data loss, due to stiction causing read errors. Heat treatment of the tapes improved data recovery at this stage. A Python package was developed by Paul Breen (BAS) to handle the GLORIA raw pass files. Conversion to NetCDF and generation of quicklooks for the GLORIA data from CD37 was performed in 2024/2025 using the package. This can be accessed here: https://github.com/antarctica/bas-gloria. Decoding of the data has been performed following the structure as descibed in Table 1 of Searle et al. 1989. The geographic position of the GLORIA instrument relative to the ship was calculated from the CD37 cruise track by introducing a fixed time offset of 90 seconds to the datetime of the ship at each recorded coordinate point. Latitude and longitude were subsequently interpolated, to increase the frequency of the coordinate information such that this could be added to the NetCDF attribute metadata by matching the track information with passes based on the datetime field.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="checking-the-netcdf-data">
+<h2>Checking the NetCDF data<a class="headerlink" href="#checking-the-netcdf-data" title="Link to this heading">#</a></h2>
+<p>Now let’s access the data by opening the NetCDF file in “read” mode (“r” option in nc.Dataset object construction), and store the metadata information in lists to work with later.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">nc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
+    
+    <span class="n">group_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+    <span class="c1"># Initialize a dictionary to store each group&#39;s attributes as an indexable sub-dict. </span>
+    <span class="n">attributes</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># Iterate through all groups and access their data</span>
+    <span class="k">for</span> <span class="n">group_name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        
+        <span class="c1"># Access the &#39;scan&#39; variable which contains the sample values (data)</span>
+        <span class="k">if</span> <span class="s1">&#39;scan&#39;</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">variables</span><span class="p">:</span>
+            <span class="n">scan_data</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;scan&#39;</span><span class="p">][:]</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">group_name</span><span class="p">:</span> <span class="n">scan_data</span><span class="p">})</span>
+
+    <span class="k">for</span> <span class="n">group_name</span> <span class="ow">in</span> <span class="n">group_names</span><span class="p">:</span>
+        
+        <span class="n">group</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="n">group_name</span><span class="p">]</span>
+
+        <span class="c1"># Initialize a dictionary to store attributes of the current group</span>
+        <span class="n">attributes_of_group</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="c1"># Access and store group attributes</span>
+        <span class="k">for</span> <span class="n">attr_name</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">ncattrs</span><span class="p">():</span>
+            <span class="n">attr_value</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">getncattr</span><span class="p">(</span><span class="n">attr_name</span><span class="p">)</span>
+            <span class="n">attributes_of_group</span><span class="p">[</span><span class="n">attr_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">attr_value</span>  <span class="c1"># Store attributes in a dictionary</span>
+        
+        <span class="c1"># Append the dictionary of attributes for the current group to the list</span>
+        <span class="n">attributes</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">group_name</span><span class="p">:</span> <span class="n">attributes_of_group</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="list-group-attributes-and-data-structure">
+<h2>List group attributes and data structure<a class="headerlink" href="#list-group-attributes-and-data-structure" title="Link to this heading">#</a></h2>
+<p>The group structure is as follows: each group represents one GLORIA scan, and the group attributes provide the metadata for this scan. For complete passes, 720 scans will be present. We can check the number of group and list them as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Groups found: </span><span class="si">{</span><span class="n">group_names</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; The total number of passes is </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">group_names</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Groups found: [&#39;scan1&#39;, &#39;scan2&#39;, &#39;scan3&#39;, &#39;scan4&#39;, &#39;scan5&#39;, &#39;scan6&#39;, &#39;scan7&#39;, &#39;scan8&#39;, &#39;scan9&#39;, &#39;scan10&#39;, &#39;scan11&#39;, &#39;scan12&#39;, &#39;scan13&#39;, &#39;scan14&#39;, &#39;scan15&#39;, &#39;scan16&#39;, &#39;scan17&#39;, &#39;scan18&#39;, &#39;scan19&#39;, &#39;scan20&#39;, &#39;scan21&#39;, &#39;scan22&#39;, &#39;scan23&#39;, &#39;scan24&#39;, &#39;scan25&#39;, &#39;scan26&#39;, &#39;scan27&#39;, &#39;scan28&#39;, &#39;scan29&#39;, &#39;scan30&#39;, &#39;scan31&#39;, &#39;scan32&#39;, &#39;scan33&#39;, &#39;scan34&#39;, &#39;scan35&#39;, &#39;scan36&#39;, &#39;scan37&#39;, &#39;scan38&#39;, &#39;scan39&#39;, &#39;scan40&#39;, &#39;scan41&#39;, &#39;scan42&#39;, &#39;scan43&#39;, &#39;scan44&#39;, &#39;scan45&#39;, &#39;scan46&#39;, &#39;scan47&#39;, &#39;scan48&#39;, &#39;scan49&#39;, &#39;scan50&#39;, &#39;scan51&#39;, &#39;scan52&#39;, &#39;scan53&#39;, &#39;scan54&#39;, &#39;scan55&#39;, &#39;scan56&#39;, &#39;scan57&#39;, &#39;scan58&#39;, &#39;scan59&#39;, &#39;scan60&#39;, &#39;scan61&#39;, &#39;scan62&#39;, &#39;scan63&#39;, &#39;scan64&#39;, &#39;scan65&#39;, &#39;scan66&#39;, &#39;scan67&#39;, &#39;scan68&#39;, &#39;scan69&#39;, &#39;scan70&#39;, &#39;scan71&#39;, &#39;scan72&#39;, &#39;scan73&#39;, &#39;scan74&#39;, &#39;scan75&#39;, &#39;scan76&#39;, &#39;scan77&#39;, &#39;scan78&#39;, &#39;scan79&#39;, &#39;scan80&#39;, &#39;scan81&#39;, &#39;scan82&#39;, &#39;scan83&#39;, &#39;scan84&#39;, &#39;scan85&#39;, &#39;scan86&#39;, &#39;scan87&#39;, &#39;scan88&#39;, &#39;scan89&#39;, &#39;scan90&#39;, &#39;scan91&#39;, &#39;scan92&#39;, &#39;scan93&#39;, &#39;scan94&#39;, &#39;scan95&#39;, &#39;scan96&#39;, &#39;scan97&#39;, &#39;scan98&#39;, &#39;scan99&#39;, &#39;scan100&#39;, &#39;scan101&#39;, &#39;scan102&#39;, &#39;scan103&#39;, &#39;scan104&#39;, &#39;scan105&#39;, &#39;scan106&#39;, &#39;scan107&#39;, &#39;scan108&#39;, &#39;scan109&#39;, &#39;scan110&#39;, &#39;scan111&#39;, &#39;scan112&#39;, &#39;scan113&#39;, &#39;scan114&#39;, &#39;scan115&#39;, &#39;scan116&#39;, &#39;scan117&#39;, &#39;scan118&#39;, &#39;scan119&#39;, &#39;scan120&#39;, &#39;scan121&#39;, &#39;scan122&#39;, &#39;scan123&#39;, &#39;scan124&#39;, &#39;scan125&#39;, &#39;scan126&#39;, &#39;scan127&#39;, &#39;scan128&#39;, &#39;scan129&#39;, &#39;scan130&#39;, &#39;scan131&#39;, &#39;scan132&#39;, &#39;scan133&#39;, &#39;scan134&#39;, &#39;scan135&#39;, &#39;scan136&#39;, &#39;scan137&#39;, &#39;scan138&#39;, &#39;scan139&#39;, &#39;scan140&#39;, &#39;scan141&#39;, &#39;scan142&#39;, &#39;scan143&#39;, &#39;scan144&#39;, &#39;scan145&#39;, &#39;scan146&#39;, &#39;scan147&#39;, &#39;scan148&#39;, &#39;scan149&#39;, &#39;scan150&#39;, &#39;scan151&#39;, &#39;scan152&#39;, &#39;scan153&#39;, &#39;scan154&#39;, &#39;scan155&#39;, &#39;scan156&#39;, &#39;scan157&#39;, &#39;scan158&#39;, &#39;scan159&#39;, &#39;scan160&#39;, &#39;scan161&#39;, &#39;scan162&#39;, &#39;scan163&#39;, &#39;scan164&#39;, &#39;scan165&#39;, &#39;scan166&#39;, &#39;scan167&#39;, &#39;scan168&#39;, &#39;scan169&#39;, &#39;scan170&#39;, &#39;scan171&#39;, &#39;scan172&#39;, &#39;scan173&#39;, &#39;scan174&#39;, &#39;scan175&#39;, &#39;scan176&#39;, &#39;scan177&#39;, &#39;scan178&#39;, &#39;scan179&#39;, &#39;scan180&#39;, &#39;scan181&#39;, &#39;scan182&#39;, &#39;scan183&#39;, &#39;scan184&#39;, &#39;scan185&#39;, &#39;scan186&#39;, &#39;scan187&#39;, &#39;scan188&#39;, &#39;scan189&#39;, &#39;scan190&#39;, &#39;scan191&#39;, &#39;scan192&#39;, &#39;scan193&#39;, &#39;scan194&#39;, &#39;scan195&#39;, &#39;scan196&#39;, &#39;scan197&#39;, &#39;scan198&#39;, &#39;scan199&#39;, &#39;scan200&#39;, &#39;scan201&#39;, &#39;scan202&#39;, &#39;scan203&#39;, &#39;scan204&#39;, &#39;scan205&#39;, &#39;scan206&#39;, &#39;scan207&#39;, &#39;scan208&#39;, &#39;scan209&#39;, &#39;scan210&#39;, &#39;scan211&#39;, &#39;scan212&#39;, &#39;scan213&#39;, &#39;scan214&#39;, &#39;scan215&#39;, &#39;scan216&#39;, &#39;scan217&#39;, &#39;scan218&#39;, &#39;scan219&#39;, &#39;scan220&#39;, &#39;scan221&#39;, &#39;scan222&#39;, &#39;scan223&#39;, &#39;scan224&#39;, &#39;scan225&#39;, &#39;scan226&#39;, &#39;scan227&#39;, &#39;scan228&#39;, &#39;scan229&#39;, &#39;scan230&#39;, &#39;scan231&#39;, &#39;scan232&#39;, &#39;scan233&#39;, &#39;scan234&#39;, &#39;scan235&#39;, &#39;scan236&#39;, &#39;scan237&#39;, &#39;scan238&#39;, &#39;scan239&#39;, &#39;scan240&#39;, &#39;scan241&#39;, &#39;scan242&#39;, &#39;scan243&#39;, &#39;scan244&#39;, &#39;scan245&#39;, &#39;scan246&#39;, &#39;scan247&#39;, &#39;scan248&#39;, &#39;scan249&#39;, &#39;scan250&#39;, &#39;scan251&#39;, &#39;scan252&#39;, &#39;scan253&#39;, &#39;scan254&#39;, &#39;scan255&#39;, &#39;scan256&#39;, &#39;scan257&#39;, &#39;scan258&#39;, &#39;scan259&#39;, &#39;scan260&#39;, &#39;scan261&#39;, &#39;scan262&#39;, &#39;scan263&#39;, &#39;scan264&#39;, &#39;scan265&#39;, &#39;scan266&#39;, &#39;scan267&#39;, &#39;scan268&#39;, &#39;scan269&#39;, &#39;scan270&#39;, &#39;scan271&#39;, &#39;scan272&#39;, &#39;scan273&#39;, &#39;scan274&#39;, &#39;scan275&#39;, &#39;scan276&#39;, &#39;scan277&#39;, &#39;scan278&#39;, &#39;scan279&#39;, &#39;scan280&#39;, &#39;scan281&#39;, &#39;scan282&#39;, &#39;scan283&#39;, &#39;scan284&#39;, &#39;scan285&#39;, &#39;scan286&#39;, &#39;scan287&#39;, &#39;scan288&#39;, &#39;scan289&#39;, &#39;scan290&#39;, &#39;scan291&#39;, &#39;scan292&#39;, &#39;scan293&#39;, &#39;scan294&#39;, &#39;scan295&#39;, &#39;scan296&#39;, &#39;scan297&#39;, &#39;scan298&#39;, &#39;scan299&#39;, &#39;scan300&#39;, &#39;scan301&#39;, &#39;scan302&#39;, &#39;scan303&#39;, &#39;scan304&#39;, &#39;scan305&#39;, &#39;scan306&#39;, &#39;scan307&#39;, &#39;scan308&#39;, &#39;scan309&#39;, &#39;scan310&#39;, &#39;scan311&#39;, &#39;scan312&#39;, &#39;scan313&#39;, &#39;scan314&#39;, &#39;scan315&#39;, &#39;scan316&#39;, &#39;scan317&#39;, &#39;scan318&#39;, &#39;scan319&#39;, &#39;scan320&#39;, &#39;scan321&#39;, &#39;scan322&#39;, &#39;scan323&#39;, &#39;scan324&#39;, &#39;scan325&#39;, &#39;scan326&#39;, &#39;scan327&#39;, &#39;scan328&#39;, &#39;scan329&#39;, &#39;scan330&#39;, &#39;scan331&#39;, &#39;scan332&#39;, &#39;scan333&#39;, &#39;scan334&#39;, &#39;scan335&#39;, &#39;scan336&#39;, &#39;scan337&#39;, &#39;scan338&#39;, &#39;scan339&#39;, &#39;scan340&#39;, &#39;scan341&#39;, &#39;scan342&#39;, &#39;scan343&#39;, &#39;scan344&#39;, &#39;scan345&#39;, &#39;scan346&#39;, &#39;scan347&#39;, &#39;scan348&#39;, &#39;scan349&#39;, &#39;scan350&#39;, &#39;scan351&#39;, &#39;scan352&#39;, &#39;scan353&#39;, &#39;scan354&#39;, &#39;scan355&#39;, &#39;scan356&#39;, &#39;scan357&#39;, &#39;scan358&#39;, &#39;scan359&#39;, &#39;scan360&#39;, &#39;scan361&#39;, &#39;scan362&#39;, &#39;scan363&#39;, &#39;scan364&#39;, &#39;scan365&#39;, &#39;scan366&#39;, &#39;scan367&#39;, &#39;scan368&#39;, &#39;scan369&#39;, &#39;scan370&#39;, &#39;scan371&#39;, &#39;scan372&#39;, &#39;scan373&#39;, &#39;scan374&#39;, &#39;scan375&#39;, &#39;scan376&#39;, &#39;scan377&#39;, &#39;scan378&#39;, &#39;scan379&#39;, &#39;scan380&#39;, &#39;scan381&#39;, &#39;scan382&#39;, &#39;scan383&#39;, &#39;scan384&#39;, &#39;scan385&#39;, &#39;scan386&#39;, &#39;scan387&#39;, &#39;scan388&#39;, &#39;scan389&#39;, &#39;scan390&#39;, &#39;scan391&#39;, &#39;scan392&#39;, &#39;scan393&#39;, &#39;scan394&#39;, &#39;scan395&#39;, &#39;scan396&#39;, &#39;scan397&#39;, &#39;scan398&#39;, &#39;scan399&#39;, &#39;scan400&#39;, &#39;scan401&#39;, &#39;scan402&#39;, &#39;scan403&#39;, &#39;scan404&#39;, &#39;scan405&#39;, &#39;scan406&#39;, &#39;scan407&#39;, &#39;scan408&#39;, &#39;scan409&#39;, &#39;scan410&#39;, &#39;scan411&#39;, &#39;scan412&#39;, &#39;scan413&#39;, &#39;scan414&#39;, &#39;scan415&#39;, &#39;scan416&#39;, &#39;scan417&#39;, &#39;scan418&#39;, &#39;scan419&#39;, &#39;scan420&#39;, &#39;scan421&#39;, &#39;scan422&#39;, &#39;scan423&#39;, &#39;scan424&#39;, &#39;scan425&#39;, &#39;scan426&#39;, &#39;scan427&#39;, &#39;scan428&#39;, &#39;scan429&#39;, &#39;scan430&#39;, &#39;scan431&#39;, &#39;scan432&#39;, &#39;scan433&#39;, &#39;scan434&#39;, &#39;scan435&#39;, &#39;scan436&#39;, &#39;scan437&#39;, &#39;scan438&#39;, &#39;scan439&#39;, &#39;scan440&#39;, &#39;scan441&#39;, &#39;scan442&#39;, &#39;scan443&#39;, &#39;scan444&#39;, &#39;scan445&#39;, &#39;scan446&#39;, &#39;scan447&#39;, &#39;scan448&#39;, &#39;scan449&#39;, &#39;scan450&#39;, &#39;scan451&#39;, &#39;scan452&#39;, &#39;scan453&#39;, &#39;scan454&#39;, &#39;scan455&#39;, &#39;scan456&#39;, &#39;scan457&#39;, &#39;scan458&#39;, &#39;scan459&#39;, &#39;scan460&#39;, &#39;scan461&#39;, &#39;scan462&#39;, &#39;scan463&#39;, &#39;scan464&#39;, &#39;scan465&#39;, &#39;scan466&#39;, &#39;scan467&#39;, &#39;scan468&#39;, &#39;scan469&#39;, &#39;scan470&#39;, &#39;scan471&#39;, &#39;scan472&#39;, &#39;scan473&#39;, &#39;scan474&#39;, &#39;scan475&#39;, &#39;scan476&#39;, &#39;scan477&#39;, &#39;scan478&#39;, &#39;scan479&#39;, &#39;scan480&#39;, &#39;scan481&#39;, &#39;scan482&#39;, &#39;scan483&#39;, &#39;scan484&#39;, &#39;scan485&#39;, &#39;scan486&#39;, &#39;scan487&#39;, &#39;scan488&#39;, &#39;scan489&#39;, &#39;scan490&#39;, &#39;scan491&#39;, &#39;scan492&#39;, &#39;scan493&#39;, &#39;scan494&#39;, &#39;scan495&#39;, &#39;scan496&#39;, &#39;scan497&#39;, &#39;scan498&#39;, &#39;scan499&#39;, &#39;scan500&#39;, &#39;scan501&#39;, &#39;scan502&#39;, &#39;scan503&#39;, &#39;scan504&#39;, &#39;scan505&#39;, &#39;scan506&#39;, &#39;scan507&#39;, &#39;scan508&#39;, &#39;scan509&#39;, &#39;scan510&#39;, &#39;scan511&#39;, &#39;scan512&#39;, &#39;scan513&#39;, &#39;scan514&#39;, &#39;scan515&#39;, &#39;scan516&#39;, &#39;scan517&#39;, &#39;scan518&#39;, &#39;scan519&#39;, &#39;scan520&#39;, &#39;scan521&#39;, &#39;scan522&#39;, &#39;scan523&#39;, &#39;scan524&#39;, &#39;scan525&#39;, &#39;scan526&#39;, &#39;scan527&#39;, &#39;scan528&#39;, &#39;scan529&#39;, &#39;scan530&#39;, &#39;scan531&#39;, &#39;scan532&#39;, &#39;scan533&#39;, &#39;scan534&#39;, &#39;scan535&#39;, &#39;scan536&#39;, &#39;scan537&#39;, &#39;scan538&#39;, &#39;scan539&#39;, &#39;scan540&#39;, &#39;scan541&#39;, &#39;scan542&#39;, &#39;scan543&#39;, &#39;scan544&#39;, &#39;scan545&#39;, &#39;scan546&#39;, &#39;scan547&#39;, &#39;scan548&#39;, &#39;scan549&#39;, &#39;scan550&#39;, &#39;scan551&#39;, &#39;scan552&#39;, &#39;scan553&#39;, &#39;scan554&#39;, &#39;scan555&#39;, &#39;scan556&#39;, &#39;scan557&#39;, &#39;scan558&#39;, &#39;scan559&#39;, &#39;scan560&#39;, &#39;scan561&#39;, &#39;scan562&#39;, &#39;scan563&#39;, &#39;scan564&#39;, &#39;scan565&#39;, &#39;scan566&#39;, &#39;scan567&#39;, &#39;scan568&#39;, &#39;scan569&#39;, &#39;scan570&#39;, &#39;scan571&#39;, &#39;scan572&#39;, &#39;scan573&#39;, &#39;scan574&#39;, &#39;scan575&#39;, &#39;scan576&#39;, &#39;scan577&#39;, &#39;scan578&#39;, &#39;scan579&#39;, &#39;scan580&#39;, &#39;scan581&#39;, &#39;scan582&#39;, &#39;scan583&#39;, &#39;scan584&#39;, &#39;scan585&#39;, &#39;scan586&#39;, &#39;scan587&#39;, &#39;scan588&#39;, &#39;scan589&#39;, &#39;scan590&#39;, &#39;scan591&#39;, &#39;scan592&#39;, &#39;scan593&#39;, &#39;scan594&#39;, &#39;scan595&#39;, &#39;scan596&#39;, &#39;scan597&#39;, &#39;scan598&#39;, &#39;scan599&#39;, &#39;scan600&#39;, &#39;scan601&#39;, &#39;scan602&#39;, &#39;scan603&#39;, &#39;scan604&#39;, &#39;scan605&#39;, &#39;scan606&#39;, &#39;scan607&#39;, &#39;scan608&#39;, &#39;scan609&#39;, &#39;scan610&#39;, &#39;scan611&#39;, &#39;scan612&#39;, &#39;scan613&#39;, &#39;scan614&#39;, &#39;scan615&#39;, &#39;scan616&#39;, &#39;scan617&#39;, &#39;scan618&#39;, &#39;scan619&#39;, &#39;scan620&#39;, &#39;scan621&#39;, &#39;scan622&#39;, &#39;scan623&#39;, &#39;scan624&#39;, &#39;scan625&#39;, &#39;scan626&#39;, &#39;scan627&#39;, &#39;scan628&#39;, &#39;scan629&#39;, &#39;scan630&#39;, &#39;scan631&#39;, &#39;scan632&#39;, &#39;scan633&#39;, &#39;scan634&#39;, &#39;scan635&#39;, &#39;scan636&#39;, &#39;scan637&#39;, &#39;scan638&#39;, &#39;scan639&#39;, &#39;scan640&#39;, &#39;scan641&#39;, &#39;scan642&#39;, &#39;scan643&#39;, &#39;scan644&#39;, &#39;scan645&#39;, &#39;scan646&#39;, &#39;scan647&#39;, &#39;scan648&#39;, &#39;scan649&#39;, &#39;scan650&#39;, &#39;scan651&#39;, &#39;scan652&#39;, &#39;scan653&#39;, &#39;scan654&#39;, &#39;scan655&#39;, &#39;scan656&#39;, &#39;scan657&#39;, &#39;scan658&#39;, &#39;scan659&#39;, &#39;scan660&#39;, &#39;scan661&#39;, &#39;scan662&#39;, &#39;scan663&#39;, &#39;scan664&#39;, &#39;scan665&#39;, &#39;scan666&#39;, &#39;scan667&#39;, &#39;scan668&#39;, &#39;scan669&#39;, &#39;scan670&#39;, &#39;scan671&#39;, &#39;scan672&#39;, &#39;scan673&#39;, &#39;scan674&#39;, &#39;scan675&#39;, &#39;scan676&#39;, &#39;scan677&#39;, &#39;scan678&#39;, &#39;scan679&#39;, &#39;scan680&#39;, &#39;scan681&#39;, &#39;scan682&#39;, &#39;scan683&#39;, &#39;scan684&#39;, &#39;scan685&#39;, &#39;scan686&#39;, &#39;scan687&#39;, &#39;scan688&#39;, &#39;scan689&#39;, &#39;scan690&#39;, &#39;scan691&#39;, &#39;scan692&#39;, &#39;scan693&#39;, &#39;scan694&#39;, &#39;scan695&#39;, &#39;scan696&#39;, &#39;scan697&#39;, &#39;scan698&#39;, &#39;scan699&#39;, &#39;scan700&#39;, &#39;scan701&#39;, &#39;scan702&#39;, &#39;scan703&#39;, &#39;scan704&#39;, &#39;scan705&#39;, &#39;scan706&#39;, &#39;scan707&#39;, &#39;scan708&#39;, &#39;scan709&#39;, &#39;scan710&#39;, &#39;scan711&#39;, &#39;scan712&#39;, &#39;scan713&#39;, &#39;scan714&#39;, &#39;scan715&#39;, &#39;scan716&#39;, &#39;scan717&#39;, &#39;scan718&#39;, &#39;scan719&#39;, &#39;scan720&#39;]
+ The total number of passes is 720
+</pre></div>
+</div>
+</div>
+</div>
+<p>To access the group attribute of a particular scan (here <strong>scan1</strong>); you can just use the following command:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;scan1&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;pass_number&#39;: np.int64(169),
+ &#39;scan_number&#39;: np.int64(1),
+ &#39;hour_mark_flag&#39;: np.int64(0),
+ &#39;slant_range_correction_code&#39;: np.int64(50),
+ &#39;zero_flag&#39;: np.int64(0),
+ &#39;pulse_repetition_period&#39;: np.int64(51),
+ &#39;vehicle_heading&#39;: &#39;104&#39;,
+ &#39;year&#39;: &#39;89&#39;,
+ &#39;edge_mark_start&#39;: np.int64(65535),
+ &#39;edge_mark_end&#39;: np.int64(65535),
+ &#39;julian_day&#39;: &#39;061&#39;,
+ &#39;hours&#39;: &#39;18&#39;,
+ &#39;minutes&#39;: &#39;00&#39;,
+ &#39;seconds&#39;: &#39;&#39;,
+ &#39;checksum&#39;: np.int64(392),
+ &#39;unused&#39;: np.int64(0),
+ &#39;datetime&#39;: &#39;1989-03-02T18:00:00&#39;,
+ &#39;latitude&#39;: np.float64(-59.3227),
+ &#39;longitude&#39;: np.float64(-43.0247),
+ &#39;depth_IBCSO&#39;: np.int64(-4039)}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The variable ‘scan’, with dimensions samples, contains 994 sample values, which are the reflected acoustic returns from the instrument signal. This can be checked as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;scan1&#39;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;scan1&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>994
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 6 3 4 4 5 4 7 0 0 6 0 0 0 1 3 4
+ 5 0 2 3 4 0 0 6 7 2 1 2 2 5 3 2 2 2 0 7 0 2 3 0 4 5 4 2 4 1 0 1 0 0 0 3 7
+ 0 7 4 3 2 5 9 9 13 6 5 3 1 4 10 6 3 4 5 3 4 7 6 4 10 3 2 3 8 8 6 3 2 1 4
+ 6 0 0 3 5 2 4 4 6 6 3 5 11 6 6 9 12 5 5 10 8 9 6 4 7 8 6 8 5 3 8 4 4 3 5
+ 5 8 5 0 7 4 4 2 12 10 10 10 6 6 11 9 12 12 17 14 19 14 13 17 14 24 22 32
+ 9 15 26 30 24 14 17 16 23 23 9 4 7 18 10 15 26 23 19 18 33 20 33 32 33 20
+ 25 33 42 25 26 26 18 13 14 20 19 32 34 33 32 18 18 29 32 29 35 38 44 23
+ 31 28 26 21 23 22 29 27 39 20 30 27 23 41 48 54 47 28 47 37 39 29 30 33
+ 32 35 36 42 33 31 44 51 39 37 46 36 31 38 39 43 23 36 36 40 37 50 37 49
+ 56 45 58 64 64 60 43 40 55 49 54 45 51 40 48 46 52 57 28 39 34 47 55 62
+ 46 42 56 40 58 70 56 48 47 47 37 39 55 56 40 43 59 48 65 45 57 70 55 64
+ 57 47 54 49 53 42 65 55 53 59 45 52 64 45 61 67 67 59 44 65 64 74 62 61
+ 58 55 55 56 52 69 50 47 62 41 41 60 53 60 46 62 46 37 39 45 43 46 36 37
+ 40 37 39 47 27 34 36 37 27 38 38 31 34 24 18 16 21 27 23 14 18 11 14 22
+ 30 14 15 17 27 7 22 33 21 14 17 35 40 35 48 64 68 75 51 38 6 3 7 1 5 4 6
+ 5 0 0 3 5 1 5 5 4 0 5 19 27 21 28 31 35 14 12 33 25 24 19 15 18 11 20 24
+ 30 16 33 21 10 21 40 38 26 41 31 35 12 10 26 28 26 22 12 15 10 11 3 3 4 6
+ 10 7 0 0 3 3 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -- -- 0 0 13 95 7 0 1
+ 1 1 0 0 0 0 1 2 1 1 2 3 4 13 18 5 9 22 16 7 28 12 20 13 21 13 10 25 14 15
+ 15 24 9 15 22 6 15 16 12 31 18 13 6 13 10 16 38 25 18 23 18 24 23 38 31
+ 42 18 21 31 13 26 12 14 18 11 6 10 11 14 10 8 8 8 12 8 8 7 5 3 5 5 4 6 6
+ 8 94 76 39 32 41 22 14 22 29 19 21 16 23 38 37 37 37 27 22 38 41 41 45 35
+ 66 41 46 47 53 50 45 48 66 60 64 56 64 66 66 72 76 75 92 98 93 75 100 65
+ 96 92 99 79 73 70 65 71 62 68 96 72 93 93 68 68 69 65 93 91 83 85 72 65
+ 79 49 86 91 69 80 79 66 75 83 53 62 65 78 66 52 76 70 44 81 97 70 81 91
+ 92 82 73 80 78 89 81 65 75 76 67 65 50 69 75 64 79 81 77 64 64 49 68 69
+ 37 67 73 62 71 50 52 70 56 65 63 49 74 62 62 62 62 51 55 65 64 64 54 56
+ 49 45 62 71 57 51 54 32 43 77 64 65 50 59 48 36 49 58 60 64 49 55 37 56
+ 35 26 55 55 55 47 55 52 48 57 72 47 24 50 36 45 41 39 54 36 51 51 70 64
+ 57 50 38 41 36 28 35 32 24 32 18 42 37 39 56 67 67 58 66 69 47 63 45 36
+ 42 34 23 48 37 35 42 41 37 34 42 57 43 42 35 29 51 37 35 48 34 52 37 33
+ 51 44 33 34 42 51 50 48 53 44 39 48 39 36 35 31 37 29 38 32 32 43 30 35
+ 30 28 30 17 12 23 21 23 24 14 24 23 38 39 26 14 30 29 32 28 24 14 14 9 10
+ 15 14 8 3 12 12 12 6 12 7 22 12 30 24 14 32 23 23 31 20 32 52 43 39 40 33
+ 34 28 34 26 29 28 18 9 10 15 32 17 12 12 4 6 15 5 10 11 16 7 6 10 5 7 3 6
+ 10 10 8 4 16 8 4 4 12 6 1 3 8 7 9 13 12 5 7 2 3 6 0 7 12 4 2 7 9 6 5 4 4
+ 5 4 2 14 10 4 3 6 0 2 11 5 4 2 2 2 2 2 0 0 1 1 0 1 0 1 0 0]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-data-for-first-scan">
+<h2>Plot data for first scan<a class="headerlink" href="#plot-data-for-first-scan" title="Link to this heading">#</a></h2>
+<p>We can now create a simple plot with the sonar samples from the first scan (or any desired scan number) in our pass file. The x axis is the sample number, from port to starboard, and the y axis is the amplitude of the returned signal. A peak is observed in the middle of the plotting window, which is the direct nadir of the GLORIA instrument looking down at the water column beneath. There is a small “envelope” around this peak, which are the returns from either side of the nadir. This envelope contains nonvalid information and is usually corrected in post-processing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scan</span> <span class="o">=</span> <span class="s1">&#39;scan1&#39;</span>
+
+<span class="c1"># Create figure and add title</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">scan</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+<span class="c1"># Plot axis labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Samples&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the scan data</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;scan1&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;scan</span><span class="si">{:.0f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;scan1&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/654715eebc8ede41f2757ce53bd91aaf94334b535aa51962403d903a15f48a5b.png" src="../_images/654715eebc8ede41f2757ce53bd91aaf94334b535aa51962403d903a15f48a5b.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="interrogate-time-coverage-and-scanning-frequency-of-pass-file">
+<h1>Interrogate time coverage and scanning frequency of pass file<a class="headerlink" href="#interrogate-time-coverage-and-scanning-frequency-of-pass-file" title="Link to this heading">#</a></h1>
+<p>It is also possible to have a look at the start and end time of each file. Most of the scans have a ~6 hours length.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Storing datetime values for all scans in the pass inside a list.</span>
+<span class="n">datetimes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="p">[</span><span class="n">datetimes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;datetime&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">attributes</span><span class="p">]</span>
+
+<span class="c1"># Finding the start and end of GLORIA data in the pass.</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">datetimes</span><span class="p">),</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">T%H:%M:%S&quot;</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">datetimes</span><span class="p">),</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">T%H:%M:%S&quot;</span><span class="p">)</span>
+<span class="c1"># Creating a timedelta duration object from this information.</span>
+<span class="n">dur</span> <span class="o">=</span> <span class="n">end</span><span class="o">-</span><span class="n">start</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to extract the individual time components from the duration</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">convert_timedelta</span><span class="p">(</span><span class="n">duration</span><span class="p">):</span>
+    <span class="n">days</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="n">duration</span><span class="o">.</span><span class="n">days</span><span class="p">,</span> <span class="n">duration</span><span class="o">.</span><span class="n">seconds</span>
+    <span class="n">hours</span> <span class="o">=</span> <span class="n">days</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">+</span> <span class="n">seconds</span> <span class="o">//</span> <span class="mi">3600</span>
+    <span class="n">minutes</span> <span class="o">=</span> <span class="p">(</span><span class="n">seconds</span> <span class="o">%</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">//</span> <span class="mi">60</span>
+    <span class="n">seconds</span> <span class="o">=</span> <span class="p">(</span><span class="n">seconds</span> <span class="o">%</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span>
+
+<span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="n">convert_timedelta</span><span class="p">(</span><span class="n">dur</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The time coverage of this pass is </span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">, which corresponds to </span><span class="si">{</span><span class="n">hours</span><span class="si">}</span><span class="s2"> hours and </span><span class="si">{</span><span class="n">minutes</span><span class="si">}</span><span class="s2"> minutes.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The time coverage of this pass is 1989-03-02 18:00:00 - 1989-03-02 23:59:00, which corresponds to 5 hours and 59 minutes.
+</pre></div>
+</div>
+</div>
+</div>
+<p>The mean scanning frequency of the pass can be calculated by: <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">coverage</span> <span class="pre">/</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">scans</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Finding the number of scans in the pass file.</span>
+<span class="n">scans</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The scanning frequency of this pass file is </span><span class="si">{</span><span class="n">dur</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">scans</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span> <span class="c1"># This produces another timedelta object - the final field is microseconds.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The scanning frequency of this pass file is 0:00:29.916667.
+</pre></div>
+</div>
+</div>
+</div>
+<section id="generate-summary-statistics-for-each-attribute">
+<h2>Generate summary statistics for each attribute<a class="headerlink" href="#generate-summary-statistics-for-each-attribute" title="Link to this heading">#</a></h2>
+<p>Let’s display summary statistics for a desired attribute using <code class="docutils literal notranslate"><span class="pre">pd.describe()</span></code>. This example is for the depth of the seafloor (extracted from IBCSO data):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">depth</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">attributes</span><span class="p">:</span>
+    <span class="n">depth</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">group</span><span class="p">][</span><span class="s1">&#39;depth_IBCSO&#39;</span><span class="p">])</span>
+
+<span class="n">depth</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;depth_IBSCO (m)&#39;</span><span class="p">])</span>
+<span class="n">depth</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>depth_IBSCO (m)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>720.00000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>-3820.40000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>426.34211</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-4102.00000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>-4005.00000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>-3905.00000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>-3860.00000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>-1678.00000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Compute these statistics for all metadata attributes, and combine these into a Pandas dataframe.
+As the ship heading attribute has a dtype of string, this will need converting to an integer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">depth</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">prp</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">heading</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">attributes</span><span class="p">:</span>
+    <span class="n">depth</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">group</span><span class="p">][</span><span class="s1">&#39;depth_IBCSO&#39;</span><span class="p">])</span>
+    <span class="n">prp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">group</span><span class="p">][</span><span class="s1">&#39;pulse_repetition_period&#39;</span><span class="p">])</span>
+    <span class="n">heading</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">group</span><span class="p">][</span><span class="s1">&#39;vehicle_heading&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">prp</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">heading</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">set_axis</span><span class="p">([</span><span class="s1">&#39;Pulse repetition period (s)&#39;</span><span class="p">,</span> <span class="s1">&#39;Depth_IBCSO (m)&#39;</span><span class="p">,</span> <span class="s1">&#39;Heading_deg (deg)&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pulse repetition period (s)</th>
+      <th>Depth_IBCSO (m)</th>
+      <th>Heading_deg (deg)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>720.0</td>
+      <td>720.00000</td>
+      <td>720.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>51.0</td>
+      <td>-3820.40000</td>
+      <td>108.644444</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.0</td>
+      <td>426.34211</td>
+      <td>1.728827</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>51.0</td>
+      <td>-4102.00000</td>
+      <td>103.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>51.0</td>
+      <td>-4005.00000</td>
+      <td>107.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>51.0</td>
+      <td>-3905.00000</td>
+      <td>109.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>51.0</td>
+      <td>-3860.00000</td>
+      <td>110.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>51.0</td>
+      <td>-1678.00000</td>
+      <td>113.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="bounding-box-of-gloria-dataset">
+<h2>Bounding box of GLORIA dataset<a class="headerlink" href="#bounding-box-of-gloria-dataset" title="Link to this heading">#</a></h2>
+<p>By extracting the coordinate information from the pass, it is possible to find the geographic bounds of the data in the currently loaded pass file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">latitude</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">longitude</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="p">[</span><span class="n">latitude</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">group</span><span class="p">][</span><span class="s1">&#39;latitude&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">attributes</span><span class="p">]</span>
+<span class="p">[</span><span class="n">longitude</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">group</span><span class="p">][</span><span class="s1">&#39;longitude&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">attributes</span><span class="p">]</span>
+
+<span class="n">west</span><span class="p">,</span> <span class="n">east</span><span class="p">,</span> <span class="n">south</span><span class="p">,</span> <span class="n">north</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">longitude</span><span class="p">)),</span> <span class="nb">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">longitude</span><span class="p">)),</span> <span class="nb">min</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">latitude</span><span class="p">)),</span> <span class="nb">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">latitude</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The bounding box for the current PASS is: </span><span class="si">{</span><span class="n">west</span><span class="si">}</span><span class="s2">W </span><span class="si">{</span><span class="n">east</span><span class="si">}</span><span class="s2">E </span><span class="si">{</span><span class="n">south</span><span class="si">}</span><span class="s2">S </span><span class="si">{</span><span class="n">north</span><span class="si">}</span><span class="s2">N&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The bounding box for the current PASS is: -43.0247W -41.74535E -59.53945S -59.3227N
+</pre></div>
+</div>
+</div>
+</div>
+<p>The coordinate values can be used to create a map of the studied area. Here we will use the <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> library.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a figure with Matplotlib</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="c1"># Add a projection and set extent of the axes</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">cartopy</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bounding box of </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="n">west</span> <span class="o">-</span> <span class="mi">25</span><span class="p">,</span> <span class="n">east</span> <span class="o">+</span> <span class="mi">25</span><span class="p">,</span> <span class="n">south</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">north</span> <span class="o">+</span> <span class="mi">10</span><span class="p">])</span>
+
+<span class="c1"># Close the figure to suppress display at this point</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Add features from Cartopy’s Feature Interface (coastlines, land, ocean) using GeoAxes, add gridlines, and display figure in window.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">COASTLINE</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">LAND</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">OCEAN</span><span class="p">)</span>
+
+<span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plot latitude and longitude data of the pass file as a line (representing the instrument track).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">longitude</span><span class="p">,</span> <span class="n">latitude</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1ccc8635ae0b78159a9b4698a9569ed59730bb54b31b832008c2e7572201e283.png" src="../_images/1ccc8635ae0b78159a9b4698a9569ed59730bb54b31b832008c2e7572201e283.png" />
+</div>
+</div>
+</section>
+<section id="plot-a-simple-sonargram-with-data-from-first-scan-in-the-file">
+<h2>Plot a simple sonargram with data from first scan in the file<a class="headerlink" href="#plot-a-simple-sonargram-with-data-from-first-scan-in-the-file" title="Link to this heading">#</a></h2>
+<p>Creating the parameters of the sonargram plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nscans</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">nsamples</span> <span class="o">=</span> <span class="mi">994</span>
+<span class="n">xaxis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">nscans</span><span class="p">),</span> <span class="n">nscans</span><span class="p">)</span>
+<span class="n">yaxis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">nsamples</span><span class="p">),</span> <span class="n">nsamples</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Populating the plot with the extracted data from the pass.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Store each scan as a column in a matrix</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nsamples</span><span class="p">,</span> <span class="n">nscans</span><span class="p">))</span>
+
+<span class="c1"># Storing sample values from each scan inside their respective columns (along the x axis).</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">scan</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">cols</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">scan</span><span class="p">]</span>
+
+<span class="c1"># Creating the matrix for the colourbar (sample value)</span>
+<span class="n">mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asmatrix</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span>
+
+<span class="n">dx</span> <span class="o">=</span> <span class="n">xaxis</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">xaxis</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">dy</span> <span class="o">=</span> <span class="n">yaxis</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">yaxis</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">xlim</span> <span class="o">=</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">xaxis</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">xaxis</span><span class="p">)]</span>
+<span class="n">ylim</span> <span class="o">=</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">yaxis</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">yaxis</span><span class="p">)]</span>
+<span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">xaxis</span><span class="p">)</span> <span class="o">-</span> <span class="n">dx</span><span class="o">/</span><span class="mf">2.0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">xaxis</span><span class="p">)</span> <span class="o">+</span> <span class="n">dx</span><span class="o">/</span><span class="mf">2.0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">yaxis</span><span class="p">)</span> <span class="o">+</span> <span class="n">dy</span><span class="o">/</span><span class="mf">2.0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">yaxis</span><span class="p">)</span> <span class="o">-</span> <span class="n">dy</span><span class="o">/</span><span class="mf">2.0</span><span class="p">]</span>
+<span class="n">std_contrast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">mat</span><span class="p">)[:])</span>
+<span class="n">contrast</span> <span class="o">=</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Add the axis labels, title and colourbar, and show the image in window.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="n">std_contrast</span><span class="o">/</span><span class="n">contrast</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">std_contrast</span><span class="o">/</span><span class="n">contrast</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Scan number&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Sample number&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Return signal intensity&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;CD37_GLORIA_PASS169.nc&#39;)
+</pre></div>
+</div>
+<img alt="../_images/7e429a92c991a580c8871f37ba490b784ac805a4a4c2edd489611b65d42d10c8.png" src="../_images/7e429a92c991a580c8871f37ba490b784ac805a4a4c2edd489611b65d42d10c8.png" />
+</div>
+</div>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<section id="the-list-of-references-below-give-additional-context-regarding-the-cruise-and-the-processing-of-gloria-data">
+<h3>The list of references below give additional context regarding the cruise and the processing of GLORIA data.<a class="headerlink" href="#the-list-of-references-below-give-additional-context-regarding-the-cruise-and-the-processing-of-gloria-data" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>CD37 889: RRS Charles Darwin Scotia and Bellingshausen Seas Geophysics January 1989 - April 1989 (<a class="reference external" href="https://www.bodc.ac.uk/resources/inventories/cruise_inventory/reports/cd37.pdf">https://www.bodc.ac.uk/resources/inventories/cruise_inventory/reports/cd37.pdf</a>)</p></li>
+<li><p>CD37 cruise inventory - RRS Charles Darwin CD37 - cruise summary report- <a class="reference external" href="https://www.bodc.ac.uk/resources/inventories/cruise_inventory/report/4591/">https://www.bodc.ac.uk/resources/inventories/cruise_inventory/report/4591/</a></p></li>
+<li><p>Cunningham, Alexander P.. 1998 Geophysical Investigations of the North Scotia Ridge. University of London, PhD Thesis.</p></li>
+<li><p>Tomlinson, J.S.; Pudsey, C.J.; Livermore, R.A.; Larter, Robert D. ; Barker, Peter F.. 1992 Long-range sidescan sonar (GLORIA) survey of the Antarctic Peninsula Pacific margin. In: Yoshida, Y.; Kaminuma, K.; Shiraishi, K., (eds.) Recent progress in Antarctic earth science. Proceedings of the Sixth International Symposium on Antarctic Earth Sciences. Ranzan, Saitama, Japan, September 1991. Tokyo, Terra Scientific Publishing, 423-429.</p></li>
+<li><p>Searle, R. C., Le Bas, T. P., Mitchell, N. C., Somers, M. L., Parson, L. M., &amp; Patriat, P. H. (1990). GLORIA image processing: The state of the art. Marine geophysical researches, 12, 21-39.</p></li>
+<li><p>Searle, R. C., &amp; Hunter, P. M. (1986). The use of GLORIA long-range sidescan sonar for deep-ocean mapping. In Autocarto London (Vol. 2, pp. 339-388).</p></li>
+<li><p>Cunningham, A. P.; Barker, P. F.; Tomlinson, J. S.. 1998 Tectonics and sedimentary environment of the North Scotia Ridge region revealed by side-scan sonar. Journal of the Geological Society, 155 (6). 941-956. 10.1144/gsjgs.155.6.0941</p></li>
+<li><p>Livermore, R. A., &amp; Woollett, R. W. (1993). Seafloor spreading in the Weddell Sea and southwest Atlantic since the Late Cretaceous. Earth and Planetary Science Letters, 117(3-4), 475-495.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./GLORIA"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="about.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">About</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="compare_gloria_with_IBCSO.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Visualising GLORIA CD37 side-scan sonar data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Checking GLORIA CD37 side-scan sonar data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aim">Aim</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#survey-background">Survey background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-available-gloria-data">List of available GLORIA data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-data-via-the-ramadda-interface">Downloading the data via the Ramadda interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-set-up-the-virtual-environment-with-conda-if-desired">To set up the virtual environment with Conda (if desired):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-set-up-the-virtual-environment-on-unix-if-desired">To set up the virtual environment on UNIX (if desired):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-dependencies">Useful dependencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-relevant-modules">Load the relevant modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-metadata-information">Check the metadata information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-the-netcdf-data">Checking the NetCDF data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-group-attributes-and-data-structure">List group attributes and data structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data-for-first-scan">Plot data for first scan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interrogate-time-coverage-and-scanning-frequency-of-pass-file">Interrogate time coverage and scanning frequency of pass file</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-summary-statistics-for-each-attribute">Generate summary statistics for each attribute</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bounding-box-of-gloria-dataset">Bounding box of GLORIA dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-a-simple-sonargram-with-data-from-first-scan-in-the-file">Plot a simple sonargram with data from first scan in the file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-list-of-references-below-give-additional-context-regarding-the-cruise-and-the-processing-of-gloria-data">The list of references below give additional context regarding the cruise and the processing of GLORIA data.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By UK PDC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

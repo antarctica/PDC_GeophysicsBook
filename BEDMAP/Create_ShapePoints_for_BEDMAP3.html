@@ -1,405 +1,505 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Creating Shape Points for BEDMAP3 &#8212; UK PDC Geophysics Book</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
-
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'BEDMAP/Create_ShapePoints_for_BEDMAP3';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="About" href="../GLORIA/about.html" />
     <link rel="prev" title="Creating Shape Lines for BEDMAP3" href="Create_ShapeLines_for_BEDMAP3.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../welcome.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.jpg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">UK PDC Geophysics Book</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../welcome.html">
-   Welcome to the Geophysics Book from the UK Polar Centre
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Geophysics Data Portal
- </span>
-</p>
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="UK PDC Geophysics Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="UK PDC Geophysics Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../welcome.html">
+                    Welcome to the Geophysics Book from the UK Polar Centre
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Geophysics Data Portal</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../data-portal/about.html">
-   About
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../data-portal/user_guide.html">
-   User Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../data-portal/data_available.html">
-   List of data available
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../data-portal/Checking_Airborne_Radar_Echo_sounding_data.html">
-   Checking Airborne Radar Echo Sounding data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../data-portal/Checking_Airborne_Radar_Echo_sounding_data_MATLAB.html">
-   Checking Airborne Radar Echo Sounding data (MATLAB)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../data-portal/Checking_gravity_XYZ_data.html">
-   Checking Airborne Gravity data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../data-portal/Checking_magnetics_XYZ_data.html">
-   Checking Airborne Magnetics data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/user_guide.html">User Guide</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/data_available.html">List of data available</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/Checking_Airborne_Radar_Echo_sounding_data.html">Checking Airborne Radar Echo Sounding data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/Checking_Airborne_Radar_Echo_sounding_data_MATLAB.html">Checking Airborne Radar Echo Sounding data (MATLAB)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/Checking_gravity_XYZ_data.html">Checking Airborne Gravity data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../data-portal/Checking_magnetics_XYZ_data.html">Checking Airborne Magnetics data</a></li>
+
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  BEDMAP
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">BEDMAP</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="about.html">
-   About
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data_available.html">
-   List of data available
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Downloading_the_Bedmap_data.html">
-   Downloading the Bedmap data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Get_full_metadata_from_CSV_file.html">
-   Get full metadata from CSV file - BEDMAP
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Checking_CSV_geospatially.html">
-   Reading the BEDMAP CSV files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Create_ShapeLines_for_BEDMAP3.html">
-   Creating Shape Lines for BEDMAP3
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Creating Shape Points for BEDMAP3
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_available.html">List of data available</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Downloading_the_Bedmap_data.html">Downloading the Bedmap data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Get_full_metadata_from_CSV_file.html">Get full metadata from CSV file - BEDMAP</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Checking_CSV_geospatially.html">Reading the BEDMAP CSV files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Create_ShapeLines_for_BEDMAP3.html">Creating Shape Lines for BEDMAP3</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating Shape Points for BEDMAP3</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">GLORIA</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../GLORIA/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GLORIA/checking_gloria_data.html">Checking GLORIA CD37 side-scan sonar data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../GLORIA/compare_gloria_with_IBCSO.html">Visualising GLORIA CD37 side-scan sonar data</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/BEDMAP/Create_ShapePoints_for_BEDMAP3.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/antarctica/PDC_GeophysicsBook"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/antarctica/PDC_GeophysicsBook/issues/new?title=Issue%20on%20page%20%2FBEDMAP/Create_ShapePoints_for_BEDMAP3.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/antarctica/PDC_GeophysicsBook/edit/main/book/BEDMAP/Create_ShapePoints_for_BEDMAP3.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://binder.pangeo.io/v2/gh/antarctica/PDC_GeophysicsBook/main?urlpath=tree/book/BEDMAP/Create_ShapePoints_for_BEDMAP3.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/antarctica/PDC_GeophysicsBook/main?urlpath=tree/book/BEDMAP/Create_ShapePoints_for_BEDMAP3.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/antarctica/PDC_GeophysicsBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/antarctica/PDC_GeophysicsBook/edit/main/book/BEDMAP/Create_ShapePoints_for_BEDMAP3.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/antarctica/PDC_GeophysicsBook/issues/new?title=Issue%20on%20page%20%2FBEDMAP/Create_ShapePoints_for_BEDMAP3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/BEDMAP/Create_ShapePoints_for_BEDMAP3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Creating Shape Points for BEDMAP3</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-bedmap3-project">
-   The BEDMAP3 project
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-shape-points">
-   Creating shape Points
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#virtual-environment">
-     Virtual environment
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#upload-the-modules">
-     Upload the modules
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-initial-grid">
-     Load initial grid
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-grid-of-x-and-y-size-that-will-contain-all-the-values-for-each-point-from-the-bed-elevation-picks">
-     Create a grid of x and y size that will contain all the values for each point from the bed elevation picks
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#initiate-the-different-variables">
-     Initiate the different variables
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#open-the-standardised-csv-files">
-     Open the standardised CSV files
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convert-the-latitude-and-longitude-to-polar-stereographic-coordinates">
-     Convert the latitude and longitude to polar stereographic coordinates
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculate-the-index">
-     Calculate the index
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculate-statistics-for-each-pixel-values">
-     Calculate statistics for each pixel values
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#saving-the-data-as-a-geo-dataframe">
-     Saving the data as a geo-dataframe
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#creation-of-the-columns">
-       Creation of the columns
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#creation-of-the-geodataframe">
-       Creation of the geodataframe
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#save-the-data-as-shapefile-and-geopackages">
-       Save the data as shapefile and geopackages
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#results">
-   Results
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plotting-ice-thickness">
-     Plotting ice thickness
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Results
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bedmap3-project">The BEDMAP3 project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-shape-points">Creating shape Points</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-the-modules">Upload the modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-initial-grid">Load initial grid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-grid-of-x-and-y-size-that-will-contain-all-the-values-for-each-point-from-the-bed-elevation-picks">Create a grid of x and y size that will contain all the values for each point from the bed elevation picks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initiate-the-different-variables">Initiate the different variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-standardised-csv-files">Open the standardised CSV files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-the-latitude-and-longitude-to-polar-stereographic-coordinates">Convert the latitude and longitude to polar stereographic coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-index">Calculate the index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-statistics-for-each-pixel-values">Calculate statistics for each pixel values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-data-as-a-geo-dataframe">Saving the data as a geo-dataframe</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creation-of-the-columns">Creation of the columns</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creation-of-the-geodataframe">Creation of the geodataframe</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#save-the-data-as-shapefile-and-geopackages">Save the data as shapefile and geopackages</a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-ice-thickness">Plotting ice thickness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Results</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="creating-shape-points-for-bedmap3">
-<h1>Creating Shape Points for BEDMAP3<a class="headerlink" href="#creating-shape-points-for-bedmap3" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="creating-shape-points-for-bedmap3">
+<h1>Creating Shape Points for BEDMAP3<a class="headerlink" href="#creating-shape-points-for-bedmap3" title="Link to this heading">#</a></h1>
 <p>Author: Alice Fremand (&#64;almand)</p>
 <p>Date: 30/09/2022</p>
-<div class="section" id="the-bedmap3-project">
-<h2>The BEDMAP3 project<a class="headerlink" href="#the-bedmap3-project" title="Permalink to this headline">¶</a></h2>
+<section id="the-bedmap3-project">
+<h2>The BEDMAP3 project<a class="headerlink" href="#the-bedmap3-project" title="Link to this heading">#</a></h2>
 <p>Bedmap3 is a collaborative community project with the aim to produce a new map and datasets of Antarctic ice thickness and bed topography for the international glaciology and geophysical community, using a variety of data (including ice-thickness, bathymetry, surface altitude and grounding lines).</p>
 <p>Additionally Bedmap3 will act as a repository and portal for standardized RES data for the glaciology and Geophysics community.</p>
 <p>For more information about the project: <a class="reference external" href="https://www.scar.org/science/bedmap3/home/">https://www.scar.org/science/bedmap3/home/</a></p>
-</div>
-<div class="section" id="creating-shape-points">
-<h2>Creating shape Points<a class="headerlink" href="#creating-shape-points" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creating-shape-points">
+<h2>Creating shape Points<a class="headerlink" href="#creating-shape-points" title="Link to this heading">#</a></h2>
 <p>The goal of the tutorial is to show how the Shape Points have been created as an intermediary file of the BEDMAP3 project. The goal of this code is to grid averaged values of ice thickness, bed and surface elevation at the centre of each pixel of a 500x500m grid.</p>
 <p>The data are available from the UK Polar Data Centre:</p>
 <ul class="simple">
@@ -407,8 +507,8 @@
 <li><p>Bedmap2 standardised CSV data points: <a class="reference external" href="https://doi.org/10.5285/2fd95199-365e-4da1-ae26-3b6d48b3e6ac">https://doi.org/10.5285/2fd95199-365e-4da1-ae26-3b6d48b3e6ac</a></p></li>
 <li><p>Bedmap3 standardised CSV data points: <a class="reference external" href="https://doi.org/10.5285/91523ff9-d621-46b3-87f7-ffb6efcd1847">https://doi.org/10.5285/91523ff9-d621-46b3-87f7-ffb6efcd1847</a></p></li>
 </ul>
-<div class="section" id="virtual-environment">
-<h3>Virtual environment<a class="headerlink" href="#virtual-environment" title="Permalink to this headline">¶</a></h3>
+<section id="virtual-environment">
+<h3>Virtual environment<a class="headerlink" href="#virtual-environment" title="Link to this heading">#</a></h3>
 <p>For the code to run, it is important to install the correct dependancies and libraries. In particular the following libraries are crucial for the code to be run:</p>
 <ul class="simple">
 <li><p>geopandas</p></li>
@@ -428,7 +528,6 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Package                       Version
 ----------------------------- -------------------
 alabaster                     0.7.12
-antlr4-python3-runtime        4.7.2
 anyio                         3.3.4
 argon2-cffi                   21.1.0
 async-generator               1.10
@@ -439,8 +538,7 @@ backports.functools-lru-cache 1.6.4
 beautifulsoup4                4.10.0
 bleach                        4.1.0
 brotlipy                      0.7.0
-certifi                       2022.9.24
-cf-units                      3.0.1
+certifi                       2021.10.8
 cffi                          1.15.0
 cftime                        1.5.1.1
 chardet                       4.0.0
@@ -452,7 +550,6 @@ click-plugins                 1.1.1
 cligj                         0.7.1
 cloudpickle                   1.6.0
 colorama                      0.4.4
-compliance-checker            5.0.2
 cryptography                  35.0.0
 cycler                        0.10.0
 dataclasses                   0.8
@@ -475,17 +572,14 @@ ipykernel                     5.5.5
 ipython                       7.23.1
 ipython-genutils              0.2.0
 ipywidgets                    7.6.5
-isodate                       0.6.1
 jedi                          0.18.0
 Jinja2                        3.0.3
 jsonschema                    3.2.0
 jupyter                       1.0.0
 jupyter-book                  0.12.0
 jupyter-cache                 0.4.3
-Note: you may need to restart the kernel to use updated packages.jupyter-client                6.1.12
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jupyter-console               6.4.0
+jupyter-client                6.1.12
+jupyter-console               6.4.0
 jupyter-core                  4.7.1
 jupyter-server                1.11.2
 jupyter-server-mathjax        0.2.3
@@ -513,15 +607,13 @@ nbformat                      5.1.3
 nest-asyncio                  1.5.1
 netCDF4                       1.5.7
 notebook                      6.4.5
-numpy                         1.22.3
+numpy                         1.20.3
 obspy                         1.2.2
 olefile                       0.46
-OWSLib                        0.27.2
 packaging                     21.2
 pandas                        1.2.4
 pandocfilters                 1.5.0
 parso                         0.8.2
-pendulum                      2.1.2
 pickleshare                   0.7.5
 Pillow                        8.3.1
 pip                           21.1.2
@@ -531,7 +623,6 @@ pybtex                        0.24.0
 pybtex-docutils               1.0.1
 pycparser                     2.21
 pydata-sphinx-theme           0.6.3
-pygeoif                       0.7
 Pygments                      2.9.0
 pyOpenSSL                     21.0.0
 pyparsing                     2.4.7
@@ -544,14 +635,12 @@ pyrsistent                    0.18.0
 PySocks                       1.7.1
 python-dateutil               2.8.1
 pytz                          2021.1
-pytzdata                      2020.1
 pywin32                       300
 pywinpty                      1.1.4
 PyYAML                        6.0
 pyzmq                         22.1.0
 qtconsole                     5.1.1
 QtPy                          1.11.2
-regex                         2022.8.17
 requests                      2.26.0
 Rtree                         0.9.7
 scipy                         1.6.3
@@ -574,46 +663,15 @@ sphinx-multitoc-numbering     0.1.3
 sphinx-panels                 0.6.0
 sphinx-thebe                  0.0.10
 sphinx-togglebutton           0.2.3
-sphinxcontrib-applehelp       1.0.2
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="upload-the-modules">
-<h3>Upload the modules<a class="headerlink" href="#upload-the-modules" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>geopandas: used to create geodataframe and easily save the result to shapefiles or geopackages.</p></li>
-<li><p>ll2ps_projection: set of tools used for the conversion from latitude/longitude to stereographic coordinates.
-The ll2ps projection script correspond to the <a class="reference external" href="http://projection.py">projection.py</a> script that can be downloaded from the following link:
-Agosta, C. (2019, January 24). Agosta et al. (2019), The Cryosphere : data processing, analyses and figures. Zenodo. <a class="reference external" href="https://doi.org/10.5281/zenodo.2548848">https://doi.org/10.5281/zenodo.2548848</a></p></li>
-<li><p>Other modules: numpy, gdal, pandas, os, glob, math, scipy, pathlib</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">gdal</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">iqr</span>
-<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-
-<span class="kn">from</span> <span class="nn">ll2ps_projection</span> <span class="kn">import</span> <span class="n">stereosouth_lonlat2xy</span><span class="c1"># for lon/lat to xy projection (see stereosouth_xy2lonlat function)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinxcontrib-bibtex          2.2.1
+sphinxcontrib-applehelp       1.0.2Note: you may need to restart the kernel to use updated packages.
+sphinxcontrib-bibtex          2.2.1
 sphinxcontrib-devhelp         1.0.2
 sphinxcontrib-htmlhelp        2.0.0
 sphinxcontrib-jsmath          1.0.1
 sphinxcontrib-qthelp          1.0.3
 sphinxcontrib-serializinghtml 1.1.5
 spyder-kernels                1.10.2
+
 SQLAlchemy                    1.4.26
 terminado                     0.12.1
 testpath                      0.5.0
@@ -623,7 +681,6 @@ traitlets                     5.0.5
 typing-extensions             3.10.0.2
 uc-micro-py                   1.0.1
 urllib3                       1.26.7
-validators                    0.18.2
 wcwidth                       0.2.5
 webencodings                  0.5.1
 websocket-client              0.57.0
@@ -631,15 +688,42 @@ wheel                         0.36.2
 widgetsnbextension            3.5.2
 win-inet-pton                 1.1.0
 wincertstore                  0.2
-xarray                        2022.6.0
 zipp                          3.6.0
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="upload-the-modules">
+<h3>Upload the modules<a class="headerlink" href="#upload-the-modules" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>geopandas: used to create geodataframe and easily save the result to shapefiles or geopackages.</p></li>
+<li><p>ll2ps_projection: set of tools used for the conversion from latitude/longitude to stereographic coordinates.
+The ll2ps projection script correspond to the <a class="reference external" href="http://projection.py">projection.py</a> script that can be downloaded from the following link:
+Agosta, C. (2019, January 24). Agosta et al. (2019), The Cryosphere : data processing, analyses and figures. Zenodo. <a class="reference external" href="https://doi.org/10.5281/zenodo.2548848">https://doi.org/10.5281/zenodo.2548848</a></p></li>
+<li><p>Other modules: numpy, gdal, pandas, os, glob, math, scipy, pathlib</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gdal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">iqr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ll2ps_projection</span><span class="w"> </span><span class="kn">import</span> <span class="n">stereosouth_lonlat2xy</span><span class="c1"># for lon/lat to xy projection (see stereosouth_xy2lonlat function)</span>
+</pre></div>
 </div>
-<div class="section" id="load-initial-grid">
-<h3>Load initial grid<a class="headerlink" href="#load-initial-grid" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</section>
+<section id="load-initial-grid">
+<h3>Load initial grid<a class="headerlink" href="#load-initial-grid" title="Link to this heading">#</a></h3>
 <p>The first step of the code is to import a raster mask that is used to get the location of the points in a referenced grid. The raster mask consists of a GeoTIFF image with pixels of 500x500m in size. The code opens the file and gets relevant parameters.  From the image we get an array of x and y values that are located at the centre of each pixel.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -664,9 +748,9 @@ zipp                          3.6.0
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="create-a-grid-of-x-and-y-size-that-will-contain-all-the-values-for-each-point-from-the-bed-elevation-picks">
-<h3>Create a grid of x and y size that will contain all the values for each point from the bed elevation picks<a class="headerlink" href="#create-a-grid-of-x-and-y-size-that-will-contain-all-the-values-for-each-point-from-the-bed-elevation-picks" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="create-a-grid-of-x-and-y-size-that-will-contain-all-the-values-for-each-point-from-the-bed-elevation-picks">
+<h3>Create a grid of x and y size that will contain all the values for each point from the bed elevation picks<a class="headerlink" href="#create-a-grid-of-x-and-y-size-that-will-contain-all-the-values-for-each-point-from-the-bed-elevation-picks" title="Link to this heading">#</a></h3>
 <p>From the GeoTIFF image, we can create an empty array that will be used to contain the data in each pixel</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -675,9 +759,9 @@ zipp                          3.6.0
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="initiate-the-different-variables">
-<h3>Initiate the different variables<a class="headerlink" href="#initiate-the-different-variables" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="initiate-the-different-variables">
+<h3>Initiate the different variables<a class="headerlink" href="#initiate-the-different-variables" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lon_point</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#longitude points from csv file</span>
@@ -690,15 +774,15 @@ zipp                          3.6.0
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="open-the-standardised-csv-files">
-<h3>Open the standardised CSV files<a class="headerlink" href="#open-the-standardised-csv-files" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="open-the-standardised-csv-files">
+<h3>Open the standardised CSV files<a class="headerlink" href="#open-the-standardised-csv-files" title="Link to this heading">#</a></h3>
 <p>The code reads the standardised csv files using pandas. First, the values of latitude, longitude, ice thickness, bed and surface elevation are saved are extracted from the dataframe and stored in the respective following variables:
 lat_point, lon_point, ice_thickness, bedElev, surfElev.</p>
 <p>To do that, we create a function that will read the data and return the information we need: latitude, longitude, ice thickness, bed and surface elevation. We select only the data where at least ice thickness, bed or surface elevation is  not equal to -9999. Indeed, values of -9999 was given where no values exist.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_Aerogeophysics</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">ice_thickness</span><span class="p">,</span> <span class="n">surfElev</span><span class="p">,</span> <span class="n">bedElev</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">read_Aerogeophysics</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">ice_thickness</span><span class="p">,</span> <span class="n">surfElev</span><span class="p">,</span> <span class="n">bedElev</span><span class="p">):</span>
     <span class="s2">&quot;Function to read bed elevation picks data in the standardised format&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;file name: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">input_file</span>) #print filename of file processed   
     <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span> <span class="c1">#open input file </span>
@@ -735,9 +819,9 @@ lat_point, lon_point, ice_thickness, bedElev, surfElev.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="convert-the-latitude-and-longitude-to-polar-stereographic-coordinates">
-<h3>Convert the latitude and longitude to polar stereographic coordinates<a class="headerlink" href="#convert-the-latitude-and-longitude-to-polar-stereographic-coordinates" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="convert-the-latitude-and-longitude-to-polar-stereographic-coordinates">
+<h3>Convert the latitude and longitude to polar stereographic coordinates<a class="headerlink" href="#convert-the-latitude-and-longitude-to-polar-stereographic-coordinates" title="Link to this heading">#</a></h3>
 <p>We used the <code class="docutils literal notranslate"><span class="pre">stereosouth_lonlat2xy</span></code> to convert the data to polar stereographic coordinates</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -747,15 +831,15 @@ lat_point, lon_point, ice_thickness, bedElev, surfElev.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="calculate-the-index">
-<h3>Calculate the index<a class="headerlink" href="#calculate-the-index" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="calculate-the-index">
+<h3>Calculate the index<a class="headerlink" href="#calculate-the-index" title="Link to this heading">#</a></h3>
 <p>The goal then is to determine the index of the latitude and longitude of each data row so the data can be added to the pixel corresponding to the location of the data.
 In other words, for each latitude and longitude couple, we determine in which pixel the values of ice thickness, bed and surface elevation should be assign to. We will also calculate the distance between the latitude, longitude from csv file to x,y from the reference image to know how far from the center of the pixel the data is.</p>
 <p><strong>Note</strong>: The size of the pixel is of 500 meters</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
     <span class="s2">&quot;To calculate the distance between 2 points&quot;</span>
     <span class="n">dist</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">dist</span> 
@@ -773,9 +857,9 @@ In other words, for each latitude and longitude couple, we determine in which pi
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="calculate-statistics-for-each-pixel-values">
-<h3>Calculate statistics for each pixel values<a class="headerlink" href="#calculate-statistics-for-each-pixel-values" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="calculate-statistics-for-each-pixel-values">
+<h3>Calculate statistics for each pixel values<a class="headerlink" href="#calculate-statistics-for-each-pixel-values" title="Link to this heading">#</a></h3>
 <p>Then, we calculate the mean, iqr, min, max values of each variables in each pixel. This calculation is only done when there are values in a pixel. Values of -9999 are given when the information is missing. Values are rounded to the closest integer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -839,12 +923,12 @@ In other words, for each latitude and longitude couple, we determine in which pi
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="saving-the-data-as-a-geo-dataframe">
-<h3>Saving the data as a geo-dataframe<a class="headerlink" href="#saving-the-data-as-a-geo-dataframe" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="saving-the-data-as-a-geo-dataframe">
+<h3>Saving the data as a geo-dataframe<a class="headerlink" href="#saving-the-data-as-a-geo-dataframe" title="Link to this heading">#</a></h3>
 <p>The values are saved into a dataframe and then converted into a geodataframe. The data are then saved as shapefiles and geopackages. To make sure the files are not too big, we set the columns as integer.</p>
-<div class="section" id="creation-of-the-columns">
-<h4>Creation of the columns<a class="headerlink" href="#creation-of-the-columns" title="Permalink to this headline">¶</a></h4>
+<section id="creation-of-the-columns">
+<h4>Creation of the columns<a class="headerlink" href="#creation-of-the-columns" title="Link to this heading">#</a></h4>
 <p>First, we convert the point values to a dataframe:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1025,9 +1109,9 @@ In other words, for each latitude and longitude couple, we determine in which pi
 <p>5 rows × 27 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="creation-of-the-geodataframe">
-<h4>Creation of the geodataframe<a class="headerlink" href="#creation-of-the-geodataframe" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="creation-of-the-geodataframe">
+<h4>Creation of the geodataframe<a class="headerlink" href="#creation-of-the-geodataframe" title="Link to this heading">#</a></h4>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> module, we can convert the dataframe to a geodataframe. To do that, we only need to specify the latitude and longitude columns of the dataframe. Then we need to specify the coordinate system used:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1206,9 +1290,9 @@ In other words, for each latitude and longitude couple, we determine in which pi
 <p>5 rows × 26 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="save-the-data-as-shapefile-and-geopackages">
-<h4>Save the data as shapefile and geopackages<a class="headerlink" href="#save-the-data-as-shapefile-and-geopackages" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="save-the-data-as-shapefile-and-geopackages">
+<h4>Save the data as shapefile and geopackages<a class="headerlink" href="#save-the-data-as-shapefile-and-geopackages" title="Link to this heading">#</a></h4>
 <p>We can then save the result to shapefile and geopackages. We made sure to use intenger for the statistics so the files are not to big and easy to handle in your favorite software:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1230,13 +1314,13 @@ In other words, for each latitude and longitude couple, we determine in which pi
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="results">
-<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="plotting-ice-thickness">
-<h3>Plotting ice thickness<a class="headerlink" href="#plotting-ice-thickness" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Link to this heading">#</a></h2>
+<section id="plotting-ice-thickness">
+<h3>Plotting ice thickness<a class="headerlink" href="#plotting-ice-thickness" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This line configures matplotlib to show figures embedded in the notebook, </span>
@@ -1249,8 +1333,8 @@ In other words, for each latitude and longitude couple, we determine in which pi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -1268,24 +1352,24 @@ In other words, for each latitude and longitude couple, we determine in which pi
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/Create_ShapePoints_for_BEDMAP3_29_1.png" src="../_images/Create_ShapePoints_for_BEDMAP3_29_1.png" />
+<img alt="../_images/dd441d21595a3c2e61595bda2723b3711f928797db872da18b0f274073fdeb66.png" src="../_images/dd441d21595a3c2e61595bda2723b3711f928797db872da18b0f274073fdeb66.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 2000x2000 with 0 Axes&gt;
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id1">
-<h3>Results<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id1">
+<h3>Results<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>All the BEDMAP point shapefiles are available online:</p>
 <ul class="simple">
 <li><p>Bedmap1 statistically-summarised data points (shapefiles): <a class="reference external" href="https://doi.org/10.5285/925ac4ec-2a9d-461a-bfaa-6314eb0888c8">https://doi.org/10.5285/925ac4ec-2a9d-461a-bfaa-6314eb0888c8</a></p></li>
 <li><p>Bedmap2 statistically-summarised data points (shapefiles): <a class="reference external" href="https://doi.org/10.5285/0f90d926-99ce-43c9-b536-0c7791d1728b">https://doi.org/10.5285/0f90d926-99ce-43c9-b536-0c7791d1728b</a></p></li>
 <li><p>Bedmap3 statistically-summarised data points (shapefiles): <a class="reference external" href="https://doi.org/10.5285/a72a50c6-a829-4e12-9f9a-5a683a1acc4a">https://doi.org/10.5285/a72a50c6-a829-4e12-9f9a-5a683a1acc4a</a></p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1299,7 +1383,7 @@ In other words, for each latitude and longitude couple, we determine in which pi
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./BEDMAP"
         },
         predefinedOutput: true
@@ -1307,47 +1391,126 @@ In other words, for each latitude and longitude couple, we determine in which pi
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="Create_ShapeLines_for_BEDMAP3.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Creating Shape Lines for BEDMAP3</p>
-            </div>
-        </a>
-    </div>
-
-</div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By UK PDC<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Create_ShapeLines_for_BEDMAP3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Creating Shape Lines for BEDMAP3</p>
       </div>
-    </div>
-  
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+    </a>
+    <a class="right-next"
+       href="../GLORIA/about.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">About</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bedmap3-project">The BEDMAP3 project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-shape-points">Creating shape Points</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-the-modules">Upload the modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-initial-grid">Load initial grid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-grid-of-x-and-y-size-that-will-contain-all-the-values-for-each-point-from-the-bed-elevation-picks">Create a grid of x and y size that will contain all the values for each point from the bed elevation picks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initiate-the-different-variables">Initiate the different variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-standardised-csv-files">Open the standardised CSV files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-the-latitude-and-longitude-to-polar-stereographic-coordinates">Convert the latitude and longitude to polar stereographic coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-index">Calculate the index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-statistics-for-each-pixel-values">Calculate statistics for each pixel values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-data-as-a-geo-dataframe">Saving the data as a geo-dataframe</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creation-of-the-columns">Creation of the columns</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creation-of-the-geodataframe">Creation of the geodataframe</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#save-the-data-as-shapefile-and-geopackages">Save the data as shapefile and geopackages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-ice-thickness">Plotting ice thickness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Results</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
+  <div class="footer-item">
+    
+<p class="component-author">
+By UK PDC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

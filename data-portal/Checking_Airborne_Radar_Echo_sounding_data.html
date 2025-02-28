@@ -1,433 +1,516 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Checking Airborne Radar Echo Sounding data &#8212; UK PDC Geophysics Book</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
-
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'data-portal/Checking_Airborne_Radar_Echo_sounding_data';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Checking Airborne Radar Echo Sounding data (MATLAB)" href="Checking_Airborne_Radar_Echo_sounding_data_MATLAB.html" />
     <link rel="prev" title="List of data available" href="data_available.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../welcome.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.jpg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">UK PDC Geophysics Book</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../welcome.html">
-   Welcome to the Geophysics Book from the UK Polar Centre
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Geophysics Data Portal
- </span>
-</p>
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="UK PDC Geophysics Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="UK PDC Geophysics Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../welcome.html">
+                    Welcome to the Geophysics Book from the UK Polar Centre
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Geophysics Data Portal</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="about.html">
-   About
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="user_guide.html">
-   User Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data_available.html">
-   List of data available
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Checking Airborne Radar Echo Sounding data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Checking_Airborne_Radar_Echo_sounding_data_MATLAB.html">
-   Checking Airborne Radar Echo Sounding data (MATLAB)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Checking_gravity_XYZ_data.html">
-   Checking Airborne Gravity data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Checking_magnetics_XYZ_data.html">
-   Checking Airborne Magnetics data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="data_available.html">List of data available</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Checking Airborne Radar Echo Sounding data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Checking_Airborne_Radar_Echo_sounding_data_MATLAB.html">Checking Airborne Radar Echo Sounding data (MATLAB)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Checking_gravity_XYZ_data.html">Checking Airborne Gravity data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Checking_magnetics_XYZ_data.html">Checking Airborne Magnetics data</a></li>
+
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  BEDMAP
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">BEDMAP</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../BEDMAP/about.html">
-   About
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../BEDMAP/data_available.html">
-   List of data available
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../BEDMAP/Downloading_the_Bedmap_data.html">
-   Downloading the Bedmap data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../BEDMAP/Get_full_metadata_from_CSV_file.html">
-   Get full metadata from CSV file - BEDMAP
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../BEDMAP/Checking_CSV_geospatially.html">
-   Reading the BEDMAP CSV files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../BEDMAP/Create_ShapeLines_for_BEDMAP3.html">
-   Creating Shape Lines for BEDMAP3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../BEDMAP/Create_ShapePoints_for_BEDMAP3.html">
-   Creating Shape Points for BEDMAP3
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../BEDMAP/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BEDMAP/data_available.html">List of data available</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BEDMAP/Downloading_the_Bedmap_data.html">Downloading the Bedmap data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BEDMAP/Get_full_metadata_from_CSV_file.html">Get full metadata from CSV file - BEDMAP</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../BEDMAP/Checking_CSV_geospatially.html">Reading the BEDMAP CSV files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BEDMAP/Create_ShapeLines_for_BEDMAP3.html">Creating Shape Lines for BEDMAP3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BEDMAP/Create_ShapePoints_for_BEDMAP3.html">Creating Shape Points for BEDMAP3</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">GLORIA</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../GLORIA/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GLORIA/checking_gloria_data.html">Checking GLORIA CD37 side-scan sonar data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../GLORIA/compare_gloria_with_IBCSO.html">Visualising GLORIA CD37 side-scan sonar data</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/data-portal/Checking_Airborne_Radar_Echo_sounding_data.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/antarctica/PDC_GeophysicsBook"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/antarctica/PDC_GeophysicsBook/issues/new?title=Issue%20on%20page%20%2Fdata-portal/Checking_Airborne_Radar_Echo_sounding_data.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/antarctica/PDC_GeophysicsBook/edit/main/book/data-portal/Checking_Airborne_Radar_Echo_sounding_data.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://binder.pangeo.io/v2/gh/antarctica/PDC_GeophysicsBook/main?urlpath=tree/book/data-portal/Checking_Airborne_Radar_Echo_sounding_data.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/antarctica/PDC_GeophysicsBook/main?urlpath=tree/book/data-portal/Checking_Airborne_Radar_Echo_sounding_data.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/antarctica/PDC_GeophysicsBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/antarctica/PDC_GeophysicsBook/edit/main/book/data-portal/Checking_Airborne_Radar_Echo_sounding_data.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/antarctica/PDC_GeophysicsBook/issues/new?title=Issue%20on%20page%20%2Fdata-portal/Checking_Airborne_Radar_Echo_sounding_data.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/data-portal/Checking_Airborne_Radar_Echo_sounding_data.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Checking Airborne Radar Echo Sounding data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aim">
-   Aim
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#virtual-environment">
-     Virtual environment
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-set-up-the-virtual-environment-with-conda">
-     To set up the virtual environment with Conda:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-set-up-the-virtual-environment-on-unix">
-     To set up the virtual environment on UNIX:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-the-relevant-modules">
-     Load the relevant modules
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#check-the-netcdf-files">
-   Check the NetCDF files
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#read-the-netcdf">
-     Read the NetCDF
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#check-the-metadata-information">
-     Check the metadata information
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#check-the-dimension-information">
-     Check the dimension information
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#check-the-name-and-metadata-of-the-variables-stored-in-the-netcdf-file">
-     Check the name and metadata of the variables stored in the NetCDF file
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visual-check-of-the-data">
-   Visual check of the data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-the-data">
-     Load the data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-the-processed-radargrams">
-     Plot the processed radargrams
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-amplitude-of-single-trace-from-the-radar-data">
-     Plot amplitude of single trace from the radar data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-geographic-location-of-trace-on-map">
-     Plot geographic location of trace on map
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-surface-and-bed-elevations-along-flightline">
-     Plot surface and bed elevations along flightline
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#check-the-seg-y-files">
-   Check the SEG-Y files
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-the-data-for-chirp-and-pulse">
-     Load the data for chirp and pulse
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#read-the-seg-ys">
-     Read the SEG-Ys
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inspect-seg-y-parameters">
-     Inspect SEG-Y parameters
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#read-traces">
-     Read traces
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Plot the processed radargrams
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aim">Aim</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-set-up-the-virtual-environment-with-conda">To set up the virtual environment with Conda:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-set-up-the-virtual-environment-on-unix">To set up the virtual environment on UNIX:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-relevant-modules">Load the relevant modules</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-netcdf-files">Check the NetCDF files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-netcdf">Read the NetCDF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-metadata-information">Check the metadata information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-dimension-information">Check the dimension information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-name-and-metadata-of-the-variables-stored-in-the-netcdf-file">Check the name and metadata of the variables stored in the NetCDF file</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-check-of-the-data">Visual check of the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">Load the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-processed-radargrams">Plot the processed radargrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-amplitude-of-single-trace-from-the-radar-data">Plot amplitude of single trace from the radar data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-geographic-location-of-trace-on-map">Plot geographic location of trace on map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-surface-and-bed-elevations-along-flightline">Plot surface and bed elevations along flightline</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-seg-y-files">Check the SEG-Y files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data-for-chirp-and-pulse">Load the data for chirp and pulse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-seg-ys">Read the SEG-Ys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-seg-y-parameters">Inspect SEG-Y parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-traces">Read traces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Plot the processed radargrams</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="checking-airborne-radar-echo-sounding-data">
-<h1>Checking Airborne Radar Echo Sounding data<a class="headerlink" href="#checking-airborne-radar-echo-sounding-data" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="checking-airborne-radar-echo-sounding-data">
+<h1>Checking Airborne Radar Echo Sounding data<a class="headerlink" href="#checking-airborne-radar-echo-sounding-data" title="Link to this heading">#</a></h1>
 <p>Author: Alice Fremand (&#64;almand) &amp; Julien Bodart (&#64;julbod)</p>
 <p>Date: 12/11/2021</p>
-<div class="section" id="aim">
-<h2>Aim<a class="headerlink" href="#aim" title="Permalink to this headline">¶</a></h2>
+<section id="aim">
+<h2>Aim<a class="headerlink" href="#aim" title="Link to this heading">#</a></h2>
 <p>The goal of this tutorial is to easily check radar echo sounding data from either NetCDF or SEG-Y formatted files.</p>
-<div class="section" id="virtual-environment">
-<h3>Virtual environment<a class="headerlink" href="#virtual-environment" title="Permalink to this headline">¶</a></h3>
+<section id="virtual-environment">
+<h3>Virtual environment<a class="headerlink" href="#virtual-environment" title="Link to this heading">#</a></h3>
 <p>For the code to run, it is important to install the correct dependancies and libraries. In particular the following libraries are crucial for the code to run:</p>
 <ul class="simple">
 <li><p>netCDF4 <em>module to check NetCDF data in python</em></p></li>
 <li><p>obspy <em>module to check SEGY data in python</em></p></li>
 </ul>
-</div>
-<div class="section" id="to-set-up-the-virtual-environment-with-conda">
-<h3>To set up the virtual environment with Conda:<a class="headerlink" href="#to-set-up-the-virtual-environment-with-conda" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="to-set-up-the-virtual-environment-with-conda">
+<h3>To set up the virtual environment with Conda:<a class="headerlink" href="#to-set-up-the-virtual-environment-with-conda" title="Link to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">aerogeophysics_env</span>
 <span class="o">&gt;</span><span class="n">conda</span> <span class="n">activate</span> <span class="n">aerogeophysics_env</span>
 <span class="o">&gt;</span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">env</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
@@ -436,9 +519,9 @@
 <span class="o">&gt;</span><span class="n">conda</span> <span class="n">install</span> <span class="n">netCDF4</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="to-set-up-the-virtual-environment-on-unix">
-<h3>To set up the virtual environment on UNIX:<a class="headerlink" href="#to-set-up-the-virtual-environment-on-unix" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="to-set-up-the-virtual-environment-on-unix">
+<h3>To set up the virtual environment on UNIX:<a class="headerlink" href="#to-set-up-the-virtual-environment-on-unix" title="Link to this heading">#</a></h3>
 <p>Load your python module:</p>
 <p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">python/conda3</span></code></p>
 <p>Then in the folder where you have your code, you need to launch:</p>
@@ -668,29 +751,29 @@ zipp                          3.4.1
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="load-the-relevant-modules">
-<h3>Load the relevant modules<a class="headerlink" href="#load-the-relevant-modules" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="load-the-relevant-modules">
+<h3>Load the relevant modules<a class="headerlink" href="#load-the-relevant-modules" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">netCDF4</span> <span class="k">as</span> <span class="nn">nc</span>
-<span class="kn">from</span> <span class="nn">obspy.io.segy.segy</span> <span class="kn">import</span> <span class="n">_read_segy</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="k">as</span> <span class="nn">ticker</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">transforms</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">netCDF4</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">obspy.io.segy.segy</span><span class="w"> </span><span class="kn">import</span> <span class="n">_read_segy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.ticker</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ticker</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">transforms</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="check-the-netcdf-files">
-<h2>Check the NetCDF files<a class="headerlink" href="#check-the-netcdf-files" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="check-the-netcdf-files">
+<h2>Check the NetCDF files<a class="headerlink" href="#check-the-netcdf-files" title="Link to this heading">#</a></h2>
 <p>Example given for GRADES-IMAGE data.</p>
 <p>Data available for download here: Corr, H. (2021). Processed airborne radio-echo sounding data from the GRADES-IMAGE survey covering the Evans and Rutford Ice Streams, and ice rises in the Ronne Ice Shelf, West Antarctica (2006/2007) (Version 1.0) [Data set]. NERC EDS UK Polar Data Centre. <a class="reference external" href="https://doi.org/10.5285/C7EA5697-87E3-4529-A0DD-089A2ED638FB">https://doi.org/10.5285/C7EA5697-87E3-4529-A0DD-089A2ED638FB</a></p>
-<div class="section" id="read-the-netcdf">
-<h3>Read the NetCDF<a class="headerlink" href="#read-the-netcdf" title="Permalink to this headline">¶</a></h3>
+<section id="read-the-netcdf">
+<h3>Read the NetCDF<a class="headerlink" href="#read-the-netcdf" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">=</span><span class="n">nc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s1">&#39;D:/British_Antarctic_Survey/data/GRADES_IMAGE_0607/netcdf/GRADES_IMAGE_G06.nc&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
@@ -698,9 +781,9 @@ zipp                          3.4.1
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="check-the-metadata-information">
-<h3>Check the metadata information<a class="headerlink" href="#check-the-metadata-information" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="check-the-metadata-information">
+<h3>Check the metadata information<a class="headerlink" href="#check-the-metadata-information" title="Link to this heading">#</a></h3>
 <p>By printing <code class="docutils literal notranslate"><span class="pre">f</span></code>, we can read the metadata and obtain information about the variables and their respective dimensions</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -845,9 +928,9 @@ root group (NETCDF4 data model, file format HDF5):
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="check-the-dimension-information">
-<h3>Check the dimension information<a class="headerlink" href="#check-the-dimension-information" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="check-the-dimension-information">
+<h3>Check the dimension information<a class="headerlink" href="#check-the-dimension-information" title="Link to this heading">#</a></h3>
 <p>To get information about the NetCDF dimensions and their size, you can do the following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -875,9 +958,9 @@ root group (NETCDF4 data model, file format HDF5):
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="check-the-name-and-metadata-of-the-variables-stored-in-the-netcdf-file">
-<h3>Check the name and metadata of the variables stored in the NetCDF file<a class="headerlink" href="#check-the-name-and-metadata-of-the-variables-stored-in-the-netcdf-file" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="check-the-name-and-metadata-of-the-variables-stored-in-the-netcdf-file">
+<h3>Check the name and metadata of the variables stored in the NetCDF file<a class="headerlink" href="#check-the-name-and-metadata-of-the-variables-stored-in-the-netcdf-file" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">variables</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
@@ -1044,12 +1127,12 @@ filling on
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="visual-check-of-the-data">
-<h2>Visual check of the data<a class="headerlink" href="#visual-check-of-the-data" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="load-the-data">
-<h3>Load the data<a class="headerlink" href="#load-the-data" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="visual-check-of-the-data">
+<h2>Visual check of the data<a class="headerlink" href="#visual-check-of-the-data" title="Link to this heading">#</a></h2>
+<section id="load-the-data">
+<h3>Load the data<a class="headerlink" href="#load-the-data" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># radar variables</span>
@@ -1081,9 +1164,9 @@ filling on
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plot-the-processed-radargrams">
-<h3>Plot the processed radargrams<a class="headerlink" href="#plot-the-processed-radargrams" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="plot-the-processed-radargrams">
+<h3>Plot the processed radargrams<a class="headerlink" href="#plot-the-processed-radargrams" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span> <span class="c1"># set the size of the inline plot</span>
@@ -1105,7 +1188,7 @@ filling on
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x1e733870f10&gt;
 </pre></div>
 </div>
-<img alt="../_images/Checking_Airborne_Radar_Echo_sounding_data_18_1.png" src="../_images/Checking_Airborne_Radar_Echo_sounding_data_18_1.png" />
+<img alt="../_images/8c5652f0b55d6ce5644b2d12bc2eb4eda0c33345611dee61036c40a7810ce30b.png" src="../_images/8c5652f0b55d6ce5644b2d12bc2eb4eda0c33345611dee61036c40a7810ce30b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1129,12 +1212,12 @@ filling on
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x1e70ed627c0&gt;
 </pre></div>
 </div>
-<img alt="../_images/Checking_Airborne_Radar_Echo_sounding_data_19_1.png" src="../_images/Checking_Airborne_Radar_Echo_sounding_data_19_1.png" />
+<img alt="../_images/e46730801f5ac8da68399b4acd9ef4c3a293571b7d6672b667f7c89237e320ca.png" src="../_images/e46730801f5ac8da68399b4acd9ef4c3a293571b7d6672b667f7c89237e320ca.png" />
 </div>
 </div>
-</div>
-<div class="section" id="plot-amplitude-of-single-trace-from-the-radar-data">
-<h3>Plot amplitude of single trace from the radar data<a class="headerlink" href="#plot-amplitude-of-single-trace-from-the-radar-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="plot-amplitude-of-single-trace-from-the-radar-data">
+<h3>Plot amplitude of single trace from the radar data<a class="headerlink" href="#plot-amplitude-of-single-trace-from-the-radar-data" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">]</span> <span class="c1"># set the size of the inline plot</span>
@@ -1164,12 +1247,12 @@ filling on
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Checking_Airborne_Radar_Echo_sounding_data_21_0.png" src="../_images/Checking_Airborne_Radar_Echo_sounding_data_21_0.png" />
+<img alt="../_images/fc19eb03ffa48c7185ede88e6abd12dfd561c67da960fba57d198841e1663c2f.png" src="../_images/fc19eb03ffa48c7185ede88e6abd12dfd561c67da960fba57d198841e1663c2f.png" />
 </div>
 </div>
-</div>
-<div class="section" id="plot-geographic-location-of-trace-on-map">
-<h3>Plot geographic location of trace on map<a class="headerlink" href="#plot-geographic-location-of-trace-on-map" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="plot-geographic-location-of-trace-on-map">
+<h3>Plot geographic location of trace on map<a class="headerlink" href="#plot-geographic-location-of-trace-on-map" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span> <span class="c1"># Set the size of the inline plot</span>
@@ -1188,12 +1271,12 @@ filling on
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Y (km)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/Checking_Airborne_Radar_Echo_sounding_data_23_1.png" src="../_images/Checking_Airborne_Radar_Echo_sounding_data_23_1.png" />
+<img alt="../_images/1f35c5962538a04b4b92462633fa48ff63c5757d7f08f6e0c5225c82f8c604dd.png" src="../_images/1f35c5962538a04b4b92462633fa48ff63c5757d7f08f6e0c5225c82f8c604dd.png" />
 </div>
 </div>
-</div>
-<div class="section" id="plot-surface-and-bed-elevations-along-flightline">
-<h3>Plot surface and bed elevations along flightline<a class="headerlink" href="#plot-surface-and-bed-elevations-along-flightline" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="plot-surface-and-bed-elevations-along-flightline">
+<h3>Plot surface and bed elevations along flightline<a class="headerlink" href="#plot-surface-and-bed-elevations-along-flightline" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span> <span class="c1"># Set the size of the inline plot</span>
@@ -1212,15 +1295,15 @@ filling on
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Elevation (meters WGS84)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/Checking_Airborne_Radar_Echo_sounding_data_25_1.png" src="../_images/Checking_Airborne_Radar_Echo_sounding_data_25_1.png" />
+<img alt="../_images/72ecb10005938d234293e86cfe2a1720246571cac9b891ce1cbc59bb82ea4ea9.png" src="../_images/72ecb10005938d234293e86cfe2a1720246571cac9b891ce1cbc59bb82ea4ea9.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="check-the-seg-y-files">
-<h2>Check the SEG-Y files<a class="headerlink" href="#check-the-seg-y-files" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="load-the-data-for-chirp-and-pulse">
-<h3>Load the data for chirp and pulse<a class="headerlink" href="#load-the-data-for-chirp-and-pulse" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="check-the-seg-y-files">
+<h2>Check the SEG-Y files<a class="headerlink" href="#check-the-seg-y-files" title="Link to this heading">#</a></h2>
+<section id="load-the-data-for-chirp-and-pulse">
+<h3>Load the data for chirp and pulse<a class="headerlink" href="#load-the-data-for-chirp-and-pulse" title="Link to this heading">#</a></h3>
 <p>Give here the path to where the desired files lives on your PC</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1230,9 +1313,9 @@ filling on
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="read-the-seg-ys">
-<h3>Read the SEG-Ys<a class="headerlink" href="#read-the-seg-ys" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="read-the-seg-ys">
+<h3>Read the SEG-Ys<a class="headerlink" href="#read-the-seg-ys" title="Link to this heading">#</a></h3>
 <p>The data is read using the <code class="docutils literal notranslate"><span class="pre">_read_segy</span></code> command from the <code class="docutils literal notranslate"><span class="pre">obspy</span></code> Python module</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1242,9 +1325,9 @@ filling on
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="inspect-seg-y-parameters">
-<h3>Inspect SEG-Y parameters<a class="headerlink" href="#inspect-seg-y-parameters" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="inspect-seg-y-parameters">
+<h3>Inspect SEG-Y parameters<a class="headerlink" href="#inspect-seg-y-parameters" title="Link to this heading">#</a></h3>
 <p>It is possible to check the content of the SEG-Y bytes using very simple commands of the <code class="docutils literal notranslate"><span class="pre">obspy</span></code> package.</p>
 <p>Some examples are given below for the chirp data (pulse is the same):</p>
 <div class="cell docutils container">
@@ -1304,9 +1387,9 @@ filling on
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="read-traces">
-<h3>Read traces<a class="headerlink" href="#read-traces" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="read-traces">
+<h3>Read traces<a class="headerlink" href="#read-traces" title="Link to this heading">#</a></h3>
 <p>Obspy can also be used to read individual traces</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1445,9 +1528,9 @@ source_measurement_unit: 0
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id1">
-<h3>Plot the processed radargrams<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id1">
+<h3>Plot the processed radargrams<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>We first need to concatenate all traces from the SEG-Y into one array and calculate the log of data</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1485,7 +1568,7 @@ source_measurement_unit: 0
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(143.5, 0.5, &#39;Fast Time Sample Number&#39;)
 </pre></div>
 </div>
-<img alt="../_images/Checking_Airborne_Radar_Echo_sounding_data_46_1.png" src="../_images/Checking_Airborne_Radar_Echo_sounding_data_46_1.png" />
+<img alt="../_images/9e205a881c6271bcdf5552d87517253a4ad7fd15216225deea06f847d40b0ec0.png" src="../_images/9e205a881c6271bcdf5552d87517253a4ad7fd15216225deea06f847d40b0ec0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1507,12 +1590,12 @@ source_measurement_unit: 0
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(143.5, 0.5, &#39;Fast Time Sample Number&#39;)
 </pre></div>
 </div>
-<img alt="../_images/Checking_Airborne_Radar_Echo_sounding_data_47_1.png" src="../_images/Checking_Airborne_Radar_Echo_sounding_data_47_1.png" />
+<img alt="../_images/d7c0c7cfe35c34fc460fd3a65387fabb9673215b3b2c6a254b045c1802727434.png" src="../_images/d7c0c7cfe35c34fc460fd3a65387fabb9673215b3b2c6a254b045c1802727434.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1526,7 +1609,7 @@ source_measurement_unit: 0
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./data-portal"
         },
         predefinedOutput: true
@@ -1534,56 +1617,132 @@ source_measurement_unit: 0
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="data_available.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">List of data available</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="Checking_Airborne_Radar_Echo_sounding_data_MATLAB.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Checking Airborne Radar Echo Sounding data (MATLAB)</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By UK PDC<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="data_available.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">List of data available</p>
       </div>
-    </div>
-  
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+    </a>
+    <a class="right-next"
+       href="Checking_Airborne_Radar_Echo_sounding_data_MATLAB.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Checking Airborne Radar Echo Sounding data (MATLAB)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aim">Aim</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-set-up-the-virtual-environment-with-conda">To set up the virtual environment with Conda:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-set-up-the-virtual-environment-on-unix">To set up the virtual environment on UNIX:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-relevant-modules">Load the relevant modules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-netcdf-files">Check the NetCDF files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-netcdf">Read the NetCDF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-metadata-information">Check the metadata information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-dimension-information">Check the dimension information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-name-and-metadata-of-the-variables-stored-in-the-netcdf-file">Check the name and metadata of the variables stored in the NetCDF file</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-check-of-the-data">Visual check of the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">Load the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-processed-radargrams">Plot the processed radargrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-amplitude-of-single-trace-from-the-radar-data">Plot amplitude of single trace from the radar data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-geographic-location-of-trace-on-map">Plot geographic location of trace on map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-surface-and-bed-elevations-along-flightline">Plot surface and bed elevations along flightline</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-seg-y-files">Check the SEG-Y files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data-for-chirp-and-pulse">Load the data for chirp and pulse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-seg-ys">Read the SEG-Ys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-seg-y-parameters">Inspect SEG-Y parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-traces">Read traces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Plot the processed radargrams</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
+  <div class="footer-item">
+    
+<p class="component-author">
+By UK PDC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
